@@ -1,0 +1,16 @@
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbprojAssemblyReference.cache
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.CreateNewUser.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.LoginForm.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Resources.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.GenerateResource.cache
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.CoreCompileInputs.cache
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).exe.config
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).exe
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).pdb
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).xml
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\MySql.Data.dll
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\MySql.Data.xml
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.CopyComplete
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).exe
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).xml
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).pdb
