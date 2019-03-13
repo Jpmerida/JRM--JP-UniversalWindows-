@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateNewGuest.Designer.vb">
+      <DependentUpon>CreateNewGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateNewUser.Designer.vb">
       <DependentUpon>CreateNewUser.vb</DependentUpon>
     </Compile>
@@ -93,6 +99,12 @@
       <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
     </Compile>
     <Compile Include="For Test Only\InsertingData UsingMYSQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestsManagement.Designer.vb">
+      <DependentUpon>GuestsManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GuestsManagement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.vb">
@@ -141,8 +153,23 @@
     <Compile Include="ServicesManagement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UpdateUser.Designer.vb">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagement.Designer.vb">
+      <DependentUpon>UserManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CreateNewGuest.resx">
+      <DependentUpon>CreateNewGuest.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewUser.resx">
       <DependentUpon>CreateNewUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="For Test Only\InsertingData UsingMYSQL.resx">
       <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestsManagement.resx">
+      <DependentUpon>GuestsManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -172,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ServicesManagement.resx">
       <DependentUpon>ServicesManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagement.resx">
+      <DependentUpon>UserManagement.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

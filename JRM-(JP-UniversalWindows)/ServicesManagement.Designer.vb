@@ -35,9 +35,9 @@ Partial Class ServicesManagement
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView1.Location = New System.Drawing.Point(22, 124)
+        Me.ListView1.Location = New System.Drawing.Point(30, 106)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(958, 262)
+        Me.ListView1.Size = New System.Drawing.Size(1040, 262)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -68,7 +68,7 @@ Partial Class ServicesManagement
         '
         'btn_AddNew
         '
-        Me.btn_AddNew.Location = New System.Drawing.Point(604, 456)
+        Me.btn_AddNew.Location = New System.Drawing.Point(751, 483)
         Me.btn_AddNew.Name = "btn_AddNew"
         Me.btn_AddNew.Size = New System.Drawing.Size(184, 52)
         Me.btn_AddNew.TabIndex = 1
