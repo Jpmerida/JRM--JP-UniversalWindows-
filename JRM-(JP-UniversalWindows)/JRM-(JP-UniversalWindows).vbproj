@@ -80,6 +80,21 @@
     <Compile Include="CreateNewUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="First.Designer.vb">
+      <DependentUpon>First.vb</DependentUpon>
+    </Compile>
+    <Compile Include="First.vb" />
+    <Compile Include="For Test Only\InsertingData UsingMYSQL.Designer.vb">
+      <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="For Test Only\InsertingData UsingMYSQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -108,13 +123,40 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="For Test Only\Test4Adding.Designer.vb">
+      <DependentUpon>Test4Adding.vb</DependentUpon>
+    </Compile>
+    <Compile Include="For Test Only\Test4Adding.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Services.Designer.vb">
+      <DependentUpon>New Services.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Services.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServicesManagement.Designer.vb">
+      <DependentUpon>ServicesManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CreateNewUser.resx">
       <DependentUpon>CreateNewUser.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="First.resx">
+      <DependentUpon>First.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="For Test Only\InsertingData UsingMYSQL.resx">
+      <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -122,8 +164,28 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="For Test Only\Test4Adding.resx">
+      <DependentUpon>Test4Adding.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Services.resx">
+      <DependentUpon>New Services.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServicesManagement.resx">
+      <DependentUpon>ServicesManagement.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -14,3 +14,9 @@ C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\ob
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).exe
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).xml
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).pdb
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Test4Adding.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.InsertingData_UsingMYSQL.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.First.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.MainMenu.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.New_Services.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.ServicesManagement.resources

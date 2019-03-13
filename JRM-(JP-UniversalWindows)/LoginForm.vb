@@ -20,8 +20,11 @@ Public Class LoginForm
         If txtbox_Username.Text = user And txtbox_Password.Text = pass Then
             cmd.Dispose()
             conn.Close()
-            Me.Hide()
+
+            First.Show()
             MainMenu.ShowDialog()
+            Me.Close()
+
 
         Else
             MsgBox("Wrong username or password", vbCritical, "Error Login")
@@ -32,5 +35,9 @@ Public Class LoginForm
 
     Private Sub txtLink_CreateUser_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles txtLink_CreateUser.LinkClicked
         CreateNewUser.Show()
+    End Sub
+
+    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        First.Show()
     End Sub
 End Class

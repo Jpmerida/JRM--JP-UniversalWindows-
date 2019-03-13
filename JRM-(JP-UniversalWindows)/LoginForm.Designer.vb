@@ -62,7 +62,7 @@ Partial Class LoginForm
         Me.btn_Login.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Login.Location = New System.Drawing.Point(594, 338)
         Me.btn_Login.Name = "btn_Login"
-        Me.btn_Login.Size = New System.Drawing.Size(126, 62)
+        Me.btn_Login.Size = New System.Drawing.Size(143, 62)
         Me.btn_Login.TabIndex = 3
         Me.btn_Login.Text = "LOGIN"
         Me.btn_Login.UseVisualStyleBackColor = True
@@ -76,7 +76,9 @@ Partial Class LoginForm
         Me.Controls.Add(Me.txtLink_CreateUser)
         Me.Controls.Add(Me.txtbox_Password)
         Me.Controls.Add(Me.txtbox_Username)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "LoginForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LoginForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()

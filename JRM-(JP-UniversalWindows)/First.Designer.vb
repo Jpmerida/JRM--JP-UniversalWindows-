@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MainMenu
+Partial Class First
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,34 +22,26 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btn_SManage = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btn_SManage
-        '
-        Me.btn_SManage.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_SManage.Location = New System.Drawing.Point(30, 352)
-        Me.btn_SManage.Name = "btn_SManage"
-        Me.btn_SManage.Size = New System.Drawing.Size(299, 114)
-        Me.btn_SManage.TabIndex = 0
-        Me.btn_SManage.Text = "Services Management"
-        Me.btn_SManage.UseVisualStyleBackColor = True
-        '
-        'MainMenu
+        'First
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.ClientSize = New System.Drawing.Size(1366, 768)
+        Me.BackColor = System.Drawing.SystemColors.InfoText
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btn_SManage)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MainMenu"
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "First"
+        Me.Opacity = 0.5R
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Main Menu"
+        Me.Text = "First"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btn_SManage As Button
 End Class
