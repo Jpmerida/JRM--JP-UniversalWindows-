@@ -22,10 +22,5 @@ JRM-(JP-UniversalWindows)
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="T:JRM__JP_UniversalWindows_.DataSet1">
-<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member>
 </members>
 </doc>

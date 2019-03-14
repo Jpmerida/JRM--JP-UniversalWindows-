@@ -26,8 +26,10 @@ Partial Class New_Services
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cboSize = New System.Windows.Forms.ComboBox()
+        Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.cboCatname = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -37,8 +39,6 @@ Partial Class New_Services
         Me.txtLocationname = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtDesc = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,7 +66,7 @@ Partial Class New_Services
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.cboSize)
         Me.GroupBox1.Controls.Add(Me.txtDesc)
         Me.GroupBox1.Controls.Add(Me.txtPrice)
@@ -102,6 +102,18 @@ Partial Class New_Services
         Me.cboSize.Size = New System.Drawing.Size(108, 38)
         Me.cboSize.TabIndex = 5
         '
+        'txtDesc
+        '
+        Me.txtDesc.BackColor = System.Drawing.Color.LightGray
+        Me.txtDesc.Enabled = False
+        Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.txtDesc.Location = New System.Drawing.Point(275, 320)
+        Me.txtDesc.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDesc.Multiline = True
+        Me.txtDesc.Name = "txtDesc"
+        Me.txtDesc.Size = New System.Drawing.Size(399, 40)
+        Me.txtDesc.TabIndex = 6
+        '
         'txtPrice
         '
         Me.txtPrice.BackColor = System.Drawing.Color.LightGray
@@ -125,6 +137,17 @@ Partial Class New_Services
         Me.cboCatname.Size = New System.Drawing.Size(320, 38)
         Me.cboCatname.TabIndex = 3
         Me.cboCatname.Text = "101 - Cottage"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Label7.Location = New System.Drawing.Point(88, 323)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(179, 31)
+        Me.Label7.TabIndex = 35
+        Me.Label7.Text = "Description :"
         '
         'Label6
         '
@@ -228,29 +251,6 @@ Partial Class New_Services
         Me.Label1.Size = New System.Drawing.Size(226, 31)
         Me.Label1.TabIndex = 19
         Me.Label1.Text = "Location Name :"
-        '
-        'txtDesc
-        '
-        Me.txtDesc.BackColor = System.Drawing.Color.LightGray
-        Me.txtDesc.Enabled = False
-        Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.txtDesc.Location = New System.Drawing.Point(275, 320)
-        Me.txtDesc.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtDesc.Multiline = True
-        Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(399, 40)
-        Me.txtDesc.TabIndex = 6
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.Label7.Location = New System.Drawing.Point(88, 323)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(179, 31)
-        Me.Label7.TabIndex = 35
-        Me.Label7.Text = "Description :"
         '
         'New_Services
         '
