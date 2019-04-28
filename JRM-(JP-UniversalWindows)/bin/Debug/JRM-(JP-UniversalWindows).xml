@@ -22,5 +22,25 @@ JRM-(JP-UniversalWindows)
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources._2_Blur">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources._4_BLUR">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.JRM_Transparent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.Untitled">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

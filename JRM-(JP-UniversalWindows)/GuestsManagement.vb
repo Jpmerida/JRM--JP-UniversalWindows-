@@ -10,7 +10,6 @@ Public Class GuestsManagement
         If connection.State = ConnectionState.Closed Then
             connection.Open()
         End If
-
         Try
             If cmd.ExecuteNonQuery() = 1 Then
                 Return True
@@ -18,10 +17,8 @@ Public Class GuestsManagement
                 Return False
             End If
         Catch ex As Exception
-
             MessageBox.Show("ERROR")
             Return False
-
         End Try
 
         If connection.State = ConnectionState.Open Then
@@ -32,6 +29,8 @@ Public Class GuestsManagement
     End Function
 
     Private Sub GuestsManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Normal
+
         viewguests(ListView1, "")
         txtSearch.Text = ""
         txtFname.Text = ""
@@ -41,13 +40,113 @@ Public Class GuestsManagement
         txtAddress.Text = ""
         txtContact.Text = ""
         ComboBox1.Text = ""
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            cmdUpdate.Enabled = True
+            cmdUpdate.Visible = True
+        ElseIf UIDType = "NONE" Or UIDType = "Staff" Then
+            cmdUpdate.Enabled = False
+            cmdUpdate.Visible = False
+        Else
+            cmdUpdate.Enabled = False
+            cmdUpdate.Visible = False
+        End If
+
+        If Procced = 1 Then
+            MainMenu.WindowState = FormWindowState.Minimized
+        ElseIf Procced = 0 Then
+            MainMenu.WindowState = FormWindowState.Maximized
+
+        End If
+
+    End Sub
+
+    Private Sub txtSearch_TextChanged_1(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+
+        viewguests(ListView1, txtSearch.Text)
     End Sub
 
 
 
-    Private Sub ListView1_DoubleClick(sender As Object, e As EventArgs) Handles ListView1.DoubleClick
-        GIDupdate = ListView1.SelectedItems(0).SubItems(0).Text
+    Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
+        GM = 0
+        openLogin(Procced)
+        Me.Close()
+    End Sub
 
+
+
+    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            Dim fn As String = txtFname.Text
+            Dim mn As String = txtMname.Text
+            Dim ln As String = txtLname.Text
+            'Dim newname As String = (fn + " " + mn + " " + ln)
+            If (txtGroupName.Text = "") Then
+                MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
+                Exit Sub
+            ElseIf (txtLname.Text = "") Then
+                MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
+                Exit Sub
+            ElseIf (txtFname.Text = "") Then
+                MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
+                Exit Sub
+            ElseIf (txtMname.Text = "") Then
+                MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
+                Exit Sub
+            ElseIf (txtContact.Text = "") Then
+                MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
+                Exit Sub
+            ElseIf GIDupdate = GIDupdate Then
+                '------------'
+
+                Dim update_command1 As New MySqlCommand("UPDATE `tblguestdetails` SET `Fname`=@fn,`Mname`=@mn,`Lname`=@ln,`Gender`=@g WHERE `GuestID` = @id", connection)
+                Dim update_command2 As New MySqlCommand("UPDATE `tblguests` SET `Name`=@Gn,`Email`=@E,`ContactNo`=@C,`Address`=@Add WHERE `GuestID` = @id2", connection)
+
+                update_command1.Parameters.Add("@id", MySqlDbType.Int64).Value = GIDupdate
+                update_command1.Parameters.Add("@fn", MySqlDbType.VarChar).Value = txtFname.Text
+                update_command1.Parameters.Add("@mn", MySqlDbType.VarChar).Value = txtMname.Text
+                update_command1.Parameters.Add("@ln", MySqlDbType.VarChar).Value = txtLname.Text
+                update_command1.Parameters.Add("@g", MySqlDbType.VarChar).Value = ComboBox1.Text
+
+                If execCommand(update_command1) Then
+                    'MessageBox.Show("Data Up  dated")
+                Else
+                    MessageBox.Show("Data NOT Updated")
+                    Exit Sub
+                End If
+                update_command2.Parameters.Add("@id2", MySqlDbType.Int64).Value = GIDupdate
+                update_command2.Parameters.Add("@Gn", MySqlDbType.VarChar).Value = txtGroupName.Text
+                update_command2.Parameters.Add("@E", MySqlDbType.VarChar).Value = txtEmail.Text
+                update_command2.Parameters.Add("@C", MySqlDbType.VarChar).Value = txtContact.Text
+                update_command2.Parameters.Add("@Add", MySqlDbType.VarChar).Value = txtAddress.Text
+
+                If execCommand(update_command2) Then
+                    MessageBox.Show("Data Updated")
+                    viewguests(ListView1, "")
+                Else
+                    MessageBox.Show("Data NOT Updated")
+                    Exit Sub
+                End If
+
+            Else
+                MsgBox("Guest Selected do not match", vbInformation, "Mismatch")
+            End If
+        Else
+            MsgBox("Not Authorized!", vbInformation, "")
+        End If
+
+    End Sub
+
+    Private Sub cmdCreate_Click(sender As Object, e As EventArgs) Handles cmdCreate.Click
+        CreateNewGuest.ShowDialog()
+    End Sub
+
+    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
+        If (Me.ListView1.SelectedItems.Count = 0) Then
+            Return
+        End If
+
+        GIDupdate = ListView1.SelectedItems(0).Text
 
         mysql = "select * from tblguestdetails where GuestID ='" & GIDupdate & "'"
         conndb()
@@ -74,75 +173,6 @@ Public Class GuestsManagement
         txtContact.Text = ListView1.SelectedItems(0).SubItems(3).Text
         txtAddress.Text = ListView1.SelectedItems(0).SubItems(4).Text
     End Sub
-
-    Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
-        Me.Close()
-    End Sub
-
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        viewguests(ListView1, txtSearch.Text)
-    End Sub
-
-
-    Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
-        Dim fn As String = txtFname.Text
-        Dim mn As String = txtMname.Text
-        Dim ln As String = txtLname.Text
-        'Dim newname As String = (fn + " " + mn + " " + ln)
-        If (txtGroupName.Text = "") Then
-            MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
-            Exit Sub
-        ElseIf (txtLname.Text = "") Then
-            MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
-            Exit Sub
-        ElseIf (txtFname.Text = "") Then
-            MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
-            Exit Sub
-        ElseIf (txtMname.Text = "") Then
-            MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
-            Exit Sub
-        ElseIf (txtContact.Text = "") Then
-            MsgBox("Cannot Update Information.", vbInformation, "Missing Required Information")
-            Exit Sub
-        ElseIf GIDupdate = GIDupdate Then
-            '------------'
-
-            Dim update_command1 As New MySqlCommand("UPDATE `tblguestdetails` SET `Fname`=@fn,`Mname`=@mn,`Lname`=@ln,`Gender`=@g WHERE `GuestID` = @id", connection)
-            Dim update_command2 As New MySqlCommand("UPDATE `tblguests` SET `Name`=@Gn,`Email`=@E,`ContactNo`=@C,`Address`=@Add WHERE `GuestID` = @id2", connection)
-
-            update_command1.Parameters.Add("@id", MySqlDbType.Int64).Value = GIDupdate
-            update_command1.Parameters.Add("@fn", MySqlDbType.VarChar).Value = txtFname.Text
-            update_command1.Parameters.Add("@mn", MySqlDbType.VarChar).Value = txtMname.Text
-            update_command1.Parameters.Add("@ln", MySqlDbType.VarChar).Value = txtLname.Text
-            update_command1.Parameters.Add("@g", MySqlDbType.VarChar).Value = ComboBox1.Text
-
-            If execCommand(update_command1) Then
-                'MessageBox.Show("Data Up  dated")
-            Else
-                MessageBox.Show("Data NOT Updated")
-                Exit Sub
-            End If
-            update_command2.Parameters.Add("@id2", MySqlDbType.Int64).Value = GIDupdate
-            update_command2.Parameters.Add("@Gn", MySqlDbType.VarChar).Value = txtGroupName.Text
-            update_command2.Parameters.Add("@E", MySqlDbType.VarChar).Value = txtEmail.Text
-            update_command2.Parameters.Add("@C", MySqlDbType.VarChar).Value = txtContact.Text
-            update_command2.Parameters.Add("@Add", MySqlDbType.VarChar).Value = txtAddress.Text
-
-            If execCommand(update_command2) Then
-                MessageBox.Show("Data Updated")
-                viewguests(ListView1, "")
-            Else
-                MessageBox.Show("Data NOT Updated")
-                Exit Sub
-            End If
-
-        Else
-            MsgBox("Guest Selected do not match", vbInformation, "Mismatch")
-        End If
-    End Sub
-
-    Private Sub cmdCreate_Click(sender As Object, e As EventArgs) Handles cmdCreate.Click
-        CreateNewGuest.ShowDialog()
-
-    End Sub
 End Class
+
+

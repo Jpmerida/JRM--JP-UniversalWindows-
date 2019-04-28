@@ -39,7 +39,6 @@ Partial Class GuestsManagement
         Me.txtMname = New System.Windows.Forms.TextBox()
         Me.txtFname = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -50,6 +49,7 @@ Partial Class GuestsManagement
         Me.txtGroupName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cmdCreate = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -57,203 +57,196 @@ Partial Class GuestsManagement
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"M", "F"})
-        Me.ComboBox1.Location = New System.Drawing.Point(809, 332)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ComboBox1.Location = New System.Drawing.Point(511, 195)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(64, 33)
-        Me.ComboBox1.TabIndex = 38
+        Me.ComboBox1.Size = New System.Drawing.Size(52, 28)
+        Me.ComboBox1.TabIndex = 9
         '
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label8.Location = New System.Drawing.Point(790, 298)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label8.Location = New System.Drawing.Point(493, 167)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(115, 29)
+        Me.Label8.Size = New System.Drawing.Size(90, 24)
         Me.Label8.TabIndex = 37
         Me.Label8.Text = "GENDER"
         '
         'cmdCancel
         '
+        Me.cmdCancel.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmdCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmdCancel.Location = New System.Drawing.Point(1310, 490)
-        Me.cmdCancel.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmdCancel.Location = New System.Drawing.Point(870, 323)
         Me.cmdCancel.Name = "cmdCancel"
-        Me.cmdCancel.Size = New System.Drawing.Size(135, 64)
-        Me.cmdCancel.TabIndex = 36
-        Me.cmdCancel.Text = "Cancel"
-        Me.cmdCancel.UseVisualStyleBackColor = True
+        Me.cmdCancel.Size = New System.Drawing.Size(108, 51)
+        Me.cmdCancel.TabIndex = 4
+        Me.cmdCancel.Text = "CLOSE"
+        Me.cmdCancel.UseVisualStyleBackColor = False
         '
         'cmdUpdate
         '
+        Me.cmdUpdate.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmdUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmdUpdate.Location = New System.Drawing.Point(1161, 490)
-        Me.cmdUpdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmdUpdate.Location = New System.Drawing.Point(751, 323)
         Me.cmdUpdate.Name = "cmdUpdate"
-        Me.cmdUpdate.Size = New System.Drawing.Size(135, 64)
-        Me.cmdUpdate.TabIndex = 35
+        Me.cmdUpdate.Size = New System.Drawing.Size(108, 51)
+        Me.cmdUpdate.TabIndex = 3
         Me.cmdUpdate.Text = "Update"
-        Me.cmdUpdate.UseVisualStyleBackColor = True
+        Me.cmdUpdate.UseVisualStyleBackColor = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label7.Location = New System.Drawing.Point(1062, 376)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label7.Location = New System.Drawing.Point(697, 230)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(102, 29)
+        Me.Label7.Size = New System.Drawing.Size(80, 24)
         Me.Label7.TabIndex = 34
         Me.Label7.Text = "Address"
         '
         'txtAddress
         '
         Me.txtAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAddress.Location = New System.Drawing.Point(776, 409)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAddress.Location = New System.Drawing.Point(493, 256)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(668, 34)
-        Me.txtAddress.TabIndex = 33
+        Me.txtAddress.Size = New System.Drawing.Size(486, 29)
+        Me.txtAddress.TabIndex = 12
         Me.txtAddress.Text = "Address"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label6.Location = New System.Drawing.Point(918, 298)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label6.Location = New System.Drawing.Point(588, 167)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(169, 29)
+        Me.Label6.Size = New System.Drawing.Size(132, 24)
         Me.Label6.TabIndex = 32
         Me.Label6.Text = "Email Address"
         '
         'txtEmail
         '
         Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(918, 332)
-        Me.txtEmail.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEmail.Location = New System.Drawing.Point(588, 195)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(283, 34)
-        Me.txtEmail.TabIndex = 31
+        Me.txtEmail.Size = New System.Drawing.Size(181, 29)
+        Me.txtEmail.TabIndex = 10
         Me.txtEmail.Text = "Email Address"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label5.Location = New System.Drawing.Point(1234, 298)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label5.Location = New System.Drawing.Point(832, 167)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(113, 29)
+        Me.Label5.Size = New System.Drawing.Size(88, 24)
         Me.Label5.TabIndex = 30
         Me.Label5.Text = "Contact #"
         '
         'txtContact
         '
         Me.txtContact.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.Location = New System.Drawing.Point(1217, 332)
-        Me.txtContact.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtContact.Location = New System.Drawing.Point(775, 195)
         Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(227, 34)
-        Me.txtContact.TabIndex = 29
+        Me.txtContact.Size = New System.Drawing.Size(204, 29)
+        Me.txtContact.TabIndex = 11
         Me.txtContact.Text = "Contact Number 9123"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(1085, 220)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(713, 105)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 29)
+        Me.Label4.Size = New System.Drawing.Size(40, 24)
         Me.Label4.TabIndex = 28
         Me.Label4.Text = "M.I."
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label3.Location = New System.Drawing.Point(1234, 220)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label3.Location = New System.Drawing.Point(859, 105)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(128, 29)
+        Me.Label3.Size = New System.Drawing.Size(99, 24)
         Me.Label3.TabIndex = 27
         Me.Label3.Text = "Last Name"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.Location = New System.Drawing.Point(854, 220)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(555, 105)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(131, 29)
+        Me.Label2.Size = New System.Drawing.Size(101, 24)
         Me.Label2.TabIndex = 26
         Me.Label2.Text = "First Name"
         '
         'txtLname
         '
         Me.txtLname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLname.Location = New System.Drawing.Point(1161, 253)
-        Me.txtLname.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtLname.Location = New System.Drawing.Point(775, 131)
         Me.txtLname.Name = "txtLname"
-        Me.txtLname.Size = New System.Drawing.Size(283, 34)
-        Me.txtLname.TabIndex = 25
+        Me.txtLname.Size = New System.Drawing.Size(204, 29)
+        Me.txtLname.TabIndex = 8
         Me.txtLname.Text = "Last Name"
         '
         'txtMname
         '
         Me.txtMname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMname.Location = New System.Drawing.Point(1068, 253)
-        Me.txtMname.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtMname.Location = New System.Drawing.Point(701, 131)
         Me.txtMname.Name = "txtMname"
-        Me.txtMname.Size = New System.Drawing.Size(84, 34)
-        Me.txtMname.TabIndex = 24
+        Me.txtMname.Size = New System.Drawing.Size(68, 29)
+        Me.txtMname.TabIndex = 7
         Me.txtMname.Text = "Middle Name"
         '
         'txtFname
         '
         Me.txtFname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFname.Location = New System.Drawing.Point(776, 253)
-        Me.txtFname.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtFname.Location = New System.Drawing.Point(493, 131)
         Me.txtFname.Name = "txtFname"
-        Me.txtFname.Size = New System.Drawing.Size(283, 34)
-        Me.txtFname.TabIndex = 23
+        Me.txtFname.Size = New System.Drawing.Size(202, 29)
+        Me.txtFname.TabIndex = 6
         Me.txtFname.Text = "First Name"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label1.Location = New System.Drawing.Point(111, 44)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(10, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(174, 29)
+        Me.Label1.Size = New System.Drawing.Size(138, 24)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Search Group :"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(293, 41)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(283, 34)
-        Me.txtSearch.TabIndex = 21
-        Me.txtSearch.Text = "SAMPLE last name"
         '
         'ListView1
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(13, 135)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ListView1.Location = New System.Drawing.Point(10, 73)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(744, 344)
-        Me.ListView1.TabIndex = 20
+        Me.ListView1.Size = New System.Drawing.Size(466, 276)
+        Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
@@ -270,7 +263,7 @@ Partial Class GuestsManagement
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "EMAIL"
-        Me.ColumnHeader3.Width = 158
+        Me.ColumnHeader3.Width = 0
         '
         'ColumnHeader4
         '
@@ -285,45 +278,56 @@ Partial Class GuestsManagement
         'ColumnHeader6
         '
         Me.ColumnHeader6.Text = "CREATED"
-        Me.ColumnHeader6.Width = 125
+        Me.ColumnHeader6.Width = 0
         '
         'txtGroupName
         '
         Me.txtGroupName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtGroupName.Location = New System.Drawing.Point(776, 182)
-        Me.txtGroupName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtGroupName.Location = New System.Drawing.Point(493, 75)
         Me.txtGroupName.Name = "txtGroupName"
-        Me.txtGroupName.Size = New System.Drawing.Size(668, 34)
-        Me.txtGroupName.TabIndex = 39
-        Me.txtGroupName.Text = "Group Name"
+        Me.txtGroupName.Size = New System.Drawing.Size(486, 29)
+        Me.txtGroupName.TabIndex = 5
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label9.Location = New System.Drawing.Point(1031, 149)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label9.Location = New System.Drawing.Point(674, 48)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(151, 29)
+        Me.Label9.Size = New System.Drawing.Size(119, 24)
         Me.Label9.TabIndex = 40
         Me.Label9.Text = "Group Name"
         '
         'cmdCreate
         '
+        Me.cmdCreate.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.cmdCreate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmdCreate.Location = New System.Drawing.Point(859, 490)
-        Me.cmdCreate.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdCreate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cmdCreate.Location = New System.Drawing.Point(509, 323)
         Me.cmdCreate.Name = "cmdCreate"
-        Me.cmdCreate.Size = New System.Drawing.Size(294, 64)
-        Me.cmdCreate.TabIndex = 41
+        Me.cmdCreate.Size = New System.Drawing.Size(235, 51)
+        Me.cmdCreate.TabIndex = 2
         Me.cmdCreate.Text = "Create New Guest"
-        Me.cmdCreate.UseVisualStyleBackColor = True
+        Me.cmdCreate.UseVisualStyleBackColor = False
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(154, 39)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(295, 29)
+        Me.txtSearch.TabIndex = 1
         '
         'GuestsManagement
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1458, 557)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.ClientSize = New System.Drawing.Size(994, 440)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.cmdCreate)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtGroupName)
@@ -344,9 +348,12 @@ Partial Class GuestsManagement
         Me.Controls.Add(Me.txtMname)
         Me.Controls.Add(Me.txtFname)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.ListView1)
+        Me.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "GuestsManagement"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.Text = "GuestsManagement"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -370,7 +377,6 @@ Partial Class GuestsManagement
     Friend WithEvents txtMname As TextBox
     Friend WithEvents txtFname As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtSearch As TextBox
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
@@ -381,4 +387,5 @@ Partial Class GuestsManagement
     Friend WithEvents txtGroupName As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents cmdCreate As Button
+    Friend WithEvents txtSearch As TextBox
 End Class

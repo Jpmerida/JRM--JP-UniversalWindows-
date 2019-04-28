@@ -48,6 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.22, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -74,6 +75,37 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckinForm.Designer.vb">
+      <DependentUpon>CheckinForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckinForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckinGuest.Designer.vb">
+      <DependentUpon>CheckinGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckinGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CheckinSelector.Designer.vb">
+      <DependentUpon>CheckinSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckinSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module_Catcher.vb" />
+    <Compile Include="VenueManagementForm.Designer.vb">
+      <DependentUpon>VenueManagementForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VenueManagementForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewCategoryType.Designer.vb">
+      <DependentUpon>CreateNewCategoryType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewCategoryType.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CreateNewGuest.Designer.vb">
       <DependentUpon>CreateNewGuest.vb</DependentUpon>
     </Compile>
@@ -98,10 +130,28 @@
     <Compile Include="For Test Only\InsertingData UsingMYSQL.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="For Test Only\Insert_Image_Into_MySQL.Designer.vb">
+      <DependentUpon>Insert_Image_Into_MySQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="For Test Only\Insert_Image_Into_MySQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORM_AddNewServices.Designer.vb">
+      <DependentUpon>FORM_AddNewServices.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORM_AddNewServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GuestsManagement.Designer.vb">
       <DependentUpon>GuestsManagement.vb</DependentUpon>
     </Compile>
     <Compile Include="GuestsManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginConfirm.Designer.vb">
+      <DependentUpon>LoginConfirm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginConfirm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.vb">
@@ -138,16 +188,28 @@
     <Compile Include="For Test Only\Test4Adding.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="New Services.Designer.vb">
-      <DependentUpon>New Services.vb</DependentUpon>
+    <Compile Include="CreateNewServices.Designer.vb">
+      <DependentUpon>CreateNewServices.vb</DependentUpon>
     </Compile>
-    <Compile Include="New Services.vb">
+    <Compile Include="CreateNewServices.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceCategories.Designer.vb">
+      <DependentUpon>ServiceCategories.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCategories.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ServicesManagement.Designer.vb">
       <DependentUpon>ServicesManagement.vb</DependentUpon>
     </Compile>
     <Compile Include="ServicesManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCategoryType.Designer.vb">
+      <DependentUpon>UpdateCategoryType.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCategoryType.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateUser.Designer.vb">
@@ -164,6 +226,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CheckinForm.resx">
+      <DependentUpon>CheckinForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckinGuest.resx">
+      <DependentUpon>CheckinGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CheckinSelector.resx">
+      <DependentUpon>CheckinSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VenueManagementForm.resx">
+      <DependentUpon>VenueManagementForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewCategoryType.resx">
+      <DependentUpon>CreateNewCategoryType.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateNewGuest.resx">
       <DependentUpon>CreateNewGuest.vb</DependentUpon>
     </EmbeddedResource>
@@ -176,8 +253,17 @@
     <EmbeddedResource Include="For Test Only\InsertingData UsingMYSQL.resx">
       <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="For Test Only\Insert_Image_Into_MySQL.resx">
+      <DependentUpon>Insert_Image_Into_MySQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORM_AddNewServices.resx">
+      <DependentUpon>FORM_AddNewServices.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GuestsManagement.resx">
       <DependentUpon>GuestsManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginConfirm.resx">
+      <DependentUpon>LoginConfirm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
@@ -194,11 +280,17 @@
     <EmbeddedResource Include="For Test Only\Test4Adding.resx">
       <DependentUpon>Test4Adding.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="New Services.resx">
-      <DependentUpon>New Services.vb</DependentUpon>
+    <EmbeddedResource Include="CreateNewServices.resx">
+      <DependentUpon>CreateNewServices.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceCategories.resx">
+      <DependentUpon>ServiceCategories.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServicesManagement.resx">
       <DependentUpon>ServicesManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCategoryType.resx">
+      <DependentUpon>UpdateCategoryType.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateUser.resx">
       <DependentUpon>UpdateUser.vb</DependentUpon>
@@ -212,12 +304,44 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\CreateNewCategoryType.datasource" />
+    <None Include="My Project\DataSources\CreateNewGuest.datasource" />
+    <None Include="My Project\DataSources\CreateNewUser.datasource" />
+    <None Include="My Project\DataSources\first.datasource" />
+    <None Include="My Project\DataSources\GuestsManagement.datasource" />
+    <None Include="My Project\DataSources\InsertingData_UsingMYSQL.datasource" />
+    <None Include="My Project\DataSources\JRM__JP_UniversalWindows_.My.MyApplication.datasource" />
+    <None Include="My Project\DataSources\JRM__JP_UniversalWindows_.My.MySettings.datasource" />
+    <None Include="My Project\DataSources\LoginForm.datasource" />
+    <None Include="My Project\DataSources\MainMenu.datasource" />
+    <None Include="My Project\DataSources\New_Services.datasource" />
+    <None Include="My Project\DataSources\ServiceCategories.datasource" />
+    <None Include="My Project\DataSources\ServicesManagement.datasource" />
+    <None Include="My Project\DataSources\Test4Adding.datasource" />
+    <None Include="My Project\DataSources\UpdateCategoryType.datasource" />
+    <None Include="My Project\DataSources\UpdateUser.datasource" />
+    <None Include="My Project\DataSources\UserManagement.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2 Blur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JRM Transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4 BLUR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

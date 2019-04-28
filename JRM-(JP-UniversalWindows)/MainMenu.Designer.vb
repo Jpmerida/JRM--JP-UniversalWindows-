@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainMenu
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,75 +20,49 @@ Partial Class MainMenu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btn_SManage = New System.Windows.Forms.Button()
-        Me.btn_GManage = New System.Windows.Forms.Button()
-        Me.btn_UManage = New System.Windows.Forms.Button()
         Me.btn_Exit = New System.Windows.Forms.Button()
+        Me.btn_Checkin = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btn_SManage
-        '
-        Me.btn_SManage.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_SManage.Location = New System.Drawing.Point(375, 29)
-        Me.btn_SManage.Name = "btn_SManage"
-        Me.btn_SManage.Size = New System.Drawing.Size(298, 53)
-        Me.btn_SManage.TabIndex = 0
-        Me.btn_SManage.Text = "Services Management"
-        Me.btn_SManage.UseVisualStyleBackColor = True
-        '
-        'btn_GManage
-        '
-        Me.btn_GManage.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_GManage.Location = New System.Drawing.Point(679, 29)
-        Me.btn_GManage.Name = "btn_GManage"
-        Me.btn_GManage.Size = New System.Drawing.Size(298, 53)
-        Me.btn_GManage.TabIndex = 1
-        Me.btn_GManage.Text = "Guest Management"
-        Me.btn_GManage.UseVisualStyleBackColor = True
-        '
-        'btn_UManage
-        '
-        Me.btn_UManage.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_UManage.Location = New System.Drawing.Point(71, 29)
-        Me.btn_UManage.Name = "btn_UManage"
-        Me.btn_UManage.Size = New System.Drawing.Size(298, 53)
-        Me.btn_UManage.TabIndex = 2
-        Me.btn_UManage.Text = "User Management"
-        Me.btn_UManage.UseVisualStyleBackColor = True
         '
         'btn_Exit
         '
         Me.btn_Exit.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Exit.Location = New System.Drawing.Point(1218, 703)
+        Me.btn_Exit.Location = New System.Drawing.Point(1186, 12)
         Me.btn_Exit.Name = "btn_Exit"
         Me.btn_Exit.Size = New System.Drawing.Size(136, 53)
         Me.btn_Exit.TabIndex = 3
-        Me.btn_Exit.Text = "EXIT"
+        Me.btn_Exit.Text = "LOG-OUT"
         Me.btn_Exit.UseVisualStyleBackColor = True
+        '
+        'btn_Checkin
+        '
+        Me.btn_Checkin.Font = New System.Drawing.Font("Minion Pro", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Checkin.Location = New System.Drawing.Point(12, 12)
+        Me.btn_Checkin.Name = "btn_Checkin"
+        Me.btn_Checkin.Size = New System.Drawing.Size(200, 53)
+        Me.btn_Checkin.TabIndex = 4
+        Me.btn_Checkin.Text = "CHECK-IN"
+        Me.btn_Checkin.UseVisualStyleBackColor = False
         '
         'MainMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ClientSize = New System.Drawing.Size(1366, 768)
-        Me.ControlBox = False
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
+        Me.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1334, 711)
+        Me.Controls.Add(Me.btn_Checkin)
         Me.Controls.Add(Me.btn_Exit)
-        Me.Controls.Add(Me.btn_UManage)
-        Me.Controls.Add(Me.btn_GManage)
-        Me.Controls.Add(Me.btn_SManage)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "MainMenu"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Main Menu"
+        Me.TopMost = True
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btn_SManage As Button
-    Friend WithEvents btn_GManage As Button
-    Friend WithEvents btn_UManage As Button
     Friend WithEvents btn_Exit As Button
+    Friend WithEvents btn_Checkin As Button
 End Class

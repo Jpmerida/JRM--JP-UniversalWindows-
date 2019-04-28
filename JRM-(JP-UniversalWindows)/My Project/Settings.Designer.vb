@@ -63,6 +63,18 @@ Namespace My
                 Return CType(Me("ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Left")>  _
+        Public Property Right() As Global.System.Windows.Forms.HorizontalAlignment
+            Get
+                Return CType(Me("Right"),Global.System.Windows.Forms.HorizontalAlignment)
+            End Get
+            Set
+                Me("Right") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

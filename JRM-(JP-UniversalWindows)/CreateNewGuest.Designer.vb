@@ -257,6 +257,7 @@ Partial Class CreateNewGuest
         Me.Controls.Add(Me.txtMname)
         Me.Controls.Add(Me.txtFname)
         Me.Name = "CreateNewGuest"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CreateNewGuest"
         Me.ResumeLayout(False)
         Me.PerformLayout()
