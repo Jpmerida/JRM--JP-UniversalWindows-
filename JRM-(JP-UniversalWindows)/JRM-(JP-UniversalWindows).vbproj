@@ -75,53 +75,56 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckinForm.Designer.vb">
-      <DependentUpon>CheckinForm.vb</DependentUpon>
+    <Compile Include="Forms\Form_Checkin.Designer.vb">
+      <DependentUpon>Form_Checkin.vb</DependentUpon>
     </Compile>
-    <Compile Include="CheckinForm.vb">
+    <Compile Include="Forms\Form_Checkin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckinGuest.Designer.vb">
-      <DependentUpon>CheckinGuest.vb</DependentUpon>
+    <Compile Include="Forms\Form_Checkin_Guest.Designer.vb">
+      <DependentUpon>Form_Checkin_Guest.vb</DependentUpon>
     </Compile>
-    <Compile Include="CheckinGuest.vb">
+    <Compile Include="Forms\Form_Checkin_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckinSelector.Designer.vb">
-      <DependentUpon>CheckinSelector.vb</DependentUpon>
+    <Compile Include="Forms\Form_Checkin_Venue.Designer.vb">
+      <DependentUpon>Form_Checkin_Venue.vb</DependentUpon>
     </Compile>
-    <Compile Include="CheckinSelector.vb">
+    <Compile Include="Forms\Form_Checkin_Venue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module_Catcher.vb" />
-    <Compile Include="VenueManagementForm.Designer.vb">
-      <DependentUpon>VenueManagementForm.vb</DependentUpon>
+    <Compile Include="Modules\Module_Catcher.vb" />
+    <Compile Include="Modules\Module_Connection.vb" />
+    <Compile Include="Modules\Module_Forms.vb" />
+    <Compile Include="Modules\Module_Variable.vb" />
+    <Compile Include="Forms\Form_Management_Venue.Designer.vb">
+      <DependentUpon>Form_Management_Venue.vb</DependentUpon>
     </Compile>
-    <Compile Include="VenueManagementForm.vb">
+    <Compile Include="Forms\Form_Management_Venue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewCategoryType.Designer.vb">
-      <DependentUpon>CreateNewCategoryType.vb</DependentUpon>
+    <Compile Include="Forms\Form_CreateNew_CategoryType.Designer.vb">
+      <DependentUpon>Form_CreateNew_CategoryType.vb</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewCategoryType.vb">
+    <Compile Include="Forms\Form_CreateNew_CategoryType.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewGuest.Designer.vb">
-      <DependentUpon>CreateNewGuest.vb</DependentUpon>
+    <Compile Include="Forms\Form_CreateNew_Guest.Designer.vb">
+      <DependentUpon>Form_CreateNew_Guest.vb</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewGuest.vb">
+    <Compile Include="Forms\Form_CreateNew_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewUser.Designer.vb">
-      <DependentUpon>CreateNewUser.vb</DependentUpon>
+    <Compile Include="Forms\Form_CreateNew_User.Designer.vb">
+      <DependentUpon>Form_CreateNew_User.vb</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewUser.vb">
+    <Compile Include="Forms\Form_CreateNew_User.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="First.Designer.vb">
-      <DependentUpon>First.vb</DependentUpon>
+    <Compile Include="Forms\Form_Main.Designer.vb">
+      <DependentUpon>Form_Main.vb</DependentUpon>
     </Compile>
-    <Compile Include="First.vb">
+    <Compile Include="Forms\Form_Main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="For Test Only\InsertingData UsingMYSQL.Designer.vb">
@@ -136,37 +139,37 @@
     <Compile Include="For Test Only\Insert_Image_Into_MySQL.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FORM_AddNewServices.Designer.vb">
-      <DependentUpon>FORM_AddNewServices.vb</DependentUpon>
+    <Compile Include="Forms\Form_CreateNew_Services.Designer.vb">
+      <DependentUpon>Form_CreateNew_Services.vb</DependentUpon>
     </Compile>
-    <Compile Include="FORM_AddNewServices.vb">
+    <Compile Include="Forms\Form_CreateNew_Services.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GuestsManagement.Designer.vb">
-      <DependentUpon>GuestsManagement.vb</DependentUpon>
+    <Compile Include="Forms\Form_Management_Guest.Designer.vb">
+      <DependentUpon>Form_Management_Guest.vb</DependentUpon>
     </Compile>
-    <Compile Include="GuestsManagement.vb">
+    <Compile Include="Forms\Form_Management_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginConfirm.Designer.vb">
-      <DependentUpon>LoginConfirm.vb</DependentUpon>
+    <Compile Include="Forms\Form_Login_Confirm.Designer.vb">
+      <DependentUpon>Form_Login_Confirm.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginConfirm.vb">
+    <Compile Include="Forms\Form_Login_Confirm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.vb">
-      <DependentUpon>LoginForm.vb</DependentUpon>
+    <Compile Include="Forms\Form_Login.Designer.vb">
+      <DependentUpon>Form_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.vb">
+    <Compile Include="Forms\Form_Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.vb">
-      <DependentUpon>MainMenu.vb</DependentUpon>
+    <Compile Include="Forms\Form_Main_Menu.Designer.vb">
+      <DependentUpon>Form_Main_Menu.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.vb">
+    <Compile Include="Forms\Form_Main_Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Modules\Module_Display.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -188,67 +191,67 @@
     <Compile Include="For Test Only\Test4Adding.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewServices.Designer.vb">
-      <DependentUpon>CreateNewServices.vb</DependentUpon>
+    <Compile Include="Forms\Form_CreateNew_Services_Old.Designer.vb">
+      <DependentUpon>Form_CreateNew_Services_Old.vb</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewServices.vb">
+    <Compile Include="Forms\Form_CreateNew_Services_Old.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServiceCategories.Designer.vb">
-      <DependentUpon>ServiceCategories.vb</DependentUpon>
+    <Compile Include="Forms\Form_Management_ServiceCategories.Designer.vb">
+      <DependentUpon>Form_Management_ServiceCategories.vb</DependentUpon>
     </Compile>
-    <Compile Include="ServiceCategories.vb">
+    <Compile Include="Forms\Form_Management_ServiceCategories.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ServicesManagement.Designer.vb">
-      <DependentUpon>ServicesManagement.vb</DependentUpon>
+    <Compile Include="Forms\Form_Management_Service.Designer.vb">
+      <DependentUpon>Form_Management_Service.vb</DependentUpon>
     </Compile>
-    <Compile Include="ServicesManagement.vb">
+    <Compile Include="Forms\Form_Management_Service.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateCategoryType.Designer.vb">
-      <DependentUpon>UpdateCategoryType.vb</DependentUpon>
+    <Compile Include="Forms\Form_Update_CategoryType.Designer.vb">
+      <DependentUpon>Form_Update_CategoryType.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCategoryType.vb">
+    <Compile Include="Forms\Form_Update_CategoryType.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateUser.Designer.vb">
-      <DependentUpon>UpdateUser.vb</DependentUpon>
+    <Compile Include="Forms\Form_Update_User.Designer.vb">
+      <DependentUpon>Form_Update_User.vb</DependentUpon>
     </Compile>
-    <Compile Include="UpdateUser.vb">
+    <Compile Include="Forms\Form_Update_User.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserManagement.Designer.vb">
-      <DependentUpon>UserManagement.vb</DependentUpon>
+    <Compile Include="Forms\Form_Management_User.Designer.vb">
+      <DependentUpon>Form_Management_User.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserManagement.vb">
+    <Compile Include="Forms\Form_Management_User.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CheckinForm.resx">
-      <DependentUpon>CheckinForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Checkin.resx">
+      <DependentUpon>Form_Checkin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckinGuest.resx">
-      <DependentUpon>CheckinGuest.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Checkin_Guest.resx">
+      <DependentUpon>Form_Checkin_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckinSelector.resx">
-      <DependentUpon>CheckinSelector.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Checkin_Venue.resx">
+      <DependentUpon>Form_Checkin_Venue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VenueManagementForm.resx">
-      <DependentUpon>VenueManagementForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Management_Venue.resx">
+      <DependentUpon>Form_Management_Venue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewCategoryType.resx">
-      <DependentUpon>CreateNewCategoryType.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_CreateNew_CategoryType.resx">
+      <DependentUpon>Form_CreateNew_CategoryType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewGuest.resx">
-      <DependentUpon>CreateNewGuest.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_CreateNew_Guest.resx">
+      <DependentUpon>Form_CreateNew_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewUser.resx">
-      <DependentUpon>CreateNewUser.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_CreateNew_User.resx">
+      <DependentUpon>Form_CreateNew_User.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="First.resx">
-      <DependentUpon>First.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Main.resx">
+      <DependentUpon>Form_Main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="For Test Only\InsertingData UsingMYSQL.resx">
       <DependentUpon>InsertingData UsingMYSQL.vb</DependentUpon>
@@ -256,20 +259,20 @@
     <EmbeddedResource Include="For Test Only\Insert_Image_Into_MySQL.resx">
       <DependentUpon>Insert_Image_Into_MySQL.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FORM_AddNewServices.resx">
-      <DependentUpon>FORM_AddNewServices.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_CreateNew_Services.resx">
+      <DependentUpon>Form_CreateNew_Services.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GuestsManagement.resx">
-      <DependentUpon>GuestsManagement.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Management_Guest.resx">
+      <DependentUpon>Form_Management_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginConfirm.resx">
-      <DependentUpon>LoginConfirm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Login_Confirm.resx">
+      <DependentUpon>Form_Login_Confirm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Login.resx">
+      <DependentUpon>Form_Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Main_Menu.resx">
+      <DependentUpon>Form_Main_Menu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -280,23 +283,23 @@
     <EmbeddedResource Include="For Test Only\Test4Adding.resx">
       <DependentUpon>Test4Adding.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewServices.resx">
-      <DependentUpon>CreateNewServices.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_CreateNew_Services_Old.resx">
+      <DependentUpon>Form_CreateNew_Services_Old.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceCategories.resx">
-      <DependentUpon>ServiceCategories.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Management_ServiceCategories.resx">
+      <DependentUpon>Form_Management_ServiceCategories.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServicesManagement.resx">
-      <DependentUpon>ServicesManagement.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Management_Service.resx">
+      <DependentUpon>Form_Management_Service.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateCategoryType.resx">
-      <DependentUpon>UpdateCategoryType.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Update_CategoryType.resx">
+      <DependentUpon>Form_Update_CategoryType.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateUser.resx">
-      <DependentUpon>UpdateUser.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Update_User.resx">
+      <DependentUpon>Form_Update_User.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserManagement.resx">
-      <DependentUpon>UserManagement.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Form_Management_User.resx">
+      <DependentUpon>Form_Management_User.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -342,6 +345,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\4 BLUR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Main\" />
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
