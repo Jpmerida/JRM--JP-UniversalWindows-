@@ -42,17 +42,32 @@ Public Class Form_Management_Venue
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        Dim img As Byte()
-        Try
-            img = DataGridView1.CurrentRow.Cells(5).Value
-        Catch ex As Exception
-            Return
-        End Try
+        'Dim img As Byte()
+        'Try
+        '    img = DataGridView1.CurrentRow.Cells(5).Value
+        'Catch ex As Exception
+        '    Return
+        'End Try
 
-        img = DataGridView1.CurrentRow.Cells(5).Value
-        Dim ms As New MemoryStream(img)
+        'img = DataGridView1.CurrentRow.Cells(5).Value
+        'Dim img As String
+        'img = DataGridView1.CurrentRow.Cells(6).Value
+        'Dim ms As New MemoryStream(img)
 
-        PictureBox1.Image = Image.FromStream(ms)
+        'PictureBox1.Image = Image.FromStream(ms)
+        'PictureBox1.Location = img
+
+
+        mysql = "select * from tblvenue where VenueID ='" & DataGridView1.CurrentRow.Cells(0).Value & "'"
+        conndb()
+        cmd = New MySqlCommand(mysql, conn)
+        dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+        Do Until dr.Read = False
+            PictureBox1.ImageLocation = dr("Image_Location")
+        Loop
+        cmd.Dispose()
+        conn.Close()
+
         'txtCatType.Text = DataGridView1.CurrentRow.Cells(1).Value
         txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
         txtStatus.Text = DataGridView1.CurrentRow.Cells(3).Value
@@ -83,5 +98,9 @@ Public Class Form_Management_Venue
             SC = 1
         End If
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        populateDatagridview(DataGridView1, "")
     End Sub
 End Class

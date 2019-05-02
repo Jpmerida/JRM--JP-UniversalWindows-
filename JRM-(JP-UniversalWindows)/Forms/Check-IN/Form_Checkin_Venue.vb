@@ -18,13 +18,13 @@ Public Class Form_Checkin_Venue
         End If
 
 
-        populateDatagridview(DataGridView1, "")
+        populateDatagridview2(DataGridView1, "")
 
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         CheckServiceID = 0
-        SubTot = 0
+        'SubTot = 0
         Me.Close()
     End Sub
 
@@ -32,10 +32,10 @@ Public Class Form_Checkin_Venue
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         Dim id As Integer
-        id = Integer.Parse(USERID_table(0)(0))
+        id = CheckServiceID
 
         Dim item As String
-        item = "Service " + txtName.Text
+        item = "Service [" + txtName.Text + "]"
 
         Dim price As Double
         price = Double.Parse(txtPrice.Text).ToString("n2")
@@ -45,15 +45,23 @@ Public Class Form_Checkin_Venue
 
         Dim total As Double
         total = Double.Parse(selected * price)
-        SubTot += total
+        'SubTot += total
 
         ''CheckinForm.DataGridView1.Rows.Add(id, item, price, "1", total, True)
-        table2.Rows.Add(id, item, price, "1", total)
+        table2.Rows.Add(id, item, price, 1, total)
 
         Form_Checkin.DataGridView1.DataSource = table2
 
-        tempSub = SubTot
-        Form_Checkin.TextBox1.Text = tempSub.ToString("n2")
+
+        Dim i As Integer
+        For i = 0 To Form_Checkin.DataGridView1.Rows.Count - 1
+            Form_Checkin.PartialTotal = Val(Form_Checkin.DataGridView1.Rows(i).Cells(4).Value)
+        Next i
+        Form_Checkin.GrandTotal = Form_Checkin.GrandTotal + Form_Checkin.PartialTotal
+        Form_Checkin.lblGrandTotal.Text = FormatNumber(Form_Checkin.GrandTotal)
+
+        Form_Checkin.Venues(Form_Checkin.StopV) = CheckServiceID
+        Form_Checkin.StopV += 1
         Me.Close()
     End Sub
 
@@ -68,7 +76,8 @@ Public Class Form_Checkin_Venue
         Dim ms As New MemoryStream(img)
 
         PictureBox1.Image = Image.FromStream(ms)
-        'txtCatType.Text = DataGridView1.CurrentRow.Cells(1).Value
+        CheckServiceID = DataGridView1.CurrentRow.Cells(0).Value
+        ''CheckServiceTypeID = DataGridView1.CurrentRow.Cells(1).Value
         txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
         txtStatus.Text = DataGridView1.CurrentRow.Cells(3).Value
         Dim price As Double

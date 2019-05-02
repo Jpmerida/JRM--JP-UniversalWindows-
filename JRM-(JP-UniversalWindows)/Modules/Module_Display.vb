@@ -97,17 +97,17 @@ Module Module_Display
 
     '==================================================Datagrid'
     Public Sub populateDatagridview(datagrid As DataGridView, valueToSearch As String)
-        Dim searchQuery As String = "SELECT VenueID, CategoryID, Name, Status, Price, Image FROM tblvenue WHERE CONCAT(Name, Price) like '%" & valueToSearch & "%' order by CategoryID asc"
+        Dim searchQuery As String = "SELECT VenueID, CategoryID, Name, Status, Price, Image, Image_Location FROM tblvenue WHERE CONCAT(Name, Price) like '%" & valueToSearch & "%' order by CategoryID asc"
         Dim command As New MySqlCommand(searchQuery, connection)
         Dim adapter As New MySqlDataAdapter(command)
         Dim table As New DataTable()
         adapter.Fill(table)
         datagrid.AllowUserToAddRows = False
-        datagrid.RowTemplate.Height = 100
-        Dim imgc As New DataGridViewImageColumn
         datagrid.DataSource = table
-        imgc = datagrid.Columns(5)
-        imgc.ImageLayout = DataGridViewImageCellLayout.Stretch
+        'datagrid.RowTemplate.Height = 100
+        'Dim imgc As New DataGridViewImageColumn
+        'imgc = datagrid.Columns(5)
+        'imgc.ImageLayout = DataGridViewImageCellLayout.Stretch
         datagrid.Columns(0).Visible = False
         datagrid.Columns(1).Visible = False
         datagrid.Columns(2).DefaultCellStyle.Format = "n2"
@@ -116,6 +116,34 @@ Module Module_Display
         datagrid.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         datagrid.Columns(4).DefaultCellStyle.Format = "n2"
         datagrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        datagrid.Columns(5).Visible = False
+        datagrid.Columns(6).Visible = False
+    End Sub
+
+    Public Sub populateDatagridview2(datagrid As DataGridView, valueToSearch As String)
+        Dim searchQuery As String = "SELECT * FROM tblvenue WHERE (Status = 'Available') AND CONCAT(Name, Price) like '%" & valueToSearch & "%' order by CategoryID asc"
+
+
+        Dim command As New MySqlCommand(searchQuery, connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim table As New DataTable()
+        adapter.Fill(table)
+        datagrid.AllowUserToAddRows = False
+        datagrid.DataSource = table
+        'datagrid.RowTemplate.Height = 100
+        'Dim imgc As New DataGridViewImageColumn
+        'imgc = datagrid.Columns(5)
+        'imgc.ImageLayout = DataGridViewImageCellLayout.Stretch
+        datagrid.Columns(0).Visible = False
+        datagrid.Columns(1).Visible = False
+        datagrid.Columns(2).DefaultCellStyle.Format = "n2"
+        datagrid.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        datagrid.Columns(3).DefaultCellStyle.Format = "n2"
+        datagrid.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        datagrid.Columns(4).DefaultCellStyle.Format = "n2"
+        datagrid.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        datagrid.Columns(5).Visible = False
+        datagrid.Columns(6).Visible = False
     End Sub
 
 End Module

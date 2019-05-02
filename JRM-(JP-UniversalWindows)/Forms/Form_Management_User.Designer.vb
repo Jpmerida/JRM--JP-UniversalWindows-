@@ -64,10 +64,10 @@ Partial Class Form_Management_User
         'cmdCancel
         '
         Me.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.cmdCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.cmdCancel.Location = New System.Drawing.Point(499, 398)
+        Me.cmdCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.cmdCancel.Location = New System.Drawing.Point(226, 58)
         Me.cmdCancel.Name = "cmdCancel"
-        Me.cmdCancel.Size = New System.Drawing.Size(108, 51)
+        Me.cmdCancel.Size = New System.Drawing.Size(144, 37)
         Me.cmdCancel.TabIndex = 21
         Me.cmdCancel.Text = "CLOSE"
         Me.cmdCancel.UseVisualStyleBackColor = True
@@ -76,7 +76,7 @@ Partial Class Form_Management_User
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label1.Location = New System.Drawing.Point(254, 62)
+        Me.Label1.Location = New System.Drawing.Point(375, 66)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 24)
         Me.Label1.TabIndex = 19
@@ -85,9 +85,9 @@ Partial Class Form_Management_User
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(340, 59)
+        Me.txtSearch.Location = New System.Drawing.Point(461, 63)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(263, 29)
+        Me.txtSearch.Size = New System.Drawing.Size(190, 29)
         Me.txtSearch.TabIndex = 18
         '
         'ListView1
@@ -97,9 +97,9 @@ Partial Class Form_Management_User
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(258, 109)
+        Me.ListView1.Location = New System.Drawing.Point(226, 101)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(392, 271)
+        Me.ListView1.Size = New System.Drawing.Size(425, 427)
         Me.ListView1.TabIndex = 17
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details

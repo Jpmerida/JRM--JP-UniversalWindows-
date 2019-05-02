@@ -33,8 +33,13 @@ Partial Class Form_Main
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Tab_Main = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Button_Logout = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Button_Main_Checkin = New System.Windows.Forms.Button()
+        Me.Button_Main_Checkout = New System.Windows.Forms.Button()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Button_Main_Exit = New System.Windows.Forms.Button()
         Me.Button_Login = New System.Windows.Forms.Button()
+        Me.Button_Logout = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button_Guests_Update = New System.Windows.Forms.Button()
@@ -58,13 +63,17 @@ Partial Class Form_Main
         Me.Button_Users_Update = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button_Users = New System.Windows.Forms.Button()
-        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.Button_Main_Checkin = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.Button_Items_Create = New System.Windows.Forms.Button()
+        Me.Button_Items_Update = New System.Windows.Forms.Button()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.Button_Items = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.Tab_Main.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -76,8 +85,9 @@ Partial Class Form_Main
         Me.TabPage4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox9.SuspendLayout()
-        Me.GroupBox10.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -93,7 +103,7 @@ Partial Class Form_Main
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 705)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.StatusStrip1.Size = New System.Drawing.Size(1350, 24)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1260, 24)
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -127,7 +137,7 @@ Partial Class Form_Main
         '
         Me.ToolStripStatusLabel3.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(1080, 19)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(990, 19)
         Me.ToolStripStatusLabel3.Spring = True
         Me.ToolStripStatusLabel3.Text = "Date and Time :"
         '
@@ -140,12 +150,13 @@ Partial Class Form_Main
         Me.Tab_Main.Controls.Add(Me.TabPage2)
         Me.Tab_Main.Controls.Add(Me.TabPage3)
         Me.Tab_Main.Controls.Add(Me.TabPage4)
+        Me.Tab_Main.Controls.Add(Me.TabPage5)
         Me.Tab_Main.Dock = System.Windows.Forms.DockStyle.Top
         Me.Tab_Main.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Tab_Main.Location = New System.Drawing.Point(0, 0)
         Me.Tab_Main.Name = "Tab_Main"
         Me.Tab_Main.SelectedIndex = 0
-        Me.Tab_Main.Size = New System.Drawing.Size(1350, 122)
+        Me.Tab_Main.Size = New System.Drawing.Size(1260, 122)
         Me.Tab_Main.TabIndex = 8
         '
         'TabPage1
@@ -156,41 +167,90 @@ Partial Class Form_Main
         Me.TabPage1.Location = New System.Drawing.Point(4, 30)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1342, 88)
+        Me.TabPage1.Size = New System.Drawing.Size(1252, 88)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Main"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'Button_Logout
+        'GroupBox10
         '
-        Me.Button_Logout.Location = New System.Drawing.Point(31, 28)
-        Me.Button_Logout.Name = "Button_Logout"
-        Me.Button_Logout.Size = New System.Drawing.Size(121, 45)
-        Me.Button_Logout.TabIndex = 1
-        Me.Button_Logout.Text = "Log-out"
-        Me.Button_Logout.UseVisualStyleBackColor = True
+        Me.GroupBox10.Controls.Add(Me.Button_Main_Checkin)
+        Me.GroupBox10.Controls.Add(Me.Button_Main_Checkout)
+        Me.GroupBox10.Location = New System.Drawing.Point(352, 6)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(643, 79)
+        Me.GroupBox10.TabIndex = 10
+        Me.GroupBox10.TabStop = False
+        '
+        'Button_Main_Checkin
+        '
+        Me.Button_Main_Checkin.Location = New System.Drawing.Point(41, 28)
+        Me.Button_Main_Checkin.Name = "Button_Main_Checkin"
+        Me.Button_Main_Checkin.Size = New System.Drawing.Size(162, 45)
+        Me.Button_Main_Checkin.TabIndex = 1
+        Me.Button_Main_Checkin.Text = "Check IN"
+        Me.Button_Main_Checkin.UseVisualStyleBackColor = True
+        '
+        'Button_Main_Checkout
+        '
+        Me.Button_Main_Checkout.Location = New System.Drawing.Point(209, 28)
+        Me.Button_Main_Checkout.Name = "Button_Main_Checkout"
+        Me.Button_Main_Checkout.Size = New System.Drawing.Size(162, 45)
+        Me.Button_Main_Checkout.TabIndex = 2
+        Me.Button_Main_Checkout.Text = "Check Out"
+        Me.Button_Main_Checkout.UseVisualStyleBackColor = True
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.Button_Main_Exit)
+        Me.GroupBox9.Controls.Add(Me.Button_Login)
+        Me.GroupBox9.Controls.Add(Me.Button_Logout)
+        Me.GroupBox9.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(338, 79)
+        Me.GroupBox9.TabIndex = 5
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Tag = "  "
+        '
+        'Button_Main_Exit
+        '
+        Me.Button_Main_Exit.Location = New System.Drawing.Point(22, 28)
+        Me.Button_Main_Exit.Name = "Button_Main_Exit"
+        Me.Button_Main_Exit.Size = New System.Drawing.Size(121, 45)
+        Me.Button_Main_Exit.TabIndex = 3
+        Me.Button_Main_Exit.Text = "Exit"
+        Me.Button_Main_Exit.UseVisualStyleBackColor = True
         '
         'Button_Login
         '
-        Me.Button_Login.Location = New System.Drawing.Point(31, 28)
+        Me.Button_Login.Location = New System.Drawing.Point(176, 28)
         Me.Button_Login.Name = "Button_Login"
         Me.Button_Login.Size = New System.Drawing.Size(121, 45)
         Me.Button_Login.TabIndex = 0
         Me.Button_Login.Text = "Log-In"
         Me.Button_Login.UseVisualStyleBackColor = True
         '
+        'Button_Logout
+        '
+        Me.Button_Logout.Location = New System.Drawing.Point(176, 28)
+        Me.Button_Logout.Name = "Button_Logout"
+        Me.Button_Logout.Size = New System.Drawing.Size(121, 45)
+        Me.Button_Logout.TabIndex = 1
+        Me.Button_Logout.Text = "Log-out"
+        Me.Button_Logout.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.GroupBox2)
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TabPage2.Location = New System.Drawing.Point(4, 30)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1342, 88)
+        Me.TabPage2.Size = New System.Drawing.Size(1252, 88)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Guests Management"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -242,18 +302,19 @@ Partial Class Form_Main
         '
         'TabPage3
         '
+        Me.TabPage3.BackColor = System.Drawing.Color.Orange
         Me.TabPage3.Controls.Add(Me.GroupBox7)
         Me.TabPage3.Controls.Add(Me.GroupBox8)
         Me.TabPage3.Controls.Add(Me.GroupBox5)
         Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TabPage3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.TabPage3.Location = New System.Drawing.Point(4, 30)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1342, 88)
+        Me.TabPage3.Size = New System.Drawing.Size(1252, 88)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Services Management"
-        Me.TabPage3.UseVisualStyleBackColor = True
         '
         'GroupBox7
         '
@@ -353,16 +414,16 @@ Partial Class Form_Main
         '
         'TabPage4
         '
+        Me.TabPage4.BackColor = System.Drawing.Color.YellowGreen
         Me.TabPage4.Controls.Add(Me.GroupBox3)
         Me.TabPage4.Controls.Add(Me.GroupBox4)
         Me.TabPage4.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage4.Location = New System.Drawing.Point(4, 30)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1342, 88)
+        Me.TabPage4.Size = New System.Drawing.Size(1252, 88)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Users Management"
-        Me.TabPage4.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -412,51 +473,75 @@ Partial Class Form_Main
         Me.Button_Users.Text = "Users"
         Me.Button_Users.UseVisualStyleBackColor = True
         '
-        'GroupBox9
+        'TabPage5
         '
-        Me.GroupBox9.Controls.Add(Me.Button_Login)
-        Me.GroupBox9.Controls.Add(Me.Button_Logout)
-        Me.GroupBox9.Location = New System.Drawing.Point(8, 6)
-        Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(186, 79)
-        Me.GroupBox9.TabIndex = 5
-        Me.GroupBox9.TabStop = False
-        Me.GroupBox9.Tag = "  "
+        Me.TabPage5.Controls.Add(Me.GroupBox11)
+        Me.TabPage5.Controls.Add(Me.GroupBox12)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 30)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage5.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Item Management"
+        Me.TabPage5.UseVisualStyleBackColor = True
         '
-        'GroupBox10
+        'GroupBox11
         '
-        Me.GroupBox10.Controls.Add(Me.Button_Main_Checkin)
-        Me.GroupBox10.Controls.Add(Me.Button2)
-        Me.GroupBox10.Location = New System.Drawing.Point(200, 6)
-        Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(418, 79)
-        Me.GroupBox10.TabIndex = 10
-        Me.GroupBox10.TabStop = False
+        Me.GroupBox11.Controls.Add(Me.Button_Items_Create)
+        Me.GroupBox11.Controls.Add(Me.Button_Items_Update)
+        Me.GroupBox11.Location = New System.Drawing.Point(200, 6)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(418, 79)
+        Me.GroupBox11.TabIndex = 9
+        Me.GroupBox11.TabStop = False
+        Me.GroupBox11.Text = "Management"
         '
-        'Button_Main_Checkin
+        'Button_Items_Create
         '
-        Me.Button_Main_Checkin.Location = New System.Drawing.Point(41, 28)
-        Me.Button_Main_Checkin.Name = "Button_Main_Checkin"
-        Me.Button_Main_Checkin.Size = New System.Drawing.Size(162, 45)
-        Me.Button_Main_Checkin.TabIndex = 1
-        Me.Button_Main_Checkin.Text = "Check IN"
-        Me.Button_Main_Checkin.UseVisualStyleBackColor = True
+        Me.Button_Items_Create.Location = New System.Drawing.Point(41, 28)
+        Me.Button_Items_Create.Name = "Button_Items_Create"
+        Me.Button_Items_Create.Size = New System.Drawing.Size(162, 45)
+        Me.Button_Items_Create.TabIndex = 1
+        Me.Button_Items_Create.Text = "Add New Item"
+        Me.Button_Items_Create.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Button_Items_Update
         '
-        Me.Button2.Location = New System.Drawing.Point(209, 28)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(162, 45)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Update Service"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button_Items_Update.Location = New System.Drawing.Point(209, 28)
+        Me.Button_Items_Update.Name = "Button_Items_Update"
+        Me.Button_Items_Update.Size = New System.Drawing.Size(162, 45)
+        Me.Button_Items_Update.TabIndex = 2
+        Me.Button_Items_Update.Text = "Update Item"
+        Me.Button_Items_Update.UseVisualStyleBackColor = True
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.Controls.Add(Me.Button_Items)
+        Me.GroupBox12.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(186, 79)
+        Me.GroupBox12.TabIndex = 8
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "View List"
+        '
+        'Button_Items
+        '
+        Me.Button_Items.Location = New System.Drawing.Point(31, 28)
+        Me.Button_Items.Name = "Button_Items"
+        Me.Button_Items.Size = New System.Drawing.Size(121, 45)
+        Me.Button_Items.TabIndex = 0
+        Me.Button_Items.Text = "Items"
+        Me.Button_Items.UseVisualStyleBackColor = True
         '
         'Form_Main
         '
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.ClientSize = New System.Drawing.Size(1260, 729)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Tab_Main)
         Me.Controls.Add(Me.StatusStrip1)
         Me.IsMdiContainer = True
@@ -465,10 +550,13 @@ Partial Class Form_Main
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "   "
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Tab_Main.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox9.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -480,8 +568,9 @@ Partial Class Form_Main
         Me.TabPage4.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox9.ResumeLayout(False)
-        Me.GroupBox10.ResumeLayout(False)
+        Me.TabPage5.ResumeLayout(False)
+        Me.GroupBox11.ResumeLayout(False)
+        Me.GroupBox12.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -524,5 +613,12 @@ Partial Class Form_Main
     Friend WithEvents GroupBox9 As GroupBox
     Friend WithEvents GroupBox10 As GroupBox
     Friend WithEvents Button_Main_Checkin As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Button_Main_Checkout As Button
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents Button_Main_Exit As Button
+    Friend WithEvents GroupBox11 As GroupBox
+    Friend WithEvents Button_Items_Create As Button
+    Friend WithEvents Button_Items_Update As Button
+    Friend WithEvents GroupBox12 As GroupBox
+    Friend WithEvents Button_Items As Button
 End Class

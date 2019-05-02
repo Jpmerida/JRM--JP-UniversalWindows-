@@ -75,14 +75,14 @@ Partial Class Form_Management_Guest
         'cmdCancel
         '
         Me.cmdCancel.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.cmdCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.cmdCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold)
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmdCancel.Location = New System.Drawing.Point(1055, 338)
+        Me.cmdCancel.Location = New System.Drawing.Point(226, 58)
         Me.cmdCancel.Name = "cmdCancel"
-        Me.cmdCancel.Size = New System.Drawing.Size(108, 51)
+        Me.cmdCancel.Size = New System.Drawing.Size(144, 37)
         Me.cmdCancel.TabIndex = 4
         Me.cmdCancel.Text = "CLOSE"
-        Me.cmdCancel.UseVisualStyleBackColor = False
+        Me.cmdCancel.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -216,11 +216,11 @@ Partial Class Form_Management_Guest
         Me.Label1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(195, 57)
+        Me.Label1.Location = New System.Drawing.Point(375, 66)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 24)
+        Me.Label1.Size = New System.Drawing.Size(80, 24)
         Me.Label1.TabIndex = 22
-        Me.Label1.Text = "Search Group :"
+        Me.Label1.Text = "Search :"
         '
         'ListView1
         '
@@ -229,9 +229,9 @@ Partial Class Form_Management_Guest
         Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(195, 88)
+        Me.ListView1.Location = New System.Drawing.Point(226, 101)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(466, 301)
+        Me.ListView1.Size = New System.Drawing.Size(446, 288)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -259,7 +259,7 @@ Partial Class Form_Management_Guest
         'ColumnHeader5
         '
         Me.ColumnHeader5.Text = "ADDRESS"
-        Me.ColumnHeader5.Width = 183
+        Me.ColumnHeader5.Width = 166
         '
         'ColumnHeader6
         '
@@ -289,9 +289,9 @@ Partial Class Form_Management_Guest
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(339, 54)
+        Me.txtSearch.Location = New System.Drawing.Point(461, 63)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(295, 29)
+        Me.txtSearch.Size = New System.Drawing.Size(211, 29)
         Me.txtSearch.TabIndex = 1
         '
         'Form_Management_Guest
@@ -300,7 +300,7 @@ Partial Class Form_Management_Guest
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1334, 470)
+        Me.ClientSize = New System.Drawing.Size(1334, 558)
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtGroupName)

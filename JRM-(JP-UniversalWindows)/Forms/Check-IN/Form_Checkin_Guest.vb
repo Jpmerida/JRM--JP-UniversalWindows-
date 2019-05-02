@@ -2,7 +2,7 @@
 Public Class Form_Checkin_Guest
     Dim connection As New MySqlConnection("datasource=localhost;port=3306;username=root;password=admin;database=jrm")
 
-    Private GIDupdate As Integer
+    ''Public GIDupdate As Integer
 
     Function execCommand(ByVal cmd As MySqlCommand) As Boolean
         If connection.State = ConnectionState.Closed Then
@@ -110,8 +110,9 @@ Public Class Form_Checkin_Guest
     End Sub
 
     Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click
-        Form_Checkin.txtName.Text = txtGroupName.Text
-
+        CheckGuestID = ListView1.SelectedItems(0).SubItems(0).Text
+        Form_Checkin.txtGuest.Text = txtGroupName.Text
+        ''Form_Checkin.txtName.Text = txtGroupName.Text
         ItsOKAY = 1
         CG = 0
         Me.Close()

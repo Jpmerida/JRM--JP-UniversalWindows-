@@ -75,22 +75,46 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Form_Checkin.Designer.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin.Designer.vb">
       <DependentUpon>Form_Checkin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Checkin.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Checkin_Guest.Designer.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin_Guest.Designer.vb">
       <DependentUpon>Form_Checkin_Guest.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Checkin_Guest.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Checkin_Venue.Designer.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin_Item.Designer.vb">
+      <DependentUpon>Form_Checkin_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Check-IN\Form_Checkin_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Check-IN\Form_Checkin_Venue.Designer.vb">
       <DependentUpon>Form_Checkin_Venue.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Checkin_Venue.vb">
+    <Compile Include="Forms\Check-IN\Form_Checkin_Venue.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_CreateNew_Item.Designer.vb">
+      <DependentUpon>Form_CreateNew_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_CreateNew_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Management_Item.Designer.vb">
+      <DependentUpon>Form_Management_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Management_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Checkout.Designer.vb">
+      <DependentUpon>Form_Checkout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Checkout.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Module_Catcher.vb" />
@@ -229,14 +253,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Form_Checkin.resx">
+    <EmbeddedResource Include="Forms\Check-IN\Form_Checkin.resx">
       <DependentUpon>Form_Checkin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Checkin_Guest.resx">
+    <EmbeddedResource Include="Forms\Check-IN\Form_Checkin_Guest.resx">
       <DependentUpon>Form_Checkin_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Checkin_Venue.resx">
+    <EmbeddedResource Include="Forms\Check-IN\Form_Checkin_Item.resx">
+      <DependentUpon>Form_Checkin_Item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Check-IN\Form_Checkin_Venue.resx">
       <DependentUpon>Form_Checkin_Venue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_CreateNew_Item.resx">
+      <DependentUpon>Form_CreateNew_Item.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Management_Item.resx">
+      <DependentUpon>Form_Management_Item.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Management_Venue.resx">
       <DependentUpon>Form_Management_Venue.vb</DependentUpon>
@@ -273,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Main_Menu.resx">
       <DependentUpon>Form_Main_Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Checkout.resx">
+      <DependentUpon>Form_Checkout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

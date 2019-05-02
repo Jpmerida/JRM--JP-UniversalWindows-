@@ -1,4 +1,3 @@
-C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbprojAssemblyReference.cache
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Resources.resources
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.GenerateResource.cache
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.CoreCompileInputs.cache
@@ -6,7 +5,6 @@ C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bi
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).exe
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).pdb
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM-(JP-UniversalWindows).xml
-C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\MySql.Data.xml
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbproj.CopyComplete
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).exe
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).xml
@@ -35,3 +33,7 @@ C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\ob
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Update_CategoryType.resources
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Update_User.resources
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Management_User.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Checkout.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Management_Item.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_CreateNew_Item.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Checkin_Item.resources

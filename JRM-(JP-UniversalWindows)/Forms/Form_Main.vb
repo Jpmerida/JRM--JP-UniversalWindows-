@@ -4,7 +4,7 @@ Public Class Form_Main
 
 
     Dim CLogin = New Form_Login()
-
+    Public IM As Integer 'Item Management
     Private Sub first_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
         Button_Logout.Visible = False
@@ -170,21 +170,43 @@ Public Class Form_Main
 
     Private Sub Button_Services_Create_Click(sender As Object, e As EventArgs) Handles Button_Services_Create.Click
         If UIDType = "Admin" Or UIDType = "Manager" Then
+            Form_CreateNew_Services.Button_Update.Visible = False
             Form_CreateNew_Services.ShowDialog()
         Else
             MsgBox("User is not authorized to create a new account! Please Login with authorized credentials.", vbCritical, "Error")
         End If
 
     End Sub
+    Private Sub Button_Services_Update_Click(sender As Object, e As EventArgs) Handles Button_Services_Update.Click
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            Form_CreateNew_Services.BTN_INSERT.Visible = False
+            Form_CreateNew_Services.ShowDialog()
+        Else
+            MsgBox("User is not authorized to create a new account! Please Login with authorized credentials.", vbCritical, "Error")
+        End If
+    End Sub
 
     Private Sub Button_Main_Checkin_Click(sender As Object, e As EventArgs) Handles Button_Main_Checkin.Click
-        If CI = 0 Then
-            CInForm = New Form_Checkin()
-            CInForm.MdiParent = Me.MdiParent
-            CInForm.show()
-            CI = 1
+        Form_Checkin.ShowDialog()
+    End Sub
+
+    Private Sub Button_Main_Exit_Click(sender As Object, e As EventArgs) Handles Button_Main_Exit.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Button_Items_Click(sender As Object, e As EventArgs) Handles Button_Items.Click
+
+        If IM = 0 Then
+            Dim ItemsWindow = New Form_Management_Item
+            ItemsWindow.MdiParent = Me
+            ItemsWindow.Show()
+            IM = 1
         Else
-            CInForm.BringToFront()
+            UserWindow.bringtofront()
         End If
+    End Sub
+
+    Private Sub Button_Items_Create_Click(sender As Object, e As EventArgs) Handles Button_Items_Create.Click
+        Form_CreateNew_Item.ShowDialog()
     End Sub
 End Class

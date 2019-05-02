@@ -56,12 +56,13 @@ Public Class Form_CreateNew_Services
         End Try
         Dim ms As New MemoryStream
         PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
-        Dim command As New MySqlCommand("INSERT INTO `tblVenue`(`CategoryID`, `Name`, `Status`, `Price`, `Image`) VALUES (@ci,@vn,@vs,@vp,@img)", connection)
+        Dim command As New MySqlCommand("INSERT INTO `tblVenue`(`CategoryID`, `Name`, `Status`, `Price`, `Image`, `Image_Location`) VALUES (@ci,@vn,@vs,@vp,@img,@imgLocation)", connection)
         command.Parameters.Add("@ci", MySqlDbType.VarChar).Value = newcatID
         command.Parameters.Add("@vn", MySqlDbType.VarChar).Value = txtName.Text
         command.Parameters.Add("@vs", MySqlDbType.VarChar).Value = ComboBox2.Text
         command.Parameters.Add("@vp", MySqlDbType.Double).Value = txtPrice.Text
         command.Parameters.Add("@img", MySqlDbType.LongBlob).Value = ms.ToArray()
+        command.Parameters.Add("@imgLocation", MySqlDbType.VarChar).Value = fileDestination
         connection.Open()
         If execCommand(command) Then
             MsgBox("New Information has been saved", vbInformation, "Saved")
@@ -74,15 +75,15 @@ Public Class Form_CreateNew_Services
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        Dim img As Byte()
-        Try
-            img = DataGridView1.CurrentRow.Cells(5).Value
-        Catch ex As Exception
-            Return
-        End Try
-        img = DataGridView1.CurrentRow.Cells(5).Value
-        Dim ms As New MemoryStream(img)
-        PictureBox1.Image = Image.FromStream(ms)
+        mysql = "select * from tblvenue where VenueID ='" & DataGridView1.CurrentRow.Cells(0).Value & "'"
+        conndb()
+        cmd = New MySqlCommand(mysql, conn)
+        dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+        Do Until dr.Read = False
+            PictureBox1.ImageLocation = dr("Image_Location")
+        Loop
+        cmd.Dispose()
+        conn.Close()
         txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
         ComboBox2.Text = DataGridView1.CurrentRow.Cells(3).Value
         Dim price As Double
@@ -112,10 +113,12 @@ Public Class Form_CreateNew_Services
 
     Private Sub Button_Close_Click(sender As Object, e As EventArgs) Handles Button_Close.Click
         NF = 0
+        Me.Button_Update.Visible = True
+        Me.BTN_INSERT.Visible = True
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_Update.Click
 
         ''''''''
         '''

@@ -39,6 +39,7 @@ Partial Class Form_Management_Venue
         Me.txtDesc = New System.Windows.Forms.TextBox()
         Me.Button_Close = New System.Windows.Forms.Button()
         Me.btn_categories = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -143,7 +144,7 @@ Partial Class Form_Management_Venue
         'BTN_INSERT
         '
         Me.BTN_INSERT.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_INSERT.Location = New System.Drawing.Point(11, 242)
+        Me.BTN_INSERT.Location = New System.Drawing.Point(226, 532)
         Me.BTN_INSERT.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_INSERT.Name = "BTN_INSERT"
         Me.BTN_INSERT.Size = New System.Drawing.Size(261, 38)
@@ -169,7 +170,7 @@ Partial Class Form_Management_Venue
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(544, 63)
+        Me.TextBox1.Location = New System.Drawing.Point(461, 63)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(218, 29)
         Me.TextBox1.TabIndex = 93
@@ -181,7 +182,7 @@ Partial Class Form_Management_Venue
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(458, 66)
+        Me.Label1.Location = New System.Drawing.Point(375, 66)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(80, 24)
         Me.Label1.TabIndex = 94
@@ -222,7 +223,7 @@ Partial Class Form_Management_Venue
         'btn_categories
         '
         Me.btn_categories.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_categories.Location = New System.Drawing.Point(33, 284)
+        Me.btn_categories.Location = New System.Drawing.Point(491, 532)
         Me.btn_categories.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_categories.Name = "btn_categories"
         Me.btn_categories.Size = New System.Drawing.Size(271, 38)
@@ -230,11 +231,23 @@ Partial Class Form_Management_Venue
         Me.btn_categories.Text = "Add/Update Categories"
         Me.btn_categories.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(684, 58)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(78, 37)
+        Me.Button1.TabIndex = 99
+        Me.Button1.Text = "refresh"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form_Management_Venue
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 600)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_categories)
         Me.Controls.Add(Me.Button_Close)
         Me.Controls.Add(Me.Label7)
@@ -279,4 +292,5 @@ Partial Class Form_Management_Venue
     Friend WithEvents txtDesc As TextBox
     Friend WithEvents Button_Close As Button
     Friend WithEvents btn_categories As Button
+    Friend WithEvents Button1 As Button
 End Class

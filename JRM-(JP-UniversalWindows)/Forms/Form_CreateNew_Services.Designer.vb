@@ -37,7 +37,7 @@ Partial Class Form_CreateNew_Services
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button_Close = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_Update = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -205,14 +205,15 @@ Partial Class Form_CreateNew_Services
         Me.Button_Close.Text = "CLOSE"
         Me.Button_Close.UseVisualStyleBackColor = True
         '
-        'Button1
+        'Button_Update
         '
-        Me.Button1.Location = New System.Drawing.Point(415, 548)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 113
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button_Update.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold)
+        Me.Button_Update.Location = New System.Drawing.Point(529, 537)
+        Me.Button_Update.Name = "Button_Update"
+        Me.Button_Update.Size = New System.Drawing.Size(114, 40)
+        Me.Button_Update.TabIndex = 113
+        Me.Button_Update.Text = "Update"
+        Me.Button_Update.UseVisualStyleBackColor = True
         '
         'Form_CreateNew_Services
         '
@@ -220,7 +221,7 @@ Partial Class Form_CreateNew_Services
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 588)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button_Update)
         Me.Controls.Add(Me.Button_Close)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.DataGridView1)
@@ -262,5 +263,5 @@ Partial Class Form_CreateNew_Services
     Public WithEvents DataGridView1 As DataGridView
     Public WithEvents ComboBox2 As ComboBox
     Friend WithEvents Button_Close As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Button_Update As Button
 End Class
