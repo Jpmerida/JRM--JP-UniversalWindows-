@@ -49,27 +49,28 @@ Public Class Form_CreateNew_Item
             Catch ex As Exception
 
             End Try
-            Dim command As New MySqlCommand("INSERT INTO `Table_Items`(`Item_Name`, `Item_Price`, `Item_Qty`, `Item_Image`, `Image_Status`) VALUES (@aa,@bb,@cc,@dd,@ee)", connection)
+            Dim command As New MySqlCommand("INSERT INTO `Table_Items`(`Item_Name`, `Item_Price`, `Item_Qty`, `Item_Image`, `item_Status`) VALUES (@aa,@bb,@cc,@dd,@ee)", connection)
             command.Parameters.Add("@aa", MySqlDbType.VarChar).Value = txtItemName.Text
-            command.Parameters.Add("@bb", MySqlDbType.VarChar).Value = txtItemPrice.Text
-            command.Parameters.Add("@cc", MySqlDbType.VarChar).Value = txtItemQuantity.Text
+            command.Parameters.Add("@bb", MySqlDbType.Double).Value = txtItemPrice.Text
+            command.Parameters.Add("@cc", MySqlDbType.Int32).Value = txtItemQuantity.Text
             command.Parameters.Add("@dd", MySqlDbType.VarChar).Value = fileDestination
             Dim AvailableIsTrue As String
             If txtItemQuantity.Text >= 0 Then
-                AvailableIsTrue = txtItemQuantity.Text
+                AvailableIsTrue = 5
             Else
                 AvailableIsTrue = 1
             End If
-            command.Parameters.Add("@ee", MySqlDbType.Double).Value = AvailableIsTrue
-            connection.Open()
+            command.Parameters.Add("@ee", MySqlDbType.Int32).Value = AvailableIsTrue
+            closeDB()
+            conndb()
+
             If execCommand(command) Then
                 MsgBox("New Information has been saved", vbInformation, "Saved")
             Else
                 MessageBox.Show("Data NOT Updated")
                 Exit Sub
             End If
-            connection.Close()
-
+            closeDB()
             MsgBox("New item has been saved successfuly!", vbInformation, "New Item [Saved]")
             Me.Close()
         End If

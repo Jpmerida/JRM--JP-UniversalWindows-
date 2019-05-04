@@ -99,6 +99,12 @@
     <Compile Include="Forms\Check-IN\Form_Checkin_Venue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Check-OUT\Form_CheckOut_GuestList.Designer.vb">
+      <DependentUpon>Form_CheckOut_GuestList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Check-OUT\Form_CheckOut_GuestList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Form_CreateNew_Item.Designer.vb">
       <DependentUpon>Form_CreateNew_Item.vb</DependentUpon>
     </Compile>
@@ -111,10 +117,16 @@
     <Compile Include="Forms\Form_Management_Item.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Checkout.Designer.vb">
-      <DependentUpon>Form_Checkout.vb</DependentUpon>
+    <Compile Include="Forms\Check-OUT\Form_CheckOut.Designer.vb">
+      <DependentUpon>Form_CheckOut.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Checkout.vb">
+    <Compile Include="Forms\Check-OUT\Form_CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login\Form_Login_Background.Designer.vb">
+      <DependentUpon>Form_Login_Background.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login\Form_Login_Background.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Module_Catcher.vb" />
@@ -175,16 +187,16 @@
     <Compile Include="Forms\Form_Management_Guest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Login_Confirm.Designer.vb">
+    <Compile Include="Forms\Login\Form_Login_Confirm.Designer.vb">
       <DependentUpon>Form_Login_Confirm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Login_Confirm.vb">
+    <Compile Include="Forms\Login\Form_Login_Confirm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Login.Designer.vb">
+    <Compile Include="Forms\Login\Form_Login.Designer.vb">
       <DependentUpon>Form_Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Login.vb">
+    <Compile Include="Forms\Login\Form_Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Main_Menu.Designer.vb">
@@ -265,6 +277,9 @@
     <EmbeddedResource Include="Forms\Check-IN\Form_Checkin_Venue.resx">
       <DependentUpon>Form_Checkin_Venue.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Check-OUT\Form_CheckOut_GuestList.resx">
+      <DependentUpon>Form_CheckOut_GuestList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_CreateNew_Item.resx">
       <DependentUpon>Form_CreateNew_Item.vb</DependentUpon>
     </EmbeddedResource>
@@ -298,17 +313,20 @@
     <EmbeddedResource Include="Forms\Form_Management_Guest.resx">
       <DependentUpon>Form_Management_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Login_Confirm.resx">
+    <EmbeddedResource Include="Forms\Login\Form_Login_Background.resx">
+      <DependentUpon>Form_Login_Background.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login\Form_Login_Confirm.resx">
       <DependentUpon>Form_Login_Confirm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Login.resx">
+    <EmbeddedResource Include="Forms\Login\Form_Login.resx">
       <DependentUpon>Form_Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Main_Menu.resx">
       <DependentUpon>Form_Main_Menu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Checkout.resx">
-      <DependentUpon>Form_Checkout.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Check-OUT\Form_CheckOut.resx">
+      <DependentUpon>Form_CheckOut.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -385,6 +403,9 @@
   <ItemGroup>
     <Folder Include="Forms\Main\" />
     <Folder Include="Resources\Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img003_xN8_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

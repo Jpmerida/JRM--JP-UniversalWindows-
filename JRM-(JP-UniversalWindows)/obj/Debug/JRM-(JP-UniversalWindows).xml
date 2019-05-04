@@ -32,6 +32,11 @@ JRM-(JP-UniversalWindows)
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.img003_xN8_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.JRM_Transparent">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

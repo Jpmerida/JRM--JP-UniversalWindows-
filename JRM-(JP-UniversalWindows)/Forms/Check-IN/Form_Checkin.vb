@@ -37,6 +37,7 @@ Public Class Form_Checkin
             table2.Columns.Add("Price", Type.GetType("System.Double"))
             table2.Columns.Add("Qty", Type.GetType("System.Double"))
             table2.Columns.Add("SubTotal", Type.GetType("System.Double"))
+            table2.Columns.Add("TYPE", Type.GetType("System.String"))
             DataGridView1.DataSource = table2
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AllowUserToAddRows = False
@@ -46,13 +47,16 @@ Public Class Form_Checkin
             'DataGridView1.Columns(1).Width = 150
             DataGridView1.Columns(2).Width = 40
             DataGridView1.Columns(3).Width = 30
-            DataGridView1.Columns(4).Width = 100
+
             DataGridView1.Columns(2).DefaultCellStyle.Format = "n2"
             DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             DataGridView1.Columns(3).DefaultCellStyle.Format = "n2"
             DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             DataGridView1.Columns(4).DefaultCellStyle.Format = "n2"
             DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            DataGridView1.Columns(4).Width = 45
+            DataGridView1.Columns(5).Visible = False
+            DataGridView1.Columns(5).Width = 0
             continueonce = 1
         End If
     End Sub
@@ -116,7 +120,7 @@ Public Class Form_Checkin
         total = Double.Parse(selected * price)
         SubTot += total
 
-        table2.Rows.Add(9001, item, price, selected, total)
+        table2.Rows.Add(9001, item, price, selected, total, "P000")
 
         DataGridView1.DataSource = table2
 
@@ -203,7 +207,7 @@ Public Class Form_Checkin
                 insert_command1.Parameters.Add("@a", MySqlDbType.Int64).Value = UID
                 insert_command1.Parameters.Add("@b", MySqlDbType.Int64).Value = CheckGuestID
                 insert_command1.Parameters.Add("@c", MySqlDbType.DateTime).Value = DateTime.Now
-                insert_command1.Parameters.Add("@d", MySqlDbType.VarChar).Value = "Active"
+                insert_command1.Parameters.Add("@d", MySqlDbType.VarChar).Value = "Checkin"
                 insert_command1.Parameters.Add("@e", MySqlDbType.Date).Value = time.ToString(format)
                 insert_command1.Parameters.Add("@f", MySqlDbType.Date).Value = time.AddDays(1D).ToString(format)
                 insert_command1.Parameters.Add("@g", MySqlDbType.Double).Value = txtDiscount.Text
@@ -255,25 +259,64 @@ Public Class Form_Checkin
                     ''Table Transactions Details
                     Dim command As New MySqlCommand("SELECT MAX(`T_id`) FROM `Table_Transactions`", connection)
                     NewTransactionID = command.ExecuteScalar().ToString()
-                    connection.Close()
-
+                    closeDB()
                     Dim i As Integer
                     For i = 0 To Me.DataGridView1.Rows.Count - 1
-                        mysql = "INSERT INTO `Table_TransactionDetails`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`) " &
-                                                "VALUES (@aa,@bb,@cc,@dd,@ee,@ff)"
-                        closeDB()
-                        conndb()
-                        cmd = New MySqlCommand(mysql, conn)
-                        With cmd
-                            .Parameters.AddWithValue("@aa", NewTransactionID)
-                            .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
-                            .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
-                            .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
-                            .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
-                            .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
-                            .ExecuteNonQuery()
-                        End With
-                        closeDB()
+                        If (Me.DataGridView1.Rows(i).Cells(5).Value = "P000") Then
+                            mysql = "INSERT INTO `Table_TransactionDetails`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`, `Type`) " &
+                                                "VALUES (@aa,@bb,@cc,@dd,@ee,@ff,@gg)"
+                            closeDB()
+                            conndb()
+                            cmd = New MySqlCommand(mysql, conn)
+                            With cmd
+                                .Parameters.AddWithValue("@aa", NewTransactionID)
+                                .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
+                                .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
+                                .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
+                                .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
+                                .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
+                                .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                                .ExecuteNonQuery()
+                            End With
+                            closeDB()
+                        ElseIf (Me.DataGridView1.Rows(i).Cells(5).Value = "V000") Then
+                            mysql = "INSERT INTO `Table_TransactionDetailsVENUE`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`, `Type`) " &
+                                                "VALUES (@aa,@bb,@cc,@dd,@ee,@ff,@gg)"
+                            closeDB()
+                            conndb()
+                            cmd = New MySqlCommand(mysql, conn)
+                            With cmd
+                                .Parameters.AddWithValue("@aa", NewTransactionID)
+                                .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
+                                .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
+                                .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
+                                .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
+                                .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
+                                .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                                .ExecuteNonQuery()
+                            End With
+                            closeDB()
+
+                        ElseIf (Me.DataGridView1.Rows(i).Cells(5).Value = "I000") Then
+                            mysql = "INSERT INTO `Table_TransactionDetailsITEM`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`, `Type`) " &
+                                                "VALUES (@aa,@bb,@cc,@dd,@ee,@ff,@gg)"
+                            closeDB()
+                            conndb()
+                            cmd = New MySqlCommand(mysql, conn)
+                            With cmd
+                                .Parameters.AddWithValue("@aa", NewTransactionID)
+                                .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
+                                .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
+                                .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
+                                .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
+                                .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
+                                .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                                .ExecuteNonQuery()
+                            End With
+                            closeDB()
+
+                        End If
+
                     Next i
                 Else
                     MessageBox.Show("Data NOT Inserted")

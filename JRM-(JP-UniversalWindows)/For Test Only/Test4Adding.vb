@@ -31,8 +31,8 @@ Public Class Test4Adding
 
         Dim cmd As MySqlCommand
 
-        connection.Open()
-
+        closeDB()
+        conndb()
         For i As Integer = 0 To DataGridView1.Rows.Count - 2 Step +1
 
             cmd = New MySqlCommand("INSERT INTO `tabletest`(`id`, `first_name`, `last_name`, `age`) VALUES (@ID, @FN, @LN, @AGE)", connection)
@@ -45,9 +45,7 @@ Public Class Test4Adding
             cmd.ExecuteNonQuery()
 
         Next
-
-        connection.Close()
-
+        closeDB()
         MessageBox.Show("All Data Inserted")
 
     End Sub

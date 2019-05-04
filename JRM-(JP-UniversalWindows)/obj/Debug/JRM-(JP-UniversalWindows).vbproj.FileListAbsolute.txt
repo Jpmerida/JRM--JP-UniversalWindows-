@@ -37,3 +37,6 @@ C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\ob
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Management_Item.resources
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_CreateNew_Item.resources
 C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Checkin_Item.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM-(JP-UniversalWindows).vbprojAssemblyReference.cache
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_CheckOut_GuestList.resources
+C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Login_Background.resources

@@ -59,7 +59,7 @@ Public Class Form_Checkin_Item
         total = Double.Parse(selected * price)
         Form_Checkin.SubTot += total
 
-        table2.Rows.Add(id, item, price, selected, total)
+        table2.Rows.Add(id, item, price, selected, total, "I000")
 
         Form_Checkin.DataGridView1.DataSource = table2
 
@@ -77,8 +77,6 @@ Public Class Form_Checkin_Item
         'Me.Controls.Clear() 'removes all the controls on the form
         'load all the controls again
         'Form_Checkin_Item_Load(e, e)
-        Me.Hide()
-
         Me.Close()
 
     End Sub
@@ -106,22 +104,6 @@ Public Class Form_Checkin_Item
         SubTotalCount()
     End Sub
 
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-        mysql = "SELECT * FROM Table_Items WHERE Item_ID = " & ListView1.SelectedItems(0).Text & ""
-        conndb()
-        cmd = New MySqlCommand(mysql, conn)
-        dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
-        Do Until dr.Read = False
-            tempId = dr("Item_ID")
-            PictureBox1.ImageLocation = dr("Item_Image")
-            PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-            txtItemName.Text = dr("Item_Name")
-            quantity = dr("Item_Qty")
-        Loop
-        SubTotalCount()
-        cmd.Dispose()
-        conn.Close()
-    End Sub
     Public Sub SubTotalCount()
         If tempId = 0 Then
             ListView1.Select()
@@ -141,5 +123,22 @@ Public Class Form_Checkin_Item
 
     Private Sub Button_Close_Click(sender As Object, e As EventArgs) Handles Button_Close.Click
         Me.Close()
+    End Sub
+
+    Private Sub ListView1_Click(sender As Object, e As EventArgs) Handles ListView1.Click
+        mysql = "SELECT * FROM Table_Items WHERE Item_ID = " & ListView1.SelectedItems(0).Text & ""
+        closeDB()
+        conndb()
+        cmd = New MySqlCommand(mysql, conn)
+        dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+        Do Until dr.Read = False
+            tempId = dr("Item_ID")
+            PictureBox1.ImageLocation = dr("Item_Image")
+            PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+            txtItemName.Text = dr("Item_Name")
+            quantity = dr("Item_Qty")
+        Loop
+        SubTotalCount()
+        closeDB()
     End Sub
 End Class

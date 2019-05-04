@@ -28,15 +28,13 @@ Public Class InsertingData_UsingMYSQL
 
         cmd.Parameters.AddRange(params)
 
-        connection.Open()
-
+        closeDB()
+        conndb()
         If cmd.ExecuteNonQuery() = 1 Then
             MessageBox.Show("Inserted")
         Else
             MessageBox.Show("Not Inserted")
         End If
-
-        connection.Close()
-
+        closeDB()
     End Sub
 End Class

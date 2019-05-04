@@ -17,7 +17,6 @@ Module Module_Connection
     Public Function execCommand(ByVal cmd As MySqlCommand) As Boolean
         If connection.State = ConnectionState.Closed Then
             connection.Open()
-            conn.Open()
         End If
         Try
             If cmd.ExecuteNonQuery() = 1 Then
@@ -32,14 +31,17 @@ Module Module_Connection
         If connection.State = ConnectionState.Open Then
             connection.Dispose()
             connection.Close()
-            conn.Dispose()
-            conn.Close()
         End If
     End Function
 
     Public Sub conndb()
-        conn.ConnectionString = ("Server = localhost; uid = root; pwd = admin; database = jrm")
-        conn.Open()
+        Try
+            conn.ConnectionString = ("Server = localhost; uid = root; pwd = admin; database = jrm")
+            conn.Open()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Sub closeDB()

@@ -2,22 +2,33 @@
 
 Public Class Form_Main
 
-
+    Public CO As Integer = 0
     Dim CLogin = New Form_Login()
+    Dim ItemsWindow = New Form_Management_Item
     Public IM As Integer 'Item Management
     Private Sub first_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
-        Button_Logout.Visible = False
-        GroupBox10.Visible = False
-
         GuestWindow.MdiParent = Me
-        GuestWindow.Text = "Guest Management Form - " + Me.MdiChildren.Length.ToString()
+        'GuestWindow.Text = "Guest Management Form - " + Me.MdiChildren.Length.ToString()
+
         MMenu.mdiparent = Me
 
-        Dim CLogin = New Form_Login()
-        CLogin.MdiParent = Me
-        CLogin.Text = "Login Form - " + Me.MdiChildren.Length.ToString()
-        openLogin(Procced)
+        'MMenu = New Form_Main_Menu()
+        'MMenu.MdiParent = Me
+        'MMenu.WindowState = FormWindowState.Minimized
+        'MMenu.Show()
+
+
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+
+        Else
+            Tab_Main.TabPages.Remove(TabPage4)
+            Tab_Main.TabPages.Remove(TabPage5)
+        End If
+        'Dim CLogin = New Form_Login()
+        'CLogin.MdiParent = Me
+        'CLogin.Text = "Login Form - " + Me.MdiChildren.Length.ToString()
+        'openLogin(Procced)
 
         '=============================================== For DATAGRID UserTable Find ==== Test: WORKING!! BWHAHA =================='
         ''Dim table As New DataTable()
@@ -51,35 +62,37 @@ Public Class Form_Main
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         Dim datenow As Date = Now
-        StatusStrip1.Items(4).Text = "Date and Time : " & datenow.ToString("MMMM dd, yyyy") & " " & TimeOfDay
+        Me.ToolStripStatusLabel3.Text = "Date and Time : " & datenow.ToString("MMMM dd, yyyy") & " " & TimeOfDay
     End Sub
 
     Private Sub ExitConfirmation_Click(sender As Object, e As EventArgs) Handles ExitConfirmation.Click
+        UIDType = "NONE"
+        Procced = 0
+        'MMenu.close()
+        Form_Login_Confirm.Show()
         Me.Close()
     End Sub
 
-    Private Sub Button_Login_Click(sender As Object, e As EventArgs) Handles Button_Login.Click
-        openLogin(Procced)
-        CLogin.bringtofront()
-    End Sub
+
 
     Private Sub Button_Logout_Click(sender As Object, e As EventArgs) Handles Button_Logout.Click
         UIDType = "NONE"
         Procced = 0
-        MMenu.close()
-        Button_Logout.Visible = False
-        GroupBox10.Visible = False
-        Button_Login.Visible = True
+        'MMenu.close()
+        Form_Login_Background.Show()
+        Form_Login_Confirm.Show()
+        Me.Close()
     End Sub
 
     Private Sub Button_Users_Click(sender As Object, e As EventArgs) Handles Button_Users.Click
         If UM = 0 Then
             UserWindow = New Form_Management_User()
             UserWindow.MdiParent = Me
-            UserWindow.Text = "User Management Form - " + Me.MdiChildren.Length.ToString()
+            UserWindow.Text = "User Management Window [List]" +
             UserWindow.Show()
             UM = 1
         Else
+            UserWindow.WindowState = FormWindowState.Maximized
             UserWindow.bringtofront()
         End If
     End Sub
@@ -138,11 +151,14 @@ Public Class Form_Main
         If GM = 0 Then
             GuestWindow = New Form_Management_Guest()
             GuestWindow.mdiparent = Me
+            GuestWindow.text = "Guest Management Window [List]"
             GuestWindow.WindowState = FormWindowState.Maximized
-            ''GuestWindow.Dock = DockStyle.Right
+            GuestWindow.controlbox = False
+            GuestWindow.showicon = False
             GuestWindow.show
             GM = 1
         Else
+            GuestWindow.WindowState = FormWindowState.Maximized
             GuestWindow.bringtofront()
         End If
     End Sub
@@ -159,11 +175,12 @@ Public Class Form_Main
         If SM = 0 Then
             ServicesFORM = New Form_Management_Venue()
             ServicesFORM.MdiParent = Me
+            ServicesFORM.text = "Services Management Window [List]"
             ServicesFORM.WindowState = FormWindowState.Maximized
-            ''ServicesFORM.Dock = DockStyle.Right
             ServicesFORM.Show()
             SM = 1
         Else
+            ServicesFORM.WindowState = FormWindowState.Maximized
             ServicesFORM.bringtofront()
         End If
     End Sub
@@ -190,23 +207,34 @@ Public Class Form_Main
         Form_Checkin.ShowDialog()
     End Sub
 
-    Private Sub Button_Main_Exit_Click(sender As Object, e As EventArgs) Handles Button_Main_Exit.Click
-        Me.Close()
-    End Sub
 
     Private Sub Button_Items_Click(sender As Object, e As EventArgs) Handles Button_Items.Click
 
         If IM = 0 Then
-            Dim ItemsWindow = New Form_Management_Item
+            ItemsWindow = New Form_Management_Item
             ItemsWindow.MdiParent = Me
+            ItemsWindow.Text = "Item Management Window"
             ItemsWindow.Show()
             IM = 1
         Else
-            UserWindow.bringtofront()
+            ItemsWindow.WindowState = FormWindowState.Maximized
+            ItemsWindow.bringtofront()
         End If
     End Sub
 
     Private Sub Button_Items_Create_Click(sender As Object, e As EventArgs) Handles Button_Items_Create.Click
         Form_CreateNew_Item.ShowDialog()
+    End Sub
+
+    Private Sub Button_Main_Checkout_Click(sender As Object, e As EventArgs) Handles Button_Main_Checkout.Click
+        Dim CheckOutForm As New Form_CheckOut_GuestList()
+        If CO = 0 Then
+            CheckOutForm = New Form_CheckOut_GuestList()
+            CheckOutForm.MdiParent = Me
+            CheckOutForm.Show()
+            CO = 0
+        Else
+            Checkoutform.bringtofront()
+        End If
     End Sub
 End Class

@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.JRM__JP_UniversalWindows_.Form_Main
+            Me.MainForm = Global.JRM__JP_UniversalWindows_.Form_Login_Background
         End Sub
     End Class
 End Namespace

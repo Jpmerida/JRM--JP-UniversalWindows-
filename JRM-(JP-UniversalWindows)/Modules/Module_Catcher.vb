@@ -11,7 +11,6 @@
     Public Sub OnlyNumbers(e As KeyPressEventArgs)
         If (e.KeyChar < "0" OrElse e.KeyChar > "9") _
     AndAlso e.KeyChar <> ControlChars.Back AndAlso e.KeyChar <> "." Then
-            'cancel keys
             e.Handled = True
         End If
     End Sub

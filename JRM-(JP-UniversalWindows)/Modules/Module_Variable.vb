@@ -22,4 +22,8 @@
 
 
     Public table2 As New DataTable("Table")
+
+    Public gid As Integer
+    Public getTid As Integer
+
 End Module

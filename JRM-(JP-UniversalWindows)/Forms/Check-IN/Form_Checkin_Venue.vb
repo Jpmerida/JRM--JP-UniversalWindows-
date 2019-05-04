@@ -48,7 +48,7 @@ Public Class Form_Checkin_Venue
         'SubTot += total
 
         ''CheckinForm.DataGridView1.Rows.Add(id, item, price, "1", total, True)
-        table2.Rows.Add(id, item, price, 1, total)
+        table2.Rows.Add(id, item, price, 1, total, "V000")
 
         Form_Checkin.DataGridView1.DataSource = table2
 
@@ -71,29 +71,33 @@ Public Class Form_Checkin_Venue
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        Dim img As Byte()
-        img = DataGridView1.CurrentRow.Cells(5).Value
-        Dim ms As New MemoryStream(img)
+        Try
+            Dim img As Byte()
+            img = DataGridView1.CurrentRow.Cells(5).Value
+            Dim ms As New MemoryStream(img)
 
-        PictureBox1.Image = Image.FromStream(ms)
-        CheckServiceID = DataGridView1.CurrentRow.Cells(0).Value
-        ''CheckServiceTypeID = DataGridView1.CurrentRow.Cells(1).Value
-        txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
-        txtStatus.Text = DataGridView1.CurrentRow.Cells(3).Value
-        Dim price As Double
-        price = DataGridView1.CurrentRow.Cells(4).Value
-        txtPrice.Text = price.ToString("n2")
+            PictureBox1.Image = Image.FromStream(ms)
+            CheckServiceID = DataGridView1.CurrentRow.Cells(0).Value
+            ''CheckServiceTypeID = DataGridView1.CurrentRow.Cells(1).Value
+            txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
+            txtStatus.Text = DataGridView1.CurrentRow.Cells(3).Value
+            Dim price As Double
+            price = DataGridView1.CurrentRow.Cells(4).Value
+            txtPrice.Text = price.ToString("n2")
 
-        mysql = "select * from tbllocationtype where CategoryID ='" & DataGridView1.CurrentRow.Cells(1).Value & "'"
-        conndb()
-        cmd = New MySqlCommand(mysql, conn)
-        dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
-        dr.Read()
-        txtCatType.Text = dr("CatType")
-        txtDesc.Text = dr("CatDescription")
-        cmd.Dispose()
-        conn.Close()
-        Button4.Enabled = True
+            mysql = "select * from tbllocationtype where CategoryID ='" & DataGridView1.CurrentRow.Cells(1).Value & "'"
+            conndb()
+            cmd = New MySqlCommand(mysql, conn)
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            dr.Read()
+            txtCatType.Text = dr("CatType")
+            txtDesc.Text = dr("CatDescription")
+            cmd.Dispose()
+            conn.Close()
+            Button4.Enabled = True
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub TxtPrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrice.KeyPress

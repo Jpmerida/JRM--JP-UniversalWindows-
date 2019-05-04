@@ -23,6 +23,7 @@ Partial Class Form_Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Main))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ExitConfirmation = New System.Windows.Forms.ToolStripStatusLabel()
@@ -33,12 +34,11 @@ Partial Class Form_Main
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Tab_Main = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Button_Main_Checkin = New System.Windows.Forms.Button()
         Me.Button_Main_Checkout = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
-        Me.Button_Main_Exit = New System.Windows.Forms.Button()
-        Me.Button_Login = New System.Windows.Forms.Button()
         Me.Button_Logout = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -143,6 +143,7 @@ Partial Class Form_Main
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
         '
         'Tab_Main
         '
@@ -161,6 +162,7 @@ Partial Class Form_Main
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.GroupBox10)
         Me.TabPage1.Controls.Add(Me.GroupBox9)
         Me.TabPage1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -172,13 +174,20 @@ Partial Class Form_Main
         Me.TabPage1.Text = "Main"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(1022, 34)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 3
+        '
         'GroupBox10
         '
         Me.GroupBox10.Controls.Add(Me.Button_Main_Checkin)
         Me.GroupBox10.Controls.Add(Me.Button_Main_Checkout)
-        Me.GroupBox10.Location = New System.Drawing.Point(352, 6)
+        Me.GroupBox10.Location = New System.Drawing.Point(163, 6)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(643, 79)
+        Me.GroupBox10.Size = New System.Drawing.Size(407, 79)
         Me.GroupBox10.TabIndex = 10
         Me.GroupBox10.TabStop = False
         '
@@ -202,37 +211,17 @@ Partial Class Form_Main
         '
         'GroupBox9
         '
-        Me.GroupBox9.Controls.Add(Me.Button_Main_Exit)
-        Me.GroupBox9.Controls.Add(Me.Button_Login)
         Me.GroupBox9.Controls.Add(Me.Button_Logout)
         Me.GroupBox9.Location = New System.Drawing.Point(8, 6)
         Me.GroupBox9.Name = "GroupBox9"
-        Me.GroupBox9.Size = New System.Drawing.Size(338, 79)
+        Me.GroupBox9.Size = New System.Drawing.Size(149, 79)
         Me.GroupBox9.TabIndex = 5
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Tag = "  "
         '
-        'Button_Main_Exit
-        '
-        Me.Button_Main_Exit.Location = New System.Drawing.Point(22, 28)
-        Me.Button_Main_Exit.Name = "Button_Main_Exit"
-        Me.Button_Main_Exit.Size = New System.Drawing.Size(121, 45)
-        Me.Button_Main_Exit.TabIndex = 3
-        Me.Button_Main_Exit.Text = "Exit"
-        Me.Button_Main_Exit.UseVisualStyleBackColor = True
-        '
-        'Button_Login
-        '
-        Me.Button_Login.Location = New System.Drawing.Point(176, 28)
-        Me.Button_Login.Name = "Button_Login"
-        Me.Button_Login.Size = New System.Drawing.Size(121, 45)
-        Me.Button_Login.TabIndex = 0
-        Me.Button_Login.Text = "Log-In"
-        Me.Button_Login.UseVisualStyleBackColor = True
-        '
         'Button_Logout
         '
-        Me.Button_Logout.Location = New System.Drawing.Point(176, 28)
+        Me.Button_Logout.Location = New System.Drawing.Point(15, 18)
         Me.Button_Logout.Name = "Button_Logout"
         Me.Button_Logout.Size = New System.Drawing.Size(121, 45)
         Me.Button_Logout.TabIndex = 1
@@ -539,18 +528,19 @@ Partial Class Form_Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.BackgroundImage = Global.JRM__JP_UniversalWindows_.My.Resources.Resources._2_Blur
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1260, 729)
         Me.ControlBox = False
         Me.Controls.Add(Me.Tab_Main)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MaximizeBox = False
         Me.Name = "Form_Main"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "   "
+        Me.Text = "JRM FAMILY RESORT MANAGEMENT INFORMATION SYSTEM"
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.Tab_Main.ResumeLayout(False)
@@ -580,11 +570,9 @@ Partial Class Form_Main
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents ExitConfirmation As ToolStripStatusLabel
     Friend WithEvents Tab_Main As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents Button_Login As Button
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
@@ -615,10 +603,11 @@ Partial Class Form_Main
     Friend WithEvents Button_Main_Checkin As Button
     Friend WithEvents Button_Main_Checkout As Button
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents Button_Main_Exit As Button
     Friend WithEvents GroupBox11 As GroupBox
     Friend WithEvents Button_Items_Create As Button
     Friend WithEvents Button_Items_Update As Button
     Friend WithEvents GroupBox12 As GroupBox
     Friend WithEvents Button_Items As Button
+    Friend WithEvents Panel1 As Panel
+    Public WithEvents Timer1 As Timer
 End Class

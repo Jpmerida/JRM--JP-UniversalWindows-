@@ -46,8 +46,8 @@ Public Class Insert_Image_Into_MySQL
         command.Parameters.Add("@ds", MySqlDbType.VarChar).Value = TextBoxDesc.Text
         command.Parameters.Add("@img", MySqlDbType.LongBlob).Value = ms.ToArray()
 
-        connection.Open()
-
+        closeDB()
+        conndb()
         If execCommand(command) Then
             MsgBox("New Information has been saved", vbInformation, "Saved")
             'MessageBox.Show("Data added successfully!")
@@ -55,8 +55,7 @@ Public Class Insert_Image_Into_MySQL
             MessageBox.Show("Data NOT Updated")
             Exit Sub
         End If
-
-        connection.Close()
+        closeDB()
         populateDatagridview("")
     End Sub
 
@@ -83,8 +82,8 @@ Public Class Insert_Image_Into_MySQL
         Dim command As New MySqlCommand(updateQuery, connection)
         command.Parameters.Add("@img", MySqlDbType.Blob).Value = img
 
-        connection.Open()
-
+        closeDB()
+        conndb()
         If execCommand(command) Then
             MsgBox("Image Updated", vbInformation, "Saved")
             'MessageBox.Show("Data added successfully!")
@@ -92,8 +91,7 @@ Public Class Insert_Image_Into_MySQL
             MessageBox.Show("Data NOT Updated")
             Exit Sub
         End If
-
-        connection.Close()
+        closeDB()
         populateDatagridview("")
     End Sub
 
@@ -101,8 +99,8 @@ Public Class Insert_Image_Into_MySQL
         Dim deleteQuery As String = "DELETE FROM Table_Images WHERE id = " & TextBoxID.Text
         Dim command As New MySqlCommand(deleteQuery, connection)
 
-        connection.Open()
-
+        closeDB()
+        conndb()
         If execCommand(command) Then
             MsgBox("Information Deleted", vbInformation, "Deleted")
             'MessageBox.Show("Data added successfully!")
@@ -110,8 +108,7 @@ Public Class Insert_Image_Into_MySQL
             MessageBox.Show("Deletion Succcessful")
             Exit Sub
         End If
-
-        connection.Close()
+        closeDB()
         populateDatagridview("")
     End Sub
 

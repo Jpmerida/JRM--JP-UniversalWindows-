@@ -44,7 +44,7 @@
             'GuestsManagement.ShowDialog()
             GuestWindow = New Form_Management_Guest()
             GuestWindow.MdiParent = Form_Main
-            GuestWindow.Text = "Guest Management Form - " + Form_Main.MdiChildren.Length.ToString()
+            'GuestWindow.Text = "Guest Management Form - " + Form_Main.MdiChildren.Length.ToString()
             GuestWindow.show
             GM = 1
         Else

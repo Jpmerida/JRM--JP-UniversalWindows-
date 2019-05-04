@@ -51,8 +51,6 @@ Public Class Form_Login
             ''MMenu.Dock = DockStyle.Fill
             MMenu.Show()
 
-            Form_Main.GroupBox10.Visible = True
-            Form_Main.Button_Login.Visible = False
             Form_Main.Button_Logout.Visible = True
 
             txtbox_Username.Text = ""
