@@ -64,11 +64,29 @@ Partial Class Form_Main
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button_Users = New System.Windows.Forms.Button()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
-        Me.Button_Items_Create = New System.Windows.Forms.Button()
-        Me.Button_Items_Update = New System.Windows.Forms.Button()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Button_Items = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GuestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItemsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.toolbarLogOUT = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarCheckIn = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton11 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarCheckOut = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarReserve = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarGuests = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarLocations = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarItems = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
+        Me.toolbarUsers = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1.SuspendLayout()
         Me.Tab_Main.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -86,8 +104,9 @@ Partial Class Form_Main
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
-        Me.GroupBox11.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -152,13 +171,13 @@ Partial Class Form_Main
         Me.Tab_Main.Controls.Add(Me.TabPage3)
         Me.Tab_Main.Controls.Add(Me.TabPage4)
         Me.Tab_Main.Controls.Add(Me.TabPage5)
-        Me.Tab_Main.Dock = System.Windows.Forms.DockStyle.Top
         Me.Tab_Main.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Tab_Main.Location = New System.Drawing.Point(0, 0)
+        Me.Tab_Main.Location = New System.Drawing.Point(0, 66)
         Me.Tab_Main.Name = "Tab_Main"
         Me.Tab_Main.SelectedIndex = 0
-        Me.Tab_Main.Size = New System.Drawing.Size(1260, 122)
+        Me.Tab_Main.Size = New System.Drawing.Size(789, 122)
         Me.Tab_Main.TabIndex = 8
+        Me.Tab_Main.Visible = False
         '
         'TabPage1
         '
@@ -169,7 +188,7 @@ Partial Class Form_Main
         Me.TabPage1.Location = New System.Drawing.Point(4, 30)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage1.Size = New System.Drawing.Size(781, 88)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Main"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -237,12 +256,13 @@ Partial Class Form_Main
         Me.TabPage2.Location = New System.Drawing.Point(4, 30)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage2.Size = New System.Drawing.Size(781, 88)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Guests Management"
         '
         'GroupBox2
         '
+        Me.GroupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.GroupBox2.Controls.Add(Me.Button_Guests_Update)
         Me.GroupBox2.Controls.Add(Me.Button_Guests_Create)
         Me.GroupBox2.Location = New System.Drawing.Point(200, 6)
@@ -251,6 +271,7 @@ Partial Class Form_Main
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Management"
+        Me.GroupBox2.Visible = False
         '
         'Button_Guests_Update
         '
@@ -301,7 +322,7 @@ Partial Class Form_Main
         Me.TabPage3.Location = New System.Drawing.Point(4, 30)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage3.Size = New System.Drawing.Size(781, 88)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Services Management"
         '
@@ -410,7 +431,7 @@ Partial Class Form_Main
         Me.TabPage4.Location = New System.Drawing.Point(4, 30)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage4.Size = New System.Drawing.Size(781, 88)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Users Management"
         '
@@ -464,44 +485,14 @@ Partial Class Form_Main
         '
         'TabPage5
         '
-        Me.TabPage5.Controls.Add(Me.GroupBox11)
         Me.TabPage5.Controls.Add(Me.GroupBox12)
         Me.TabPage5.Location = New System.Drawing.Point(4, 30)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1252, 88)
+        Me.TabPage5.Size = New System.Drawing.Size(781, 88)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Item Management"
         Me.TabPage5.UseVisualStyleBackColor = True
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.Controls.Add(Me.Button_Items_Create)
-        Me.GroupBox11.Controls.Add(Me.Button_Items_Update)
-        Me.GroupBox11.Location = New System.Drawing.Point(200, 6)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(418, 79)
-        Me.GroupBox11.TabIndex = 9
-        Me.GroupBox11.TabStop = False
-        Me.GroupBox11.Text = "Management"
-        '
-        'Button_Items_Create
-        '
-        Me.Button_Items_Create.Location = New System.Drawing.Point(41, 28)
-        Me.Button_Items_Create.Name = "Button_Items_Create"
-        Me.Button_Items_Create.Size = New System.Drawing.Size(162, 45)
-        Me.Button_Items_Create.TabIndex = 1
-        Me.Button_Items_Create.Text = "Add New Item"
-        Me.Button_Items_Create.UseVisualStyleBackColor = True
-        '
-        'Button_Items_Update
-        '
-        Me.Button_Items_Update.Location = New System.Drawing.Point(209, 28)
-        Me.Button_Items_Update.Name = "Button_Items_Update"
-        Me.Button_Items_Update.Size = New System.Drawing.Size(162, 45)
-        Me.Button_Items_Update.TabIndex = 2
-        Me.Button_Items_Update.Text = "Update Item"
-        Me.Button_Items_Update.UseVisualStyleBackColor = True
         '
         'GroupBox12
         '
@@ -522,22 +513,175 @@ Partial Class Form_Main
         Me.Button_Items.Text = "Items"
         Me.Button_Items.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckoutToolStripMenuItem, Me.GuestToolStripMenuItem, Me.UsersToolStripMenuItem, Me.ItemsToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1260, 24)
+        Me.MenuStrip1.TabIndex = 10
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'CheckoutToolStripMenuItem
+        '
+        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
+        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.CheckoutToolStripMenuItem.Text = "Checkout"
+        '
+        'GuestToolStripMenuItem
+        '
+        Me.GuestToolStripMenuItem.Name = "GuestToolStripMenuItem"
+        Me.GuestToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.GuestToolStripMenuItem.Text = "guest"
+        '
+        'UsersToolStripMenuItem
+        '
+        Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
+        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.UsersToolStripMenuItem.Text = "users"
+        '
+        'ItemsToolStripMenuItem
+        '
+        Me.ItemsToolStripMenuItem.Name = "ItemsToolStripMenuItem"
+        Me.ItemsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.ItemsToolStripMenuItem.Text = "items"
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbarLogOUT, Me.ToolStripSeparator9, Me.toolbarCheckIn, Me.ToolStripButton11, Me.toolbarCheckOut, Me.ToolStripSeparator6, Me.toolbarReserve, Me.ToolStripSeparator7, Me.toolbarGuests, Me.ToolStripSeparator1, Me.toolbarLocations, Me.ToolStripSeparator8, Me.toolbarItems, Me.ToolStripSeparator10, Me.toolbarUsers})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(1260, 39)
+        Me.ToolStrip1.TabIndex = 15
+        Me.ToolStrip1.Text = "ToolStrip2"
+        '
+        'toolbarLogOUT
+        '
+        Me.toolbarLogOUT.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.logout
+        Me.toolbarLogOUT.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarLogOUT.Name = "toolbarLogOUT"
+        Me.toolbarLogOUT.Size = New System.Drawing.Size(108, 36)
+        Me.toolbarLogOUT.Text = "Log-Out"
+        Me.toolbarLogOUT.ToolTipText = "Logout"
+        '
+        'ToolStripSeparator9
+        '
+        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarCheckIn
+        '
+        Me.toolbarCheckIn.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.login
+        Me.toolbarCheckIn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarCheckIn.Name = "toolbarCheckIn"
+        Me.toolbarCheckIn.Size = New System.Drawing.Size(112, 36)
+        Me.toolbarCheckIn.Text = "Check-In"
+        Me.toolbarCheckIn.ToolTipText = "Check-in"
+        '
+        'ToolStripButton11
+        '
+        Me.ToolStripButton11.Name = "ToolStripButton11"
+        Me.ToolStripButton11.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarCheckOut
+        '
+        Me.toolbarCheckOut.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.logout1
+        Me.toolbarCheckOut.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarCheckOut.Name = "toolbarCheckOut"
+        Me.toolbarCheckOut.Size = New System.Drawing.Size(125, 36)
+        Me.toolbarCheckOut.Text = "Check-Out"
+        Me.toolbarCheckOut.ToolTipText = "Check-Out"
+        '
+        'ToolStripSeparator6
+        '
+        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarReserve
+        '
+        Me.toolbarReserve.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.booking
+        Me.toolbarReserve.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarReserve.Name = "toolbarReserve"
+        Me.toolbarReserve.Size = New System.Drawing.Size(137, 36)
+        Me.toolbarReserve.Text = "Reservation"
+        Me.toolbarReserve.ToolTipText = "Reservation"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarGuests
+        '
+        Me.toolbarGuests.Image = CType(resources.GetObject("toolbarGuests.Image"), System.Drawing.Image)
+        Me.toolbarGuests.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarGuests.Name = "toolbarGuests"
+        Me.toolbarGuests.Size = New System.Drawing.Size(96, 36)
+        Me.toolbarGuests.Text = "Guests"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarLocations
+        '
+        Me.toolbarLocations.Image = CType(resources.GetObject("toolbarLocations.Image"), System.Drawing.Image)
+        Me.toolbarLocations.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarLocations.Name = "toolbarLocations"
+        Me.toolbarLocations.Size = New System.Drawing.Size(186, 36)
+        Me.toolbarLocations.Text = "Cottage/Locations"
+        Me.toolbarLocations.ToolTipText = "Cottage/Locations"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarItems
+        '
+        Me.toolbarItems.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.menu_5
+        Me.toolbarItems.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarItems.Name = "toolbarItems"
+        Me.toolbarItems.Size = New System.Drawing.Size(187, 36)
+        Me.toolbarItems.Text = "Item Management"
+        Me.toolbarItems.ToolTipText = "Items"
+        '
+        'ToolStripSeparator10
+        '
+        Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(6, 39)
+        '
+        'toolbarUsers
+        '
+        Me.toolbarUsers.Image = CType(resources.GetObject("toolbarUsers.Image"), System.Drawing.Image)
+        Me.toolbarUsers.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.toolbarUsers.Name = "toolbarUsers"
+        Me.toolbarUsers.Size = New System.Drawing.Size(193, 36)
+        Me.toolbarUsers.Text = "Users Management"
+        Me.toolbarUsers.ToolTipText = "Users"
+        '
         'Form_Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImage = Global.JRM__JP_UniversalWindows_.My.Resources.Resources._2_Blur
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1260, 729)
         Me.ControlBox = False
+        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Tab_Main)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.DoubleBuffered = True
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.MaximizeBox = False
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MinimizeBox = False
         Me.Name = "Form_Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "JRM FAMILY RESORT MANAGEMENT INFORMATION SYSTEM"
@@ -559,8 +703,11 @@ Partial Class Form_Main
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
-        Me.GroupBox11.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.ToolStrip1.ResumeLayout(False)
+        Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -603,11 +750,29 @@ Partial Class Form_Main
     Friend WithEvents Button_Main_Checkin As Button
     Friend WithEvents Button_Main_Checkout As Button
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents GroupBox11 As GroupBox
-    Friend WithEvents Button_Items_Create As Button
-    Friend WithEvents Button_Items_Update As Button
     Friend WithEvents GroupBox12 As GroupBox
     Friend WithEvents Button_Items As Button
     Friend WithEvents Panel1 As Panel
     Public WithEvents Timer1 As Timer
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GuestToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ItemsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStrip1 As ToolStrip
+    Friend WithEvents toolbarCheckIn As ToolStripButton
+    Friend WithEvents ToolStripButton11 As ToolStripSeparator
+    Friend WithEvents toolbarCheckOut As ToolStripButton
+    Friend WithEvents ToolStripSeparator6 As ToolStripSeparator
+    Friend WithEvents toolbarReserve As ToolStripButton
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
+    Friend WithEvents toolbarLocations As ToolStripButton
+    Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
+    Friend WithEvents toolbarUsers As ToolStripButton
+    Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
+    Friend WithEvents toolbarLogOUT As ToolStripButton
+    Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
+    Friend WithEvents toolbarItems As ToolStripButton
+    Friend WithEvents toolbarGuests As ToolStripButton
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

@@ -37,7 +37,6 @@ Partial Class Form_Management_Guest
         Me.txtLname = New System.Windows.Forms.TextBox()
         Me.txtMname = New System.Windows.Forms.TextBox()
         Me.txtFname = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -48,14 +47,20 @@ Partial Class Form_Management_Guest
         Me.txtGroupName = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1.SuspendLayout()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.btn_refresh = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button_Guests_Create = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
+        Me.ComboBox1.Enabled = False
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"M", "F"})
@@ -79,13 +84,13 @@ Partial Class Form_Management_Guest
         'cmdCancel
         '
         Me.cmdCancel.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.cmdCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.cmdCancel.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.cmdCancel.Location = New System.Drawing.Point(152, 21)
+        Me.cmdCancel.Location = New System.Drawing.Point(1131, 12)
         Me.cmdCancel.Name = "cmdCancel"
-        Me.cmdCancel.Size = New System.Drawing.Size(144, 37)
+        Me.cmdCancel.Size = New System.Drawing.Size(145, 28)
         Me.cmdCancel.TabIndex = 4
-        Me.cmdCancel.Text = "CLOSE"
+        Me.cmdCancel.Text = "Close"
         Me.cmdCancel.UseVisualStyleBackColor = True
         '
         'Label7
@@ -106,6 +111,7 @@ Partial Class Form_Management_Guest
         Me.txtAddress.Location = New System.Drawing.Point(138, 309)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.ReadOnly = True
         Me.txtAddress.Size = New System.Drawing.Size(486, 58)
         Me.txtAddress.TabIndex = 12
         Me.txtAddress.Text = "Address"
@@ -125,9 +131,10 @@ Partial Class Form_Management_Guest
         'txtEmail
         '
         Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmail.Location = New System.Drawing.Point(138, 239)
+        Me.txtEmail.Location = New System.Drawing.Point(138, 274)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(181, 29)
+        Me.txtEmail.ReadOnly = True
+        Me.txtEmail.Size = New System.Drawing.Size(334, 29)
         Me.txtEmail.TabIndex = 10
         Me.txtEmail.Text = "Email Address"
         '
@@ -146,9 +153,10 @@ Partial Class Form_Management_Guest
         'txtContact
         '
         Me.txtContact.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContact.Location = New System.Drawing.Point(138, 274)
+        Me.txtContact.Location = New System.Drawing.Point(136, 239)
         Me.txtContact.Name = "txtContact"
-        Me.txtContact.Size = New System.Drawing.Size(204, 29)
+        Me.txtContact.ReadOnly = True
+        Me.txtContact.Size = New System.Drawing.Size(336, 29)
         Me.txtContact.TabIndex = 11
         Me.txtContact.Text = "Contact Number 9123"
         '
@@ -193,7 +201,8 @@ Partial Class Form_Management_Guest
         Me.txtLname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLname.Location = New System.Drawing.Point(138, 170)
         Me.txtLname.Name = "txtLname"
-        Me.txtLname.Size = New System.Drawing.Size(204, 29)
+        Me.txtLname.ReadOnly = True
+        Me.txtLname.Size = New System.Drawing.Size(334, 29)
         Me.txtLname.TabIndex = 8
         Me.txtLname.Text = "Last Name"
         '
@@ -202,7 +211,8 @@ Partial Class Form_Management_Guest
         Me.txtMname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMname.Location = New System.Drawing.Point(138, 135)
         Me.txtMname.Name = "txtMname"
-        Me.txtMname.Size = New System.Drawing.Size(202, 29)
+        Me.txtMname.ReadOnly = True
+        Me.txtMname.Size = New System.Drawing.Size(334, 29)
         Me.txtMname.TabIndex = 7
         Me.txtMname.Text = "Middle Name"
         '
@@ -211,32 +221,21 @@ Partial Class Form_Management_Guest
         Me.txtFname.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFname.Location = New System.Drawing.Point(138, 100)
         Me.txtFname.Name = "txtFname"
-        Me.txtFname.Size = New System.Drawing.Size(202, 29)
+        Me.txtFname.ReadOnly = True
+        Me.txtFname.Size = New System.Drawing.Size(334, 29)
         Me.txtFname.TabIndex = 6
         Me.txtFname.Text = "First Name"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(301, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(80, 24)
-        Me.Label1.TabIndex = 22
-        Me.Label1.Text = "Search :"
         '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ListView1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(7, 65)
+        Me.ListView1.Location = New System.Drawing.Point(48, 46)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(591, 302)
+        Me.ListView1.Size = New System.Drawing.Size(591, 449)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -276,6 +275,7 @@ Partial Class Form_Management_Guest
         Me.txtGroupName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGroupName.Location = New System.Drawing.Point(138, 65)
         Me.txtGroupName.Name = "txtGroupName"
+        Me.txtGroupName.ReadOnly = True
         Me.txtGroupName.Size = New System.Drawing.Size(486, 29)
         Me.txtGroupName.TabIndex = 5
         '
@@ -293,22 +293,11 @@ Partial Class Form_Management_Guest
         '
         'txtSearch
         '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(387, 26)
+        Me.txtSearch.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.txtSearch.Location = New System.Drawing.Point(398, 16)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(211, 29)
+        Me.txtSearch.Size = New System.Drawing.Size(241, 25)
         Me.txtSearch.TabIndex = 1
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.cmdCancel)
-        Me.Panel1.Controls.Add(Me.txtSearch)
-        Me.Panel1.Controls.Add(Me.ListView1)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(68, 39)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(604, 419)
-        Me.Panel1.TabIndex = 41
         '
         'Panel2
         '
@@ -328,22 +317,86 @@ Partial Class Form_Management_Guest
         Me.Panel2.Controls.Add(Me.txtContact)
         Me.Panel2.Controls.Add(Me.txtEmail)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(678, 39)
+        Me.Panel2.Location = New System.Drawing.Point(645, 9)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(644, 419)
+        Me.Panel2.Size = New System.Drawing.Size(644, 380)
         Me.Panel2.TabIndex = 42
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(337, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 17)
+        Me.Label1.TabIndex = 22
+        Me.Label1.Text = "Search :"
+        '
+        'btn_refresh
+        '
+        Me.btn_refresh.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_refresh.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.btn_refresh.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btn_refresh.Location = New System.Drawing.Point(48, 13)
+        Me.btn_refresh.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_refresh.Name = "btn_refresh"
+        Me.btn_refresh.Size = New System.Drawing.Size(145, 28)
+        Me.btn_refresh.TabIndex = 124
+        Me.btn_refresh.Text = "Refresh"
+        Me.btn_refresh.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Button_Guests_Create)
+        Me.Panel1.Location = New System.Drawing.Point(645, 395)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(644, 100)
+        Me.Panel1.TabIndex = 125
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(273, 31)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(162, 45)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Update Guest"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button_Guests_Create
+        '
+        Me.Button_Guests_Create.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.Button_Guests_Create.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Guests_Create.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button_Guests_Create.Location = New System.Drawing.Point(105, 31)
+        Me.Button_Guests_Create.Name = "Button_Guests_Create"
+        Me.Button_Guests_Create.Size = New System.Drawing.Size(162, 45)
+        Me.Button_Guests_Create.TabIndex = 2
+        Me.Button_Guests_Create.Text = "Create New Guest"
+        Me.Button_Guests_Create.UseVisualStyleBackColor = False
         '
         'Form_Management_Guest
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(1334, 558)
+        Me.ClientSize = New System.Drawing.Size(1330, 558)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.btn_refresh)
+        Me.Controls.Add(Me.cmdCancel)
+        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.Panel2)
-        Me.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Controls.Add(Me.Label1)
+        Me.ForeColor = System.Drawing.SystemColors.Control
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimizeBox = False
         Me.Name = "Form_Management_Guest"
@@ -352,11 +405,11 @@ Partial Class Form_Management_Guest
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GuestsManagement"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -375,7 +428,6 @@ Partial Class Form_Management_Guest
     Friend WithEvents txtLname As TextBox
     Friend WithEvents txtMname As TextBox
     Friend WithEvents txtFname As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents ListView1 As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
@@ -386,6 +438,10 @@ Partial Class Form_Management_Guest
     Friend WithEvents txtGroupName As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btn_refresh As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Button_Guests_Create As Button
+    Friend WithEvents Button1 As Button
 End Class

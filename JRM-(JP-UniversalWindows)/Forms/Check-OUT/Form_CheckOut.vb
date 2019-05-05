@@ -7,7 +7,7 @@ Public Class Form_Checkout
 
 
     Public Venues(5) As Integer
-    Public StopV = 0
+    Public StopV As Integer = 0
     Public AlreadyPaid As Double
     Public SupposedToPay As Double
     Private Sub Form_Checkout_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -62,6 +62,7 @@ Public Class Form_Checkout
             newline.SubItems.Add(dr("Quantity"))
             newline.SubItems.Add(Double.Parse(dr("SubTotal")).ToString("n2"))
             newline.SubItems.Add(dr("Item_ID"))
+            newline.SubItems.Add(dr("Type"))
             dcount = dr("discount")
             advpay = dr("Advance")
             Label7.Text = "TransID - " & value.ToString("0000")
@@ -84,8 +85,9 @@ Public Class Form_Checkout
             newline.SubItems.Add(dr("Quantity"))
             newline.SubItems.Add(Double.Parse(dr("SubTotal")).ToString("n2"))
             newline.SubItems.Add(dr("Item_ID"))
+            newline.SubItems.Add(dr("Type"))
 
-            Venues(StopV) = dr("Item_ID")
+            Venues(StopV) = Integer.Parse(dr("Item_ID"))
             StopV = StopV + 1
         Loop
         closeDB()
@@ -104,8 +106,11 @@ Public Class Form_Checkout
             newline.SubItems.Add(dr("Quantity"))
             newline.SubItems.Add(Double.Parse(dr("SubTotal")).ToString("n2"))
             newline.SubItems.Add(dr("Item_ID"))
+            newline.SubItems.Add(dr("Type"))
         Loop
         closeDB()
+
+
     End Sub
 
     Private Sub txtAmount_TextChanged(sender As Object, e As EventArgs) Handles txtAmount.TextChanged
@@ -206,31 +211,19 @@ Public Class Form_Checkout
     Private Sub Button_CheckOUT_Click(sender As Object, e As EventArgs) Handles Button_CheckOUT.Click
         closeDB()
         If AlreadyPaid >= SupposedToPay Then
-            'dim x As Integer = 0
-            'For x = 0 To Venues(x)
-            'If Venues(x) = Nothing Then
-            'Else
-            'closeDB()
-            'connection.Open()
-            'Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Available' WHERE VenueID = " & Venues(x) & "", connection)
-            'update_Venue.ExecuteNonQuery()
-            'connection.Close()
-            'closeDB()
-            'End If
-            'Next x
-
-
             Dim x As Integer = 0
-            For x = 0 To Venues(x)
+            For x = 0 To StopV
                 If Venues(x) = Nothing Then
                 Else
-                    connection.Open()
-                    Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Checkout' WHERE VenueID = " & Venues(x) & "", connection)
-                    update_Venue.ExecuteNonQuery()
-                    connection.Dispose()
-                    connection.Close()
+
+
+                    ''connection.Open()
+                    ''Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Available' WHERE VenueID = " & Venues(x) & "", connection)
+                    ''update_Venue.ExecuteNonQuery()
+                    ''connection.Dispose()
+                    ''connection.Close()
                 End If
-            Next x
+            Next
             connection.Open()
             Dim update_Transactions As New MySqlCommand("UPDATE table_Transactions SET Status = 'Checkout' WHERE T_ID = " & getTid & "", connection)
             update_Transactions.ExecuteNonQuery()
@@ -243,5 +236,38 @@ Public Class Form_Checkout
             Me.Close()
         Else
         End If
+    End Sub
+
+    Private Sub ListView1_Click(sender As Object, e As EventArgs) Handles ListView1.Click
+        '======================== image
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        Label12.Text = ListView1.SelectedItems(0).SubItems(6).Text
+        If ListView1.SelectedItems(0).SubItems(6).Text = "P000" Then
+            PictureBox1.ImageLocation = "C:\Users\JpZ\source\repos\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\JRM_images\Untitled2.jpg"
+            PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+            'PictureBox1.ImageLocation = Application.StartupPath & "\JRM_images\Untitled2.jpg"
+        ElseIf ListView1.SelectedItems(0).SubItems(6).Text = "I000" Then
+            mysql = "SELECT tblvenue.Image_Location, table_transactiondetailsvenue.Item_ID FROM
+            table_transactiondetailsvenue , tblvenue WHERE table_transactiondetailsvenue.Item_ID = " & ListView1.SelectedItems(0).SubItems(5).Text & ""
+            closeDB()
+            conndb()
+            cmd = New MySqlCommand(mysql, conn)
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            Do Until dr.Read = False
+                PictureBox1.ImageLocation = dr("Image_Location")
+            Loop
+            closeDB()
+        ElseIf ListView1.SelectedItems(0).SubItems(6).Text = "V000" Then
+            mysql = "SELECT Item_ID, Item_Image FROM Table_Items WHERE Item_ID = " & ListView1.SelectedItems(0).SubItems(5).Text & ""
+            closeDB()
+            conndb()
+            cmd = New MySqlCommand(mysql, conn)
+            dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
+            Do Until dr.Read = False
+                PictureBox1.ImageLocation = dr("Item_Image")
+            Loop
+            closeDB()
+        End If
+
     End Sub
 End Class

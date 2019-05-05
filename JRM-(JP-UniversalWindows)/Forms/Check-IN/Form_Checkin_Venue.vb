@@ -5,20 +5,23 @@ Public Class Form_Checkin_Venue
 
     Private Sub CheckinSelector_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''InitializeComponent()
+        clearall()
+
+        populateDatagridview2(DataGridView1, "")
+
+    End Sub
+    Sub clearall()
         txtCatType.Text = ""
         txtPrice.Text = ""
         txtDesc.Text = ""
         txtName.Text = ""
         txtStatus.Text = ""
-
+        CheckServiceID = 0
         If CheckServiceID = 0 Then
             Button4.Enabled = False
         Else
             Button4.Enabled = True
         End If
-
-
-        populateDatagridview2(DataGridView1, "")
 
     End Sub
 

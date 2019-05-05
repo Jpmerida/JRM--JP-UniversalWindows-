@@ -32,12 +32,57 @@ JRM-(JP-UniversalWindows)
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources._exit">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.booking">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.checkbox_pen_outline">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.img003_xN8_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.JRM">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.JRM_Transparent">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.login">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.logout">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.logout1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.menu_5">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:JRM__JP_UniversalWindows_.My.Resources.Resources.Test_7">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

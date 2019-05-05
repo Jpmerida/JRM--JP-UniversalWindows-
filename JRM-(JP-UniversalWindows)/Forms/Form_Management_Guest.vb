@@ -40,6 +40,8 @@ Public Class Form_Management_Guest
         txtAddress.Text = ""
         txtContact.Text = ""
         ComboBox1.Text = ""
+        Button1.Enabled = False
+        Button1.Visible = False
     End Sub
 
     Private Sub txtSearch_TextChanged_1(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -50,7 +52,7 @@ Public Class Form_Management_Guest
 
     Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
         GM = 0
-        openLogin(Procced)
+        'openLogin(Procced)
         Me.Close()
     End Sub
 
@@ -131,11 +133,24 @@ Public Class Form_Management_Guest
         txtEmail.Text = ListView1.SelectedItems(0).SubItems(2).Text
         txtContact.Text = ListView1.SelectedItems(0).SubItems(3).Text
         txtAddress.Text = ListView1.SelectedItems(0).SubItems(4).Text
+        Button1.Enabled = True
     End Sub
 
     Private Sub Form_Management_Guest_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         GM = 0
         openLogin(Procced)
+    End Sub
+
+    Private Sub Btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        viewguests(ListView1, "")
+    End Sub
+
+    Private Sub Button_Guests_Create_Click(sender As Object, e As EventArgs) Handles Button_Guests_Create.Click
+        Form_CreateNew_Guest.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        GuestWindow.cmdupdatesub(UIDType)
     End Sub
 End Class
 

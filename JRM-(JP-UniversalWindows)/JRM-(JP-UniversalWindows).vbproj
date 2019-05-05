@@ -330,9 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="For Test Only\Test4Adding.resx">
       <DependentUpon>Test4Adding.vb</DependentUpon>
@@ -406,6 +406,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img003_xN8_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JRM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test 7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-pen-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

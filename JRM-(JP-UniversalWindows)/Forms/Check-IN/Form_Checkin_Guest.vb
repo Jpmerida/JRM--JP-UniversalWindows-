@@ -76,7 +76,7 @@ Public Class Form_Checkin_Guest
         Form_CreateNew_Guest.ShowDialog()
     End Sub
 
-    Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+    Private Sub btn_refresh_Click(sender As Object, e As EventArgs)
         viewguests(ListView1, "")
     End Sub
 
@@ -120,5 +120,13 @@ Public Class Form_Checkin_Guest
 
     Private Sub CheckinGuest_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         CG = 0
+    End Sub
+
+    Private Sub TxtFname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMname.KeyPress, txtLname.KeyPress, txtFname.KeyPress, ComboBox1.KeyPress
+        OnlyLetters(e)
+    End Sub
+
+    Private Sub TxtContact_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContact.KeyPress
+        OnlyNumbers(e)
     End Sub
 End Class

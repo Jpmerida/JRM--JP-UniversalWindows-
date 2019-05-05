@@ -54,4 +54,7 @@ Public Class Form_Update_CategoryType
         Me.Close()
     End Sub
 
+    Private Sub Form_Update_CategoryType_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

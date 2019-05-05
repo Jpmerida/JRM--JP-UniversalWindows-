@@ -33,6 +33,8 @@ Partial Class Form_CreateNew_Item
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAddItem = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.txtItemDescription = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -43,15 +45,15 @@ Partial Class Form_CreateNew_Item
         Me.PictureBox1.Location = New System.Drawing.Point(11, 11)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(180, 180)
+        Me.PictureBox1.Size = New System.Drawing.Size(255, 244)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 98
         Me.PictureBox1.TabStop = False
         '
         'SelectImage
         '
-        Me.SelectImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.SelectImage.Location = New System.Drawing.Point(11, 197)
+        Me.SelectImage.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SelectImage.Location = New System.Drawing.Point(49, 259)
         Me.SelectImage.Margin = New System.Windows.Forms.Padding(2)
         Me.SelectImage.Name = "SelectImage"
         Me.SelectImage.Size = New System.Drawing.Size(180, 31)
@@ -61,6 +63,9 @@ Partial Class Form_CreateNew_Item
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnAddItem)
+        Me.GroupBox1.Controls.Add(Me.txtItemDescription)
+        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtItemQuantity)
         Me.GroupBox1.Controls.Add(Me.txtItemPrice)
         Me.GroupBox1.Controls.Add(Me.txtItemName)
@@ -68,9 +73,9 @@ Partial Class Form_CreateNew_Item
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(196, 11)
+        Me.GroupBox1.Location = New System.Drawing.Point(271, 11)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(360, 180)
+        Me.GroupBox1.Size = New System.Drawing.Size(392, 244)
         Me.GroupBox1.TabIndex = 100
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "New Item"
@@ -78,7 +83,7 @@ Partial Class Form_CreateNew_Item
         'txtItemQuantity
         '
         Me.txtItemQuantity.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemQuantity.Location = New System.Drawing.Point(102, 113)
+        Me.txtItemQuantity.Location = New System.Drawing.Point(115, 113)
         Me.txtItemQuantity.Name = "txtItemQuantity"
         Me.txtItemQuantity.Size = New System.Drawing.Size(110, 27)
         Me.txtItemQuantity.TabIndex = 2
@@ -86,7 +91,7 @@ Partial Class Form_CreateNew_Item
         'txtItemPrice
         '
         Me.txtItemPrice.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemPrice.Location = New System.Drawing.Point(102, 80)
+        Me.txtItemPrice.Location = New System.Drawing.Point(115, 80)
         Me.txtItemPrice.Name = "txtItemPrice"
         Me.txtItemPrice.Size = New System.Drawing.Size(110, 27)
         Me.txtItemPrice.TabIndex = 1
@@ -94,7 +99,7 @@ Partial Class Form_CreateNew_Item
         'txtItemName
         '
         Me.txtItemName.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtItemName.Location = New System.Drawing.Point(102, 47)
+        Me.txtItemName.Location = New System.Drawing.Point(115, 47)
         Me.txtItemName.Name = "txtItemName"
         Me.txtItemName.Size = New System.Drawing.Size(248, 27)
         Me.txtItemName.TabIndex = 0
@@ -103,7 +108,7 @@ Partial Class Form_CreateNew_Item
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(24, 116)
+        Me.Label3.Location = New System.Drawing.Point(37, 116)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(72, 20)
         Me.Label3.TabIndex = 0
@@ -113,7 +118,7 @@ Partial Class Form_CreateNew_Item
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 83)
+        Me.Label2.Location = New System.Drawing.Point(27, 83)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(82, 20)
         Me.Label2.TabIndex = 0
@@ -123,7 +128,7 @@ Partial Class Form_CreateNew_Item
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 50)
+        Me.Label1.Location = New System.Drawing.Point(19, 50)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(90, 20)
         Me.Label1.TabIndex = 0
@@ -131,8 +136,8 @@ Partial Class Form_CreateNew_Item
         '
         'btnAddItem
         '
-        Me.btnAddItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddItem.Location = New System.Drawing.Point(255, 197)
+        Me.btnAddItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddItem.Location = New System.Drawing.Point(286, 205)
         Me.btnAddItem.Name = "btnAddItem"
         Me.btnAddItem.Size = New System.Drawing.Size(100, 31)
         Me.btnAddItem.TabIndex = 101
@@ -141,27 +146,46 @@ Partial Class Form_CreateNew_Item
         '
         'btnClose
         '
-        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClose.Location = New System.Drawing.Point(456, 197)
+        Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnClose.Location = New System.Drawing.Point(563, 261)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(100, 31)
         Me.btnClose.TabIndex = 102
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'txtItemDescription
+        '
+        Me.txtItemDescription.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtItemDescription.Location = New System.Drawing.Point(115, 146)
+        Me.txtItemDescription.Multiline = True
+        Me.txtItemDescription.Name = "txtItemDescription"
+        Me.txtItemDescription.Size = New System.Drawing.Size(248, 53)
+        Me.txtItemDescription.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(17, 149)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(92, 20)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Description :"
+        '
         'Form_CreateNew_Item
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(566, 240)
+        Me.ClientSize = New System.Drawing.Size(677, 300)
         Me.ControlBox = False
-        Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.SelectImage)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Form_CreateNew_Item"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Item [Add New Item]"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -181,4 +205,6 @@ Partial Class Form_CreateNew_Item
     Friend WithEvents Label1 As Label
     Friend WithEvents btnAddItem As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents txtItemDescription As TextBox
+    Friend WithEvents Label4 As Label
 End Class

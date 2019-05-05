@@ -217,8 +217,8 @@ Partial Class Form_CreateNew_Services
         '
         'Form_CreateNew_Services
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(800, 588)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button_Update)
@@ -238,6 +238,8 @@ Partial Class Form_CreateNew_Services
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ComboBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Form_CreateNew_Services"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "

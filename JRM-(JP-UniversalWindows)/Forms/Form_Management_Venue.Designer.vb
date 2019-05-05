@@ -244,8 +244,8 @@ Partial Class Form_Management_Venue
         '
         'Form_Management_Venue
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1350, 600)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_categories)
@@ -265,6 +265,7 @@ Partial Class Form_Management_Venue
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtCatType)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Form_Management_Venue"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "VenueForm"

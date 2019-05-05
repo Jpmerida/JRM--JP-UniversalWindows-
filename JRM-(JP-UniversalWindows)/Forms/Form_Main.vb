@@ -2,12 +2,16 @@
 
 Public Class Form_Main
 
-    Public CO As Integer = 0
+    Public CO As Integer = 0 'checkout Form
+    Public IM As Integer = 0 'Item Management
     Dim CLogin = New Form_Login()
     Dim ItemsWindow = New Form_Management_Item
-    Public IM As Integer 'Item Management
+    Dim CheckOutForm As New Form_CheckOut_GuestList()
+
     Private Sub first_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FirstReset()
         Me.WindowState = FormWindowState.Maximized
+        Form_Login_Background.Hide()
         GuestWindow.MdiParent = Me
         'GuestWindow.Text = "Guest Management Form - " + Me.MdiChildren.Length.ToString()
 
@@ -18,13 +22,6 @@ Public Class Form_Main
         'MMenu.WindowState = FormWindowState.Minimized
         'MMenu.Show()
 
-
-        If UIDType = "Admin" Or UIDType = "Manager" Then
-
-        Else
-            Tab_Main.TabPages.Remove(TabPage4)
-            Tab_Main.TabPages.Remove(TabPage5)
-        End If
         'Dim CLogin = New Form_Login()
         'CLogin.MdiParent = Me
         'CLogin.Text = "Login Form - " + Me.MdiChildren.Length.ToString()
@@ -38,15 +35,26 @@ Public Class Form_Main
         '==============================================='
     End Sub
 
+    Public Sub firstreset()
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            Form_Management_Guest.Button1.Visible = False
+        Else
+            toolbarUsers.Visible = False
+            toolbarItems.Visible = False
+            toolbarLocations.Visible = False
 
+            Tab_Main.TabPages.Remove(TabPage4)
+            ''Tab_Main.TabPages.Remove(TabPage5)
+        End If
+
+    End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-
     Private Sub first_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim message As String = "Do you want to exit the application?"
+        Dim message As String = "Do you want to Log-out?"
         Dim caption As String = "JRM - Management System"
         Dim icons As Integer = MessageBoxIcon.Question
         Dim buttons As Integer = MessageBoxButtons.YesNo
@@ -69,32 +77,9 @@ Public Class Form_Main
         UIDType = "NONE"
         Procced = 0
         'MMenu.close()
-        Form_Login_Confirm.Show()
-        Me.Close()
-    End Sub
-
-
-
-    Private Sub Button_Logout_Click(sender As Object, e As EventArgs) Handles Button_Logout.Click
-        UIDType = "NONE"
-        Procced = 0
-        'MMenu.close()
         Form_Login_Background.Show()
         Form_Login_Confirm.Show()
         Me.Close()
-    End Sub
-
-    Private Sub Button_Users_Click(sender As Object, e As EventArgs) Handles Button_Users.Click
-        If UM = 0 Then
-            UserWindow = New Form_Management_User()
-            UserWindow.MdiParent = Me
-            UserWindow.Text = "User Management Window [List]" +
-            UserWindow.Show()
-            UM = 1
-        Else
-            UserWindow.WindowState = FormWindowState.Maximized
-            UserWindow.bringtofront()
-        End If
     End Sub
 
     Private Sub Button_Users_Create_Click(sender As Object, e As EventArgs) Handles Button_Users_Create.Click
@@ -147,43 +132,6 @@ Public Class Form_Main
 
     End Sub
 
-    Private Sub Button_Guests_Click(sender As Object, e As EventArgs) Handles Button_Guests.Click
-        If GM = 0 Then
-            GuestWindow = New Form_Management_Guest()
-            GuestWindow.mdiparent = Me
-            GuestWindow.text = "Guest Management Window [List]"
-            GuestWindow.WindowState = FormWindowState.Maximized
-            GuestWindow.controlbox = False
-            GuestWindow.showicon = False
-            GuestWindow.show
-            GM = 1
-        Else
-            GuestWindow.WindowState = FormWindowState.Maximized
-            GuestWindow.bringtofront()
-        End If
-    End Sub
-
-    Private Sub Button_Guests_Update_Click(sender As Object, e As EventArgs) Handles Button_Guests_Update.Click
-        GuestWindow.cmdupdatesub(UIDType)
-    End Sub
-
-    Private Sub Button_Guests_Create_Click(sender As Object, e As EventArgs) Handles Button_Guests_Create.Click
-        Form_CreateNew_Guest.ShowDialog()
-    End Sub
-
-    Private Sub Button_Services_Click(sender As Object, e As EventArgs) Handles Button_Services.Click
-        If SM = 0 Then
-            ServicesFORM = New Form_Management_Venue()
-            ServicesFORM.MdiParent = Me
-            ServicesFORM.text = "Services Management Window [List]"
-            ServicesFORM.WindowState = FormWindowState.Maximized
-            ServicesFORM.Show()
-            SM = 1
-        Else
-            ServicesFORM.WindowState = FormWindowState.Maximized
-            ServicesFORM.bringtofront()
-        End If
-    End Sub
 
     Private Sub Button_Services_Create_Click(sender As Object, e As EventArgs) Handles Button_Services_Create.Click
         If UIDType = "Admin" Or UIDType = "Manager" Then
@@ -203,17 +151,13 @@ Public Class Form_Main
         End If
     End Sub
 
-    Private Sub Button_Main_Checkin_Click(sender As Object, e As EventArgs) Handles Button_Main_Checkin.Click
-        Form_Checkin.ShowDialog()
-    End Sub
 
-
-    Private Sub Button_Items_Click(sender As Object, e As EventArgs) Handles Button_Items.Click
-
+    Private Sub ItemsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemsToolStripMenuItem.Click
         If IM = 0 Then
             ItemsWindow = New Form_Management_Item
             ItemsWindow.MdiParent = Me
             ItemsWindow.Text = "Item Management Window"
+            ItemsWindow.WindowState = FormWindowState.Maximized
             ItemsWindow.Show()
             IM = 1
         Else
@@ -222,19 +166,127 @@ Public Class Form_Main
         End If
     End Sub
 
-    Private Sub Button_Items_Create_Click(sender As Object, e As EventArgs) Handles Button_Items_Create.Click
-        Form_CreateNew_Item.ShowDialog()
+    Private Sub UsersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersToolStripMenuItem.Click
+        If UM = 0 Then
+            UserWindow = New Form_Management_User()
+            UserWindow.MdiParent = Me
+            UserWindow.Text = "User Management Window [List]" +
+            UserWindow.Show()
+            UM = 1
+        Else
+            UserWindow.WindowState = FormWindowState.Maximized
+            UserWindow.bringtofront()
+        End If
     End Sub
 
-    Private Sub Button_Main_Checkout_Click(sender As Object, e As EventArgs) Handles Button_Main_Checkout.Click
-        Dim CheckOutForm As New Form_CheckOut_GuestList()
+    Private Sub GuestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuestToolStripMenuItem.Click
+        If GM = 0 Then
+            GuestWindow = New Form_Management_Guest()
+            GuestWindow.mdiparent = Me
+            GuestWindow.text = "Guest Management Window [List]"
+            GuestWindow.WindowState = FormWindowState.Maximized
+            GuestWindow.controlbox = False
+            GuestWindow.showicon = False
+            GuestWindow.show
+            GM = 1
+        Else
+            GuestWindow.WindowState = FormWindowState.Maximized
+            GuestWindow.bringtofront()
+        End If
+    End Sub
+
+    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem.Click
         If CO = 0 Then
             CheckOutForm = New Form_CheckOut_GuestList()
             CheckOutForm.MdiParent = Me
             CheckOutForm.Show()
-            CO = 0
+            CO = 1
         Else
-            Checkoutform.bringtofront()
+            CheckOutForm.WindowState = FormWindowState.Maximized
+            CheckOutForm.BringToFront()
+        End If
+    End Sub
+
+    Private Sub ToolStripButton12_Click(sender As Object, e As EventArgs) Handles toolbarLogOUT.Click
+        UIDType = "NONE"
+        Procced = 0
+        'MMenu.close()
+        Form_Login_Background.Show()
+        Form_Login_Confirm.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub ToolbarCheckIn_Click(sender As Object, e As EventArgs) Handles toolbarCheckIn.Click
+        CheckOutForm.Close()
+        Form_Checkin.ShowDialog()
+    End Sub
+
+    Private Sub ToolbarCheckOut_Click(sender As Object, e As EventArgs) Handles toolbarCheckOut.Click
+        If CO = 0 Then
+            CheckOutForm = New Form_CheckOut_GuestList()
+            CheckOutForm.MdiParent = Me
+            CheckOutForm.Show()
+            CO = 1
+        Else
+            CheckOutForm.WindowState = FormWindowState.Maximized
+            CheckOutForm.BringToFront()
+        End If
+    End Sub
+
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles toolbarGuests.Click
+        If GM = 0 Then
+            GuestWindow = New Form_Management_Guest()
+            GuestWindow.mdiparent = Me
+            GuestWindow.text = "Guest Management Window [List]"
+            GuestWindow.WindowState = FormWindowState.Maximized
+            GuestWindow.controlbox = False
+            GuestWindow.showicon = False
+            GuestWindow.show
+            GM = 1
+        Else
+            GuestWindow.WindowState = FormWindowState.Maximized
+            GuestWindow.bringtofront()
+        End If
+    End Sub
+
+    Private Sub ToolbarRoom_Click(sender As Object, e As EventArgs) Handles toolbarLocations.Click
+        If SM = 0 Then
+            ServicesFORM = New Form_Management_Venue()
+            ServicesFORM.MdiParent = Me
+            ServicesFORM.text = "Services Management Window [List]"
+            ServicesFORM.WindowState = FormWindowState.Maximized
+            ServicesFORM.Show()
+            SM = 1
+        Else
+            ServicesFORM.WindowState = FormWindowState.Maximized
+            ServicesFORM.bringtofront()
+        End If
+    End Sub
+
+    Private Sub ToolStripButton13_Click(sender As Object, e As EventArgs) Handles toolbarItems.Click
+        If IM = 0 Then
+            ItemsWindow = New Form_Management_Item
+            ItemsWindow.MdiParent = Me
+            ItemsWindow.Text = "Item Management Window"
+            ItemsWindow.WindowState = FormWindowState.Maximized
+            ItemsWindow.Show()
+            IM = 1
+        Else
+            ItemsWindow.WindowState = FormWindowState.Maximized
+            ItemsWindow.bringtofront()
+        End If
+    End Sub
+
+    Private Sub ToolStripButton10_Click(sender As Object, e As EventArgs) Handles toolbarUsers.Click
+        If UM = 0 Then
+            UserWindow = New Form_Management_User()
+            UserWindow.MdiParent = Me
+            UserWindow.Text = "User Management Window [List]" +
+            UserWindow.Show()
+            UM = 1
+        Else
+            UserWindow.WindowState = FormWindowState.Maximized
+            UserWindow.bringtofront()
         End If
     End Sub
 End Class

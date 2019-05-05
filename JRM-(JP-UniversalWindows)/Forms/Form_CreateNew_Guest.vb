@@ -85,4 +85,8 @@ Public Class Form_CreateNew_Guest
         txtLname.Text = ""
         ComboBox1.Text = ""
     End Sub
+
+    Private Sub TxtFname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMname.KeyPress, txtLname.KeyPress, txtFname.KeyPress, ComboBox1.KeyPress
+        OnlyLetters(e)
+    End Sub
 End Class

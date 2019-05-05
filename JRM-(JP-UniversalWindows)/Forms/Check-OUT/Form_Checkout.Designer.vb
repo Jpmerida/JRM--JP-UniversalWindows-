@@ -35,6 +35,7 @@ Partial Class Form_Checkout
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbladvancePay = New System.Windows.Forms.Label()
@@ -47,18 +48,21 @@ Partial Class Form_Checkout
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTotalCharge = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.btnConfirmPayment = New System.Windows.Forms.Button()
         Me.Button_CheckOUT = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSettlePayment
@@ -128,7 +132,7 @@ Partial Class Form_Checkout
         'ListView1
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader11, Me.ColumnHeader12})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader1})
         Me.ListView1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.ListView1.FullRowSelect = True
         Me.ListView1.Location = New System.Drawing.Point(48, 63)
@@ -170,6 +174,11 @@ Partial Class Form_Checkout
         '
         Me.ColumnHeader12.Text = "Item_ID"
         Me.ColumnHeader12.Width = 0
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Type"
+        Me.ColumnHeader1.Width = 0
         '
         'Panel2
         '
@@ -298,10 +307,28 @@ Partial Class Form_Checkout
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label7)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Location = New System.Drawing.Point(1035, 63)
+        Me.Panel3.Location = New System.Drawing.Point(745, 63)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(239, 330)
         Me.Panel3.TabIndex = 25
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 111)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(231, 214)
+        Me.FlowLayoutPanel1.TabIndex = 22
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Label3.Location = New System.Drawing.Point(17, 69)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(198, 17)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "______________________________________"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'lblTotalCharge
         '
@@ -331,10 +358,11 @@ Partial Class Form_Checkout
         Me.Panel4.Controls.Add(Me.btnConfirmPayment)
         Me.Panel4.Controls.Add(Me.Panel1)
         Me.Panel4.Controls.Add(Me.btnSettlePayment)
-        Me.Panel4.Location = New System.Drawing.Point(745, 63)
+        Me.Panel4.Location = New System.Drawing.Point(990, 63)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(288, 330)
         Me.Panel4.TabIndex = 26
+        Me.Panel4.Visible = False
         '
         'btnConfirmPayment
         '
@@ -350,20 +378,21 @@ Partial Class Form_Checkout
         '
         Me.Button_CheckOUT.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button_CheckOUT.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_CheckOUT.Location = New System.Drawing.Point(745, 456)
+        Me.Button_CheckOUT.Location = New System.Drawing.Point(1003, 396)
         Me.Button_CheckOUT.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_CheckOUT.Name = "Button_CheckOUT"
         Me.Button_CheckOUT.Size = New System.Drawing.Size(261, 67)
         Me.Button_CheckOUT.TabIndex = 42
         Me.Button_CheckOUT.Text = "Check-out"
         Me.Button_CheckOUT.UseVisualStyleBackColor = False
+        Me.Button_CheckOUT.Visible = False
         '
         'Cancel
         '
         Me.Cancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel.Location = New System.Drawing.Point(1013, 456)
+        Me.Cancel.Location = New System.Drawing.Point(719, 398)
         Me.Cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(261, 67)
@@ -371,30 +400,32 @@ Partial Class Form_Checkout
         Me.Cancel.Text = "Cancel"
         Me.Cancel.UseVisualStyleBackColor = False
         '
-        'Label3
+        'Label12
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
-        Me.Label3.Location = New System.Drawing.Point(17, 69)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(198, 17)
-        Me.Label3.TabIndex = 21
-        Me.Label3.Text = "______________________________________"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(364, 456)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.TabIndex = 44
+        Me.Label12.Text = "Label12"
         '
-        'FlowLayoutPanel1
+        'PictureBox1
         '
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 111)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(231, 214)
-        Me.FlowLayoutPanel1.TabIndex = 22
+        Me.PictureBox1.Location = New System.Drawing.Point(518, 399)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(170, 170)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 45
+        Me.PictureBox1.TabStop = False
         '
         'Form_Checkout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1334, 558)
+        Me.ClientSize = New System.Drawing.Size(1035, 558)
         Me.ControlBox = False
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Button_CheckOUT)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.Panel4)
@@ -413,6 +444,7 @@ Partial Class Form_Checkout
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -451,4 +483,7 @@ Partial Class Form_Checkout
     Friend WithEvents Cancel As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Protected Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents Label12 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

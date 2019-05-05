@@ -114,7 +114,11 @@ Public Class Form_Checkin
         price = Double.Parse(ComboBox1.Text).ToString("n2")
 
         Dim selected As Double
-        selected = Double.Parse(InputBox("Enter How Many Persons", "Enter Data", 1, -1, -1))
+        Try
+            selected = Double.Parse(InputBox("Enter How Many Persons", "Enter Data", 1, -1, -1))
+        Catch ex As Exception
+            selected = 1
+        End Try
 
         Dim total As Double
         total = Double.Parse(selected * price)
@@ -126,10 +130,12 @@ Public Class Form_Checkin
 
         Dim i As Integer
         For i = 0 To DataGridView1.Rows.Count - 1
-            PartialTotal = Val(DataGridView1.Rows(i).Cells(4).Value)
+            PartialTotal = Double.Parse(DataGridView1.Rows(i).Cells(4).Value)
         Next i
-        GrandTotal = GrandTotal + PartialTotal
-        lblGrandTotal.Text = FormatNumber(GrandTotal)
+
+        'GrandTotal = GrandTotal + PartialTotal
+        GrandTotal += PartialTotal
+        lblGrandTotal.Text = Double.Parse(FormatNumber(GrandTotal)).ToString("n2")
         ''TextBox1.Text = tempSub.ToString("n2")
     End Sub
 
@@ -181,7 +187,7 @@ Public Class Form_Checkin
             PartialTotal = 0
             Dim i As Integer
             For i = 0 To DataGridView1.Rows.Count - 1
-                PartialTotal = PartialTotal + DataGridView1.Rows(i).Cells(4).Value
+                PartialTotal = PartialTotal + Double.Parse(DataGridView1.Rows(i).Cells(4).Value)
             Next i
             GrandTotal = GrandTotal + PartialTotal
             lblGrandTotal.Text = FormatNumber(GrandTotal)
@@ -343,27 +349,72 @@ Public Class Form_Checkin
 
     'Payments
     Private Sub TxtAdvance_TextChanged(sender As Object, e As EventArgs) Handles txtAdvance.TextChanged
-        If Val(lblGrandTotal.Text) < Val(txtAdvance.Text) Or Val(lblGrandTotal.Text) = Val(txtAdvance.Text) Then
-            txtTotal.Text = "0.00"
-        Else
-            txtTotal.Text = (Val(lblGrandTotal.Text) - Val(txtAdvance.Text).ToString("00.00") - Val(txtDiscount.Text)).ToString("00.00")
+        If txtAdvance.Text = "" Or txtDiscount.Text = "" Then
+            Exit Sub
         End If
+        Dim Grand As Double
+        Dim Advan As Double
+        Dim Disco As Double
+        Try
+            Grand = Double.Parse(lblGrandTotal.Text)
+            Advan = Double.Parse(txtAdvance.Text)
+            Disco = Double.Parse(txtDiscount.Text)
+        Catch ex As Exception
+
+        End Try
+
+        'Label6.Text = (Grand - Disco) - Advan
+        txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
+        If Grand <= Advan Then
+            txtTotal.Text = "0.00"
+        End If
+
+
+        'Label6.Text = (GrandTotal - Disco) - Advan
+        'txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
+        'txtTotal.Text = Double.Parse((Val(lblGrandTotal.Text) - Val(txtDiscount.Text)) - Val(txtAdvance.Text)).ToString("n2")
+
     End Sub
     Private Sub TxtDiscount_TextChanged(sender As Object, e As EventArgs) Handles txtDiscount.TextChanged
-        If Val(lblGrandTotal.Text) < Val(txtAdvance.Text) Or Val(lblGrandTotal.Text) = Val(txtAdvance.Text) Then
-            txtTotal.Text = "0.00"
-        Else
-            txtTotal.Text = (Val(lblGrandTotal.Text) - Val(txtAdvance.Text).ToString("00.00") - Val(txtDiscount.Text)).ToString("00.00")
+
+        If txtAdvance.Text = "" Or txtDiscount.Text = "" Then
+            Exit Sub
         End If
+        Dim Grand As Double
+        Dim Advan As Double
+        Dim Disco As Double
+        Try
+            Grand = Double.Parse(lblGrandTotal.Text)
+            Advan = Double.Parse(txtAdvance.Text)
+            Disco = Double.Parse(txtDiscount.Text)
+        Catch ex As Exception
+
+        End Try
+
+        'Label6.Text = (Grand - Disco) - Advan
+        txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
+        If Grand <= Advan Then
+            txtTotal.Text = "0.00"
+        End If
+
+        'If Val(lblGrandTotal.Text) < Val(txtAdvance.Text) Or Val(lblGrandTotal.Text) = Val(txtAdvance.Text) Then
+        'txtTotal.Text = "0.00"
+        'ElseIf txtAdvance.Text = "" Or txtDiscount.Text = "" Then
+        'Exit Sub
+        'Else
+        'Dim Grand As Double = Double.Parse(lblGrandTotal.Text)
+        'Dim Advan As Double = Double.Parse(txtAdvance.Text)
+        'Dim Disco As Double = Double.Parse(txtDiscount.Text)
+        'Label6.Text = (Grand - Disco) - Advan
+        'txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
+        'End If
         'txtTotal.Text = (Val(lblGrandTotal.Text) - (Val(lblGrandTotal.Text) - Val(txtDiscount.Text))).ToString("00.00")
     End Sub
 
     'payments
 
-    Private Sub TxtDiscount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDiscount.KeyPress
+    Private Sub TxtDiscount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDiscount.KeyPress, ComboBox1.KeyPress, txtAdvance.KeyPress
         OnlyNumbers(e)
     End Sub
-    Private Sub TxtAdvance_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtAdvance.KeyPress
-        OnlyNumbers(e)
-    End Sub
+
 End Class

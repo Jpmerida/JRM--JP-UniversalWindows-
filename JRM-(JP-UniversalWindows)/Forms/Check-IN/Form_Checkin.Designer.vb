@@ -35,6 +35,9 @@ Partial Class Form_Checkin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtDiscount = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtTotal = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtAdvance = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -49,12 +52,10 @@ Partial Class Form_Checkin
         Me.lblGrandTotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTransID = New System.Windows.Forms.TextBox()
         Me.txtGuest = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtTotal = New System.Windows.Forms.Label()
-        Me.txtDiscount = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,8 +172,7 @@ Partial Class Form_Checkin
         Me.ComboBox1.Items.AddRange(New Object() {"25.00", "40.00", "50.00", "100.00"})
         Me.ComboBox1.Location = New System.Drawing.Point(391, 43)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ComboBox1.Size = New System.Drawing.Size(99, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(88, 28)
         Me.ComboBox1.TabIndex = 93
         Me.ComboBox1.Text = "25.00"
         '
@@ -224,6 +224,37 @@ Partial Class Form_Checkin
         Me.GroupBox2.Size = New System.Drawing.Size(526, 169)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
+        '
+        'txtDiscount
+        '
+        Me.txtDiscount.Font = New System.Drawing.Font("Segoe UI", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDiscount.Location = New System.Drawing.Point(295, 21)
+        Me.txtDiscount.Multiline = True
+        Me.txtDiscount.Name = "txtDiscount"
+        Me.txtDiscount.Size = New System.Drawing.Size(183, 39)
+        Me.txtDiscount.TabIndex = 68
+        Me.txtDiscount.Text = "0"
+        Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(157, 24)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(123, 32)
+        Me.Label5.TabIndex = 69
+        Me.Label5.Text = "Discount :"
+        '
+        'txtTotal
+        '
+        Me.txtTotal.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotal.ForeColor = System.Drawing.Color.Black
+        Me.txtTotal.Location = New System.Drawing.Point(295, 110)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.Size = New System.Drawing.Size(183, 38)
+        Me.txtTotal.TabIndex = 67
+        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label3
         '
@@ -373,6 +404,7 @@ Partial Class Form_Checkin
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.White
+        Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.txtTransID)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
@@ -395,6 +427,17 @@ Partial Class Form_Checkin
         Me.GroupBox3.TabIndex = 93
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Accomodation Details"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(429, 386)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(123, 32)
+        Me.Label6.TabIndex = 70
+        Me.Label6.Text = "Discount :"
+        Me.Label6.Visible = False
         '
         'txtTransID
         '
@@ -426,41 +469,9 @@ Partial Class Form_Checkin
         Me.Label4.TabIndex = 92
         Me.Label4.Text = "Transaction ID :"
         '
-        'txtTotal
-        '
-        Me.txtTotal.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.ForeColor = System.Drawing.Color.Black
-        Me.txtTotal.Location = New System.Drawing.Point(295, 110)
-        Me.txtTotal.Name = "txtTotal"
-        Me.txtTotal.Size = New System.Drawing.Size(183, 38)
-        Me.txtTotal.TabIndex = 67
-        Me.txtTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'txtDiscount
-        '
-        Me.txtDiscount.Font = New System.Drawing.Font("Segoe UI", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDiscount.Location = New System.Drawing.Point(295, 21)
-        Me.txtDiscount.Multiline = True
-        Me.txtDiscount.Name = "txtDiscount"
-        Me.txtDiscount.Size = New System.Drawing.Size(183, 39)
-        Me.txtDiscount.TabIndex = 68
-        Me.txtDiscount.Text = "0"
-        Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(157, 24)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 32)
-        Me.Label5.TabIndex = 69
-        Me.Label5.Text = "Discount :"
-        '
         'Form_Checkin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(1109, 458)
@@ -474,7 +485,7 @@ Partial Class Form_Checkin
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form_Checkin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Check-IN Form (WIP)"
+        Me.Text = "Check-in Form"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -518,7 +529,8 @@ Partial Class Form_Checkin
     Friend WithEvents Label3 As Label
     Friend WithEvents txtAdvance As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents txtTotal As Label
     Friend WithEvents txtDiscount As TextBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Public WithEvents txtTotal As Label
 End Class

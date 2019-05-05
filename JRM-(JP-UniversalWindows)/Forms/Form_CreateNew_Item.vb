@@ -30,7 +30,7 @@ Public Class Form_CreateNew_Item
     End Sub
 
     Private Sub BtnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
-        If fileSrc = "" Or txtItemName.Text = "" Or txtItemPrice.Text = "" Or txtItemQuantity.Text = "" Then
+        If fileSrc = Nothing Or txtItemName.Text = "" Or txtItemPrice.Text = "" Or txtItemQuantity.Text = "" Or txtItemDescription.Text = Nothing Then
             MsgBox("Lacking Requirements.", vbCritical, "New Item [Canceled]")
             Me.Close()
         Else
@@ -49,11 +49,12 @@ Public Class Form_CreateNew_Item
             Catch ex As Exception
 
             End Try
-            Dim command As New MySqlCommand("INSERT INTO `Table_Items`(`Item_Name`, `Item_Price`, `Item_Qty`, `Item_Image`, `item_Status`) VALUES (@aa,@bb,@cc,@dd,@ee)", connection)
+            Dim command As New MySqlCommand("INSERT INTO `Table_Items`(`Item_Name`, `Item_Price`, `Item_Qty`, `Item_Image`, `item_Status`, `item_description`) VALUES (@aa,@bb,@cc,@dd,@ee,@ff)", connection)
             command.Parameters.Add("@aa", MySqlDbType.VarChar).Value = txtItemName.Text
             command.Parameters.Add("@bb", MySqlDbType.Double).Value = txtItemPrice.Text
             command.Parameters.Add("@cc", MySqlDbType.Int32).Value = txtItemQuantity.Text
             command.Parameters.Add("@dd", MySqlDbType.VarChar).Value = fileDestination
+            command.Parameters.Add("@ff", MySqlDbType.VarChar).Value = txtItemDescription.Text
             Dim AvailableIsTrue As String
             If txtItemQuantity.Text >= 0 Then
                 AvailableIsTrue = 5
@@ -75,5 +76,9 @@ Public Class Form_CreateNew_Item
             Me.Close()
         End If
 
+    End Sub
+
+    Private Sub Form_CreateNew_Item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PictureBox1.ImageLocation = ""
     End Sub
 End Class
