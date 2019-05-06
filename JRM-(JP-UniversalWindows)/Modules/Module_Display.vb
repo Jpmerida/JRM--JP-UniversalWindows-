@@ -146,6 +146,58 @@ Module Module_Display
         datagrid.Columns(6).Visible = False
     End Sub
 
+
+    Public Sub displayReserved(datagrid As DataGridView, valueToSearch As String)
+        If valueToSearch = "" Then
+            Dim searchQuery As String = "SELECT * FROM table_transactions , tblguests WHERE table_transactions.`Status` = 'Reserved' AND tblguests.Remarks = 'Reserved' AND table_transactions.G_id = tblguests.GuestID"
+            Dim command As New MySqlCommand(searchQuery, connection)
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+            datagrid.AllowUserToAddRows = False
+            datagrid.DataSource = table
+        Else
+            Dim searchQuery As String = "SELECT * FROM table_transactions , tblguests WHERE table_transactions.`Status` = 'Reserved' AND
+            tblguests.Remarks = 'Reserved' AND table_transactions.G_id = tblguests.GuestID AND
+            CONCAT(tblguests.`Name`) LIKE '%" & valueToSearch & "%'"
+
+            Dim command As New MySqlCommand(searchQuery, connection)
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+            datagrid.AllowUserToAddRows = False
+            datagrid.DataSource = table
+        End If
+
+        datagrid.MultiSelect = False
+        datagrid.AllowUserToResizeColumns = False
+
+        datagrid.DefaultCellStyle.SelectionForeColor = Color.Black
+        datagrid.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI Semibold", 9.75, FontStyle.Bold)
+        datagrid.DefaultCellStyle.Font = New Font("Segoe UI Semibold", 9.75)
+
+        datagrid.AutoResizeColumns()
+        datagrid.Columns(0).HeaderText = "ID"
+        datagrid.Columns(1).Visible = False
+        datagrid.Columns(2).Visible = False
+        datagrid.Columns(3).Visible = False
+        datagrid.Columns(4).Visible = False
+        datagrid.Columns(5).Visible = False
+        datagrid.Columns(6).Visible = False
+        datagrid.Columns(7).Visible = False
+        datagrid.Columns(8).Visible = False
+        datagrid.Columns(9).Visible = False
+        datagrid.Columns(10).Visible = False
+        datagrid.Columns(11).Visible = True
+        datagrid.Columns(12).Visible = False
+        datagrid.Columns(13).Visible = True
+        datagrid.Columns(14).Visible = False
+        datagrid.Columns(15).Visible = False
+        datagrid.Columns(16).Visible = False
+        datagrid.Columns(17).Visible = True
+    End Sub
+
+
 End Module
 
 

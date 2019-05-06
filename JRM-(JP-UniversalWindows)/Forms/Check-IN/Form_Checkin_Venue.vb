@@ -54,7 +54,7 @@ Public Class Form_Checkin_Venue
         table2.Rows.Add(id, item, price, 1, total, "V000")
 
         Form_Checkin.DataGridView1.DataSource = table2
-
+        Form_Reservation.DataGridView1.DataSource = table2
 
         Dim i As Integer
         For i = 0 To Form_Checkin.DataGridView1.Rows.Count - 1
@@ -65,6 +65,16 @@ Public Class Form_Checkin_Venue
 
         Form_Checkin.Venues(Form_Checkin.StopV) = CheckServiceID
         Form_Checkin.StopV += 1
+
+        Dim x As Integer
+        For x = 0 To Form_Reservation.DataGridView1.Rows.Count - 1
+            Form_Reservation.PartialTotal = Val(Form_Reservation.DataGridView1.Rows(x).Cells(4).Value)
+        Next x
+        Form_Reservation.GrandTotal = Form_Reservation.GrandTotal + Form_Reservation.PartialTotal
+        Form_Reservation.lblGrandTotal.Text = FormatNumber(Form_Reservation.GrandTotal)
+        Form_Reservation.Venues(Form_Reservation.StopV) = CheckServiceID
+        Form_Reservation.StopV += 1
+
         Me.Close()
     End Sub
 

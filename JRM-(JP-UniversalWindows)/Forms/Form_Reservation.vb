@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class Form_Checkin
+Public Class Form_Reservation
     Public tempSub As Double = 0
     Public SubTot As Double = 0.00
     Public GrandTotal As Double = 0
@@ -11,6 +11,7 @@ Public Class Form_Checkin
     Public Items(5) As Integer
     Public ItemsMuch(5) As Integer
     Public StopI = 0
+
 
     Dim NewTransactionID As Integer
     Dim selectedRowIndex As Integer
@@ -26,10 +27,12 @@ Public Class Form_Checkin
         clearAll()
         resettable()
 
+        displayReserved(DataGridView2, "")
+        DisplayR(DataGridView3, Nothing)
+
         Me.WindowState = FormWindowState.Normal
     End Sub
     Public Sub resettable()
-
         table2.Rows.Clear()
         If continueonce = 0 Then
             table2.Columns.Add("ID", Type.GetType("System.String"))
@@ -43,8 +46,8 @@ Public Class Form_Checkin
             DataGridView1.AllowUserToAddRows = False
 
             DataGridView1.Columns(0).Visible = False
-            DataGridView1.Columns(2).Width = 40
-            DataGridView1.Columns(3).Width = 30
+            ''DataGridView1.Columns(2).Width = 40
+            ''DataGridView1.Columns(3).Width = 30
 
             DataGridView1.Columns(2).DefaultCellStyle.Format = "n2"
             DataGridView1.Columns(2).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
@@ -52,15 +55,21 @@ Public Class Form_Checkin
             DataGridView1.Columns(3).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             DataGridView1.Columns(4).DefaultCellStyle.Format = "n2"
             DataGridView1.Columns(4).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-            DataGridView1.Columns(4).Width = 45
+            ''DataGridView1.Columns(4).Width = 45
             DataGridView1.Columns(5).Visible = False
-            DataGridView1.Columns(5).Width = 0
+            ''DataGridView1.Columns(5).Width = 0
             continueonce = 1
         End If
     End Sub
 
     Public Sub clearAll()
-        ''table2 = New DataTable("Table")
+        Array.Clear(Venues, 0, Venues.Length)
+        StopV = 0
+        Array.Clear(Items, 0, Items.Length)
+        Array.Clear(ItemsMuch, 0, ItemsMuch.Length)
+        StopI = 0
+
+        ''table2 = New DataTable("Table2")
         txtGuest.Text = "___________________________________"
         ComboBox1.Text = "25.00"
         txtTotal.Text = 0
@@ -75,6 +84,12 @@ Public Class Form_Checkin
         time = DateTime.Now
         dateoutnew = Now.AddDays(1D)
         DateTimePicker1.Text = time.ToString(format)
+
+
+        ''Page2
+        lblName.Text = ""
+        lblTransID.Text = ""
+        ReservedID = Nothing
     End Sub
 
     Public Sub transID()
@@ -96,12 +111,12 @@ Public Class Form_Checkin
         closeDB()
 
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_Pick_Guest.Click
         Form_Checkin_Guest.ShowDialog()
     End Sub
 
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button_Add_Persons.Click
 
         Dim item As String
         item = "Quantity of [Persons]"
@@ -143,7 +158,7 @@ Public Class Form_Checkin
         Me.Close()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button_Pick_Locations.Click
         'Dim fdata As New Form_Checkin_Venue()
         'fdata.MdiParent = Me.MdiParent
         'fdata.Show()
@@ -189,15 +204,8 @@ Public Class Form_Checkin
             lblGrandTotal.Text = FormatNumber(GrandTotal)
         End If
     End Sub
-    Private Sub Button_CheckIN_Click(sender As Object, e As EventArgs) Handles Button_CheckIN.Click
-        'Dim advance As Integer = Val(txtAdvance.Text)
-        'Dim reserve As String = "0"
-        'Dim remarks As String = "Checkin"
-        'Dim stat As String = "Active"
+    Private Sub Button_CheckIN_Click(sender As Object, e As EventArgs) Handles Button_RESERVE.Click
 
-
-
-        ''-=-=-=-
         If CheckGuestID = Nothing Then
             MsgBox("Please Select A Guest", vbInformation, "Note [Error: No Guest Selected]")
         ElseIf txtAdvance.Text = Nothing Then
@@ -209,7 +217,7 @@ Public Class Form_Checkin
                 insert_command1.Parameters.Add("@a", MySqlDbType.Int64).Value = UID
                 insert_command1.Parameters.Add("@b", MySqlDbType.Int64).Value = CheckGuestID
                 insert_command1.Parameters.Add("@c", MySqlDbType.DateTime).Value = DateTime.Now
-                insert_command1.Parameters.Add("@d", MySqlDbType.VarChar).Value = "Checkin"
+                insert_command1.Parameters.Add("@d", MySqlDbType.VarChar).Value = "Reserved"
                 insert_command1.Parameters.Add("@e", MySqlDbType.Date).Value = time.ToString(format)
                 insert_command1.Parameters.Add("@f", MySqlDbType.Date).Value = time.AddDays(1D).ToString(format)
                 insert_command1.Parameters.Add("@g", MySqlDbType.Double).Value = txtDiscount.Text
@@ -218,7 +226,7 @@ Public Class Form_Checkin
 
                 If execCommand(insert_command1) Then
 
-                    Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Checkin' WHERE GuestID = " & CheckGuestID & "", connection)
+                    Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Reserved' WHERE GuestID = " & CheckGuestID & "", connection)
                     update_guest.ExecuteNonQuery()
 
                     ''Venues
@@ -226,7 +234,7 @@ Public Class Form_Checkin
                     For x = 0 To Venues(x)
                         If Venues(x) = Nothing Then
                         Else
-                            Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Occupied' WHERE VenueID = " & Venues(x) & "", connection)
+                            Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Reserved' WHERE VenueID = " & Venues(x) & "", connection)
                             update_Venue.ExecuteNonQuery()
                         End If
                     Next x
@@ -247,13 +255,23 @@ Public Class Form_Checkin
                             Loop
                             closeDB()
 
-                            mysql = "UPDATE table_items SET item_Qty = " & newQTY - Val(ItemsMuch(y)) & "" &
+                            If (newQTY <= Val(ItemsMuch(y))) Then
+                                mysql = "UPDATE table_items SET item_Qty = " & newQTY & ", Item_Status = '4'" &
                                 " WHERE Item_Id = " & Items(y)
-                            closeDB()
-                            conndb()
-                            cmd = New MySqlCommand(mysql, conn)
-                            cmd.ExecuteNonQuery()
-                            closeDB()
+                                closeDB()
+                                conndb()
+                                cmd = New MySqlCommand(mysql, conn)
+                                cmd.ExecuteNonQuery()
+                                closeDB()
+                            Else
+                                mysql = "UPDATE table_items SET item_Qty = " & newQTY - Val(ItemsMuch(y)) & "" &
+                                " WHERE Item_Id = " & Items(y)
+                                closeDB()
+                                conndb()
+                                cmd = New MySqlCommand(mysql, conn)
+                                cmd.ExecuteNonQuery()
+                                closeDB()
+                            End If
                         End If
                     Next y
 
@@ -327,13 +345,13 @@ Public Class Form_Checkin
                 ''
 
                 MsgBox("Transaction has been charged to the selected guest", vbInformation, "Charged to guest")
-
+                displayReserved(DataGridView2, "")
                 Me.Close()
             End If
         End If
     End Sub
 
-    Private Sub Button_Add_Item_Click(sender As Object, e As EventArgs) Handles Button_Add_Item.Click
+    Private Sub Button_Add_Item_Click(sender As Object, e As EventArgs) Handles Button_Pick_Item.Click
         If StopI = 15 Then
             Exit Sub
         End If
@@ -341,6 +359,8 @@ Public Class Form_Checkin
     End Sub
     Private Sub Form_Checkin_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         clearAll()
+        ReservedID = 0
+        SubTot = 0
     End Sub
 
     'Payments
@@ -359,17 +379,10 @@ Public Class Form_Checkin
 
         End Try
 
-        'Label6.Text = (Grand - Disco) - Advan
         txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
         If Grand <= Advan Then
             txtTotal.Text = "0.00"
         End If
-
-
-        'Label6.Text = (GrandTotal - Disco) - Advan
-        'txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
-        'txtTotal.Text = Double.Parse((Val(lblGrandTotal.Text) - Val(txtDiscount.Text)) - Val(txtAdvance.Text)).ToString("n2")
-
     End Sub
     Private Sub TxtDiscount_TextChanged(sender As Object, e As EventArgs) Handles txtDiscount.TextChanged
 
@@ -392,19 +405,6 @@ Public Class Form_Checkin
         If Grand <= Advan Then
             txtTotal.Text = "0.00"
         End If
-
-        'If Val(lblGrandTotal.Text) < Val(txtAdvance.Text) Or Val(lblGrandTotal.Text) = Val(txtAdvance.Text) Then
-        'txtTotal.Text = "0.00"
-        'ElseIf txtAdvance.Text = "" Or txtDiscount.Text = "" Then
-        'Exit Sub
-        'Else
-        'Dim Grand As Double = Double.Parse(lblGrandTotal.Text)
-        'Dim Advan As Double = Double.Parse(txtAdvance.Text)
-        'Dim Disco As Double = Double.Parse(txtDiscount.Text)
-        'Label6.Text = (Grand - Disco) - Advan
-        'txtTotal.Text = ((Grand - Advan) - Disco).ToString("00.00")
-        'End If
-        'txtTotal.Text = (Val(lblGrandTotal.Text) - (Val(lblGrandTotal.Text) - Val(txtDiscount.Text))).ToString("00.00")
     End Sub
 
     'payments
@@ -413,4 +413,184 @@ Public Class Form_Checkin
         OnlyNumbers(e)
     End Sub
 
+    Private Sub DataGridView2_Click(sender As Object, e As EventArgs) Handles DataGridView2.Click
+        Try
+            ReservedID = DataGridView2.CurrentRow.Cells(0).Value
+            lblTransID.Text = "TransID - " & ReservedID.ToString("0000")
+            lblName.Text = DataGridView2.CurrentRow.Cells(11).Value
+            DisplayR(DataGridView3, ReservedID)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        displayReserved(DataGridView2, TextBox1.Text)
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        If ReservedID = Nothing Then
+            Exit Sub
+        Else
+            connection.Open()
+            Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Checkin' WHERE GuestID = " & DataGridView2.CurrentRow.Cells("G_ID").Value & "", connection)
+            update_guest.ExecuteNonQuery()
+            connection.Dispose()
+            connection.Close()
+
+            connection.Open()
+            Dim update_transactions As New MySqlCommand("UPDATE table_transactions SET Status = 'Checkin' WHERE T_ID = " & DataGridView2.CurrentRow.Cells(0).Value & "", connection)
+            update_transactions.ExecuteNonQuery()
+            connection.Dispose()
+            connection.Close()
+
+            Dim k As Integer = 0
+            Dim nono As Integer = 0
+            For k = 0 To DataGridView3.Rows.Count - 1
+                If DataGridView3.Rows(k).Cells("Type").Value = "V000" Then
+                    nono = Integer.Parse(DataGridView3.Rows(k).Cells("Item_ID").Value)
+                    mysql = "UPDATE tblVenue SET Status = @status" &
+                     " WHERE VenueID = @ID"
+                    conndb()
+                    cmd = New MySqlCommand(mysql, conn)
+                    With cmd
+                        .Parameters.AddWithValue("@status", "Occupied")
+                        .Parameters.AddWithValue("@ID", nono)
+                        .ExecuteNonQuery()
+                    End With
+                    closeDB()
+                End If
+            Next k
+
+            clearAll()
+            displayReserved(DataGridView2, "")
+            DisplayR(DataGridView3, Nothing)
+            MsgBox("Transaction has been charged to the selected guest", vbInformation, "Guest Successfully Checked-IN")
+        End If
+    End Sub
+    Public Sub DisplayR(datagrid As DataGridView, valueToSearch As Integer)
+        table2.Rows.Clear()
+        Array.Clear(Venues, 0, Venues.Length)
+        StopV = 0
+        Array.Clear(Items, 0, Items.Length)
+        Array.Clear(ItemsMuch, 0, ItemsMuch.Length)
+        StopI = 0
+
+        Dim table As New DataTable()
+        ''====    ====    ====    ====    Persons    ====    ====    ====    ====    
+        Dim searchQuery As String = "SELECT * FROM table_transactions , table_transactiondetails WHERE 
+        table_transactions.T_id = table_transactiondetails.T_id AND table_transactions.`Status` = 'Reserved' AND
+        table_transactionDetails.T_id = '" & valueToSearch & "'"
+        Dim command As New MySqlCommand(searchQuery, connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        adapter.Fill(table)
+        ''====    ====    ====    ====    Venue    ====    ====    ====    ====    
+        Dim searchQuery2 As String = "SELECT * FROM table_transactions , table_transactiondetailsvenue WHERE
+        table_transactions.T_id = table_transactiondetailsvenue.T_id AND table_transactions.`Status` = 'Reserved' AND
+        table_transactiondetailsvenue.T_id = '" & valueToSearch & "'"
+        Dim command2 As New MySqlCommand(searchQuery2, connection)
+        Dim adapter2 As New MySqlDataAdapter(command2)
+        adapter2.Fill(table)
+
+        connection.Open()
+        dr = command2.ExecuteReader
+        Do Until dr.Read = False
+            Venues(StopV) = dr("Item_ID")
+            StopV = StopV + 1
+        Loop
+        connection.Dispose()
+        connection.Close()
+        ''====    ====    ====    ====    Items    ====    ====    ====    ====   
+        Dim searchQuery3 As String = "SELECT * FROM table_transactions , table_transactiondetailsitem WHERE
+        table_transactions.T_id = table_transactiondetailsitem.T_id AND table_transactions.`Status` = 'Reserved' AND
+        table_transactiondetailsitem.T_id = '" & valueToSearch & "'"
+
+        Dim command3 As New MySqlCommand(searchQuery3, connection)
+        Dim adapter3 As New MySqlDataAdapter(command3)
+        adapter3.Fill(table)
+
+        '' =======================================================================
+        datagrid.AllowUserToAddRows = False
+        datagrid.DataSource = table
+
+        datagrid.MultiSelect = False
+        datagrid.AllowUserToResizeColumns = False
+
+        datagrid.DefaultCellStyle.SelectionForeColor = Color.Black
+        datagrid.ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI Semibold", 9.75, FontStyle.Bold)
+        datagrid.DefaultCellStyle.Font = New Font("Segoe UI Semibold", 9.75)
+
+        datagrid.AutoResizeColumns()
+
+        datagrid.Columns("TDV_id").Visible = False
+        datagrid.Columns("TDI_id").Visible = False
+        datagrid.Columns(0).Visible = False
+        datagrid.Columns(1).Visible = False
+        datagrid.Columns(2).Visible = False
+        datagrid.Columns(3).Visible = False
+        datagrid.Columns(4).Visible = False
+        datagrid.Columns(5).Visible = False
+        datagrid.Columns(6).Visible = False
+        datagrid.Columns(7).Visible = False
+        datagrid.Columns(8).Visible = False
+        datagrid.Columns(9).Visible = False
+        datagrid.Columns(10).Visible = False
+        datagrid.Columns(11).Visible = False
+        datagrid.Columns(12).Visible = True
+        datagrid.Columns(12).HeaderText = "Selected Items"
+        datagrid.Columns(13).Visible = True
+        datagrid.Columns(13).HeaderText = "Price"
+        datagrid.Columns(14).Visible = True
+        datagrid.Columns(14).HeaderText = "Qty"
+        datagrid.Columns(15).Visible = True
+        datagrid.Columns(15).HeaderText = "sub-Total"
+        datagrid.Columns(16).Visible = False
+        datagrid.Columns(17).Visible = False
+    End Sub
+
+    Private Sub Button_Cancel_Reservation_Click(sender As Object, e As EventArgs) Handles Button_Cancel_Reservation.Click
+        If ReservedID = Nothing Then
+            Exit Sub
+        ElseIf MsgBox("Are you sure you want to cancel this Reservation?", vbQuestion + vbYesNo, "Cancel Reservation") = vbYes Then
+            connection.Open()
+            Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Available' WHERE GuestID = " & DataGridView2.CurrentRow.Cells("G_ID").Value & "", connection)
+            update_guest.ExecuteNonQuery()
+            connection.Dispose()
+            connection.Close()
+
+            connection.Open()
+            Dim update_transactions As New MySqlCommand("UPDATE table_transactions SET Status = 'Canceled' WHERE T_ID = " & DataGridView2.CurrentRow.Cells(0).Value & "", connection)
+            update_transactions.ExecuteNonQuery()
+            connection.Dispose()
+            connection.Close()
+
+            Dim k As Integer = 0
+            Dim nono As Integer = 0
+            For k = 0 To DataGridView3.Rows.Count - 1
+                If DataGridView3.Rows(k).Cells("Type").Value = "V000" Then
+                    nono = Integer.Parse(DataGridView3.Rows(k).Cells("Item_ID").Value)
+                    mysql = "UPDATE tblVenue SET Status = @status" &
+                         " WHERE VenueID = @ID"
+                    conndb()
+                    cmd = New MySqlCommand(mysql, conn)
+                    With cmd
+                        .Parameters.AddWithValue("@status", "Available")
+                        .Parameters.AddWithValue("@ID", nono)
+                        .ExecuteNonQuery()
+                    End With
+                    closeDB()
+                End If
+            Next k
+
+            clearAll()
+            displayReserved(DataGridView2, "")
+            MsgBox("Reservation has been Canceled", vbInformation, "Reservation Canceled")
+            DisplayR(DataGridView3, Nothing)
+        Else
+            clearAll()
+            displayReserved(DataGridView2, "")
+            DisplayR(DataGridView3, Nothing)
+        End If
+    End Sub
 End Class

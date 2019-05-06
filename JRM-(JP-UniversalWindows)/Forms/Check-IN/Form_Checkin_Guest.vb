@@ -112,6 +112,7 @@ Public Class Form_Checkin_Guest
     Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click
         CheckGuestID = ListView1.SelectedItems(0).SubItems(0).Text
         Form_Checkin.txtGuest.Text = txtGroupName.Text
+        Form_Reservation.txtGuest.Text = txtGroupName.Text
         ''Form_Checkin.txtName.Text = txtGroupName.Text
         ItsOKAY = 1
         CG = 0

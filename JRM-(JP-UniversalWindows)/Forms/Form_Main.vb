@@ -73,64 +73,7 @@ Public Class Form_Main
         Me.ToolStripStatusLabel3.Text = "Date and Time : " & datenow.ToString("MMMM dd, yyyy") & " " & TimeOfDay
     End Sub
 
-    Private Sub ExitConfirmation_Click(sender As Object, e As EventArgs) Handles ExitConfirmation.Click
-        UIDType = "NONE"
-        Procced = 0
-        'MMenu.close()
-        Form_Login_Background.Show()
-        Form_Login_Confirm.Show()
-        Me.Close()
-    End Sub
 
-    Private Sub Button_Users_Create_Click(sender As Object, e As EventArgs) Handles Button_Users_Create.Click
-        If UIDType = "Admin" Or UIDType = "Manager" Then
-            Form_CreateNew_User.ShowDialog()
-        Else
-            MsgBox("User is not authorized to create a new account. Please Login with authorized credentials.", vbCritical, "Error")
-        End If
-    End Sub
-
-    Private Sub Button_Users_Update_Click(sender As Object, e As EventArgs) Handles Button_Users_Update.Click
-
-        If UIDType = "Admin" Or UIDType = "Manager" Then
-            If UIDupdate = 0 Then
-                Return
-            Else
-                Dim search_command As New MySqlCommand("SELECT * FROM `tblusers` WHERE `UserID` = @id", connection)
-                search_command.Parameters.Add("@id", MySqlDbType.Int64).Value = UIDupdate
-                Dim adapter As New MySqlDataAdapter(search_command)
-                Dim table As New DataTable()
-                Try
-                    adapter.Fill(table)
-                    If table.Rows.Count > 0 Then
-                        Form_Update_User.txtbox_Fname.Text = table(0)(1)
-                        Form_Update_User.txtbox_Mname.Text = table(0)(2)
-                        Form_Update_User.txtbox_Lname.Text = table(0)(3)
-                        Form_Update_User.combox_Gender.Text = table(0)(4)
-                        Form_Update_User.txtbox_Email.Text = table(0)(5)
-                        Form_Update_User.txtbox_Contact.Text = table(0)(6)
-                        Form_Update_User.txtbox_Address.Text = table(0)(7)
-                        Form_Update_User.PickDate.Value = table(0)(9)
-                        Form_Update_User.combox_type.Text = table(0)(10)
-                        Form_Update_User.txtbox_Username.Text = table(0)(11)
-                        Form_Update_User.txtbox_Password.Text = table(0)(12)
-                    Else
-                        MessageBox.Show("No Data Found")
-                    End If
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
-                End Try
-
-                Form_Update_User.txtbox_CPassword.Text = ""
-                Form_Update_User.ShowDialog()
-            End If
-
-        Else
-            MsgBox("User is not authorized to create a new account! Please Login with authorized credentials.", vbCritical, "Error")
-        End If
-
-
-    End Sub
 
 
     Private Sub Button_Services_Create_Click(sender As Object, e As EventArgs) Handles Button_Services_Create.Click
@@ -152,60 +95,6 @@ Public Class Form_Main
     End Sub
 
 
-    Private Sub ItemsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemsToolStripMenuItem.Click
-        If IM = 0 Then
-            ItemsWindow = New Form_Management_Item
-            ItemsWindow.MdiParent = Me
-            ItemsWindow.Text = "Item Management Window"
-            ItemsWindow.WindowState = FormWindowState.Maximized
-            ItemsWindow.Show()
-            IM = 1
-        Else
-            ItemsWindow.WindowState = FormWindowState.Maximized
-            ItemsWindow.bringtofront()
-        End If
-    End Sub
-
-    Private Sub UsersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersToolStripMenuItem.Click
-        If UM = 0 Then
-            UserWindow = New Form_Management_User()
-            UserWindow.MdiParent = Me
-            UserWindow.Text = "User Management Window [List]" +
-            UserWindow.Show()
-            UM = 1
-        Else
-            UserWindow.WindowState = FormWindowState.Maximized
-            UserWindow.bringtofront()
-        End If
-    End Sub
-
-    Private Sub GuestToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuestToolStripMenuItem.Click
-        If GM = 0 Then
-            GuestWindow = New Form_Management_Guest()
-            GuestWindow.mdiparent = Me
-            GuestWindow.text = "Guest Management Window [List]"
-            GuestWindow.WindowState = FormWindowState.Maximized
-            GuestWindow.controlbox = False
-            GuestWindow.showicon = False
-            GuestWindow.show
-            GM = 1
-        Else
-            GuestWindow.WindowState = FormWindowState.Maximized
-            GuestWindow.bringtofront()
-        End If
-    End Sub
-
-    Private Sub CheckoutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckoutToolStripMenuItem.Click
-        If CO = 0 Then
-            CheckOutForm = New Form_CheckOut_GuestList()
-            CheckOutForm.MdiParent = Me
-            CheckOutForm.Show()
-            CO = 1
-        Else
-            CheckOutForm.WindowState = FormWindowState.Maximized
-            CheckOutForm.BringToFront()
-        End If
-    End Sub
 
     Private Sub ToolStripButton12_Click(sender As Object, e As EventArgs) Handles toolbarLogOUT.Click
         UIDType = "NONE"
@@ -218,6 +107,8 @@ Public Class Form_Main
 
     Private Sub ToolbarCheckIn_Click(sender As Object, e As EventArgs) Handles toolbarCheckIn.Click
         CheckOutForm.Close()
+        Form_Checkin.ControlBox = False
+        Form_Checkin.ShowIcon = False
         Form_Checkin.ShowDialog()
     End Sub
 
@@ -225,6 +116,8 @@ Public Class Form_Main
         If CO = 0 Then
             CheckOutForm = New Form_CheckOut_GuestList()
             CheckOutForm.MdiParent = Me
+            CheckOutForm.ControlBox = False
+            CheckOutForm.ShowIcon = False
             CheckOutForm.Show()
             CO = 1
         Else
@@ -288,5 +181,11 @@ Public Class Form_Main
             UserWindow.WindowState = FormWindowState.Maximized
             UserWindow.bringtofront()
         End If
+    End Sub
+
+    Private Sub ToolbarReserve_Click(sender As Object, e As EventArgs) Handles toolbarReserve.Click
+        CheckOutForm.Close()
+        Form_Reservation.ShowIcon = False
+        Form_Reservation.ShowDialog()
     End Sub
 End Class

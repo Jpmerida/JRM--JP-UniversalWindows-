@@ -99,6 +99,18 @@
     <Compile Include="Forms\Check-IN\Form_Checkin_Venue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Form_Reservation_Checkin.Designer.vb">
+      <DependentUpon>Form_Reservation_Checkin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Reservation_Checkin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Update_Item.Designer.vb">
+      <DependentUpon>Form_Update_Item.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Update_Item.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Check-OUT\Form_CheckOut_GuestList.Designer.vb">
       <DependentUpon>Form_CheckOut_GuestList.vb</DependentUpon>
     </Compile>
@@ -121,6 +133,12 @@
       <DependentUpon>Form_CheckOut.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Check-OUT\Form_CheckOut.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_Reservation.Designer.vb">
+      <DependentUpon>Form_Reservation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_Reservation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login\Form_Login_Background.Designer.vb">
@@ -286,6 +304,9 @@
     <EmbeddedResource Include="Forms\Form_Management_Item.resx">
       <DependentUpon>Form_Management_Item.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Reservation.resx">
+      <DependentUpon>Form_Reservation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Management_Venue.resx">
       <DependentUpon>Form_Management_Venue.vb</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +333,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Management_Guest.resx">
       <DependentUpon>Form_Management_Guest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Reservation_Checkin.resx">
+      <DependentUpon>Form_Reservation_Checkin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_Update_Item.resx">
+      <DependentUpon>Form_Update_Item.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Form_Login_Background.resx">
       <DependentUpon>Form_Login_Background.vb</DependentUpon>

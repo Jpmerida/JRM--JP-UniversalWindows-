@@ -26,7 +26,6 @@ Partial Class Form_Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form_Main))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ExitConfirmation = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -66,11 +65,6 @@ Partial Class Form_Main
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
         Me.Button_Items = New System.Windows.Forms.Button()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CheckoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GuestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.UsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ItemsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.toolbarLogOUT = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
@@ -87,6 +81,8 @@ Partial Class Form_Main
         Me.toolbarItems = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.toolbarUsers = New System.Windows.Forms.ToolStripButton()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuLOGOUT = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.Tab_Main.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -105,8 +101,8 @@ Partial Class Form_Main
         Me.GroupBox4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.GroupBox12.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -118,20 +114,13 @@ Partial Class Form_Main
         'StatusStrip1
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitConfirmation, Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel4, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel3})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 705)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.StatusStrip1.Size = New System.Drawing.Size(1260, 24)
         Me.StatusStrip1.TabIndex = 6
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ExitConfirmation
-        '
-        Me.ExitConfirmation.Font = New System.Drawing.Font("Segoe UI Black", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ExitConfirmation.Name = "ExitConfirmation"
-        Me.ExitConfirmation.Size = New System.Drawing.Size(117, 19)
-        Me.ExitConfirmation.Text = "          EXIT          "
         '
         'ToolStripStatusLabel4
         '
@@ -156,7 +145,7 @@ Partial Class Form_Main
         '
         Me.ToolStripStatusLabel3.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(990, 19)
+        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(1107, 19)
         Me.ToolStripStatusLabel3.Spring = True
         Me.ToolStripStatusLabel3.Text = "Date and Time :"
         '
@@ -513,46 +502,13 @@ Partial Class Form_Main
         Me.Button_Items.Text = "Items"
         Me.Button_Items.UseVisualStyleBackColor = True
         '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckoutToolStripMenuItem, Me.GuestToolStripMenuItem, Me.UsersToolStripMenuItem, Me.ItemsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1260, 24)
-        Me.MenuStrip1.TabIndex = 10
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CheckoutToolStripMenuItem
-        '
-        Me.CheckoutToolStripMenuItem.Name = "CheckoutToolStripMenuItem"
-        Me.CheckoutToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.CheckoutToolStripMenuItem.Text = "Checkout"
-        '
-        'GuestToolStripMenuItem
-        '
-        Me.GuestToolStripMenuItem.Name = "GuestToolStripMenuItem"
-        Me.GuestToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.GuestToolStripMenuItem.Text = "guest"
-        '
-        'UsersToolStripMenuItem
-        '
-        Me.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem"
-        Me.UsersToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
-        Me.UsersToolStripMenuItem.Text = "users"
-        '
-        'ItemsToolStripMenuItem
-        '
-        Me.ItemsToolStripMenuItem.Name = "ItemsToolStripMenuItem"
-        Me.ItemsToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
-        Me.ItemsToolStripMenuItem.Text = "items"
-        '
         'ToolStrip1
         '
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbarLogOUT, Me.ToolStripSeparator9, Me.toolbarCheckIn, Me.ToolStripButton11, Me.toolbarCheckOut, Me.ToolStripSeparator6, Me.toolbarReserve, Me.ToolStripSeparator7, Me.toolbarGuests, Me.ToolStripSeparator1, Me.toolbarLocations, Me.ToolStripSeparator8, Me.toolbarItems, Me.ToolStripSeparator10, Me.toolbarUsers})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1260, 39)
         Me.ToolStrip1.TabIndex = 15
@@ -664,6 +620,24 @@ Partial Class Form_Main
         Me.toolbarUsers.Text = "Users Management"
         Me.toolbarUsers.ToolTipText = "Users"
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuLOGOUT})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1260, 29)
+        Me.MenuStrip1.TabIndex = 17
+        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip1.Visible = False
+        '
+        'ToolStripMenuLOGOUT
+        '
+        Me.ToolStripMenuLOGOUT.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.logout
+        Me.ToolStripMenuLOGOUT.Name = "ToolStripMenuLOGOUT"
+        Me.ToolStripMenuLOGOUT.Size = New System.Drawing.Size(105, 25)
+        Me.ToolStripMenuLOGOUT.Text = "Log-OUT"
+        '
         'Form_Main
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -704,10 +678,10 @@ Partial Class Form_Main
         Me.GroupBox4.ResumeLayout(False)
         Me.TabPage5.ResumeLayout(False)
         Me.GroupBox12.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -717,7 +691,6 @@ Partial Class Form_Main
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
-    Friend WithEvents ExitConfirmation As ToolStripStatusLabel
     Friend WithEvents Tab_Main As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
@@ -754,11 +727,6 @@ Partial Class Form_Main
     Friend WithEvents Button_Items As Button
     Friend WithEvents Panel1 As Panel
     Public WithEvents Timer1 As Timer
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents CheckoutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GuestToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents UsersToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ItemsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents toolbarCheckIn As ToolStripButton
     Friend WithEvents ToolStripButton11 As ToolStripSeparator
@@ -775,4 +743,6 @@ Partial Class Form_Main
     Friend WithEvents toolbarItems As ToolStripButton
     Friend WithEvents toolbarGuests As ToolStripButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuLOGOUT As ToolStripMenuItem
 End Class

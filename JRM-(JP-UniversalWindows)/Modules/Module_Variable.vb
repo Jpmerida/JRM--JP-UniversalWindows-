@@ -18,12 +18,19 @@
 
 
     Public continueonce As Integer = 0
-
-
-
     Public table2 As New DataTable("Table")
+
+    '________________________Reservation______________
+    Public ReservedID As Integer = 0
+    ''Public Venues(5) As Integer
+    ''Public StopV = 0
+    ''Public Items(5) As Integer
+    ''Public ItemsMuch(5) As Integer
+    ''Public StopI = 0
+
 
     Public gid As Integer
     Public getTid As Integer
+    Public ForUpdateITEM_ID As Integer = 0 ''For Update ITEM ID
 
 End Module

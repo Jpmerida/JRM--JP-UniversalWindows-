@@ -15,11 +15,15 @@ Public Class Form_CheckOut_GuestList
     Public SupposedToPay As Double
 
     Private Sub Form_CheckOut_GuestList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
         ResetAll()
         DisplayList1(ListView2, "")
     End Sub
 
     Private Sub ResetAll()
+        Array.Clear(Venues, 0, Venues.Length)
+        StopV = 0
+
         Over_all_Charge = 0
         myChange = 0
         Panel3.Visible = False
@@ -38,7 +42,7 @@ Public Class Form_CheckOut_GuestList
     Public Sub DisplayList1(lv As ListView, searchme As String)
         mysql = "SELECT * FROM tblguests , table_transactions, tblGuestDetails WHERE 
         CONCAT(tblguests.Name,tblguests.contactno,tblguestdetails.Fname,tblguestdetails.Mname,tblguestdetails.Lname) like '%" & searchme & "%' AND
-        tblguests.Remarks = table_transactions.`Status` AND tblguests.GuestID = table_transactions.G_id AND tblguests.GuestID = tblguestdetails.GuestID ORDER BY TransDate asc"
+        tblguests.Remarks = table_transactions.`Status` AND tblguests.GuestID = table_transactions.G_id AND table_transactions.`Status` = 'Checkin' AND tblguests.GuestID = tblguestdetails.GuestID ORDER BY TransDate asc"
         closeDB()
         conndb()
         cmd = New MySqlCommand(mysql, conn)
@@ -64,6 +68,8 @@ Public Class Form_CheckOut_GuestList
 
     Private Sub DisplayList2(lv As ListView, searchme As String)
         ListView1.Items.Clear()
+        Array.Clear(Venues, 0, Venues.Length)
+        StopV = 0
         '================= Guest Details
         mysql = "SELECT * FROM tblguestdetails WHERE tblguestdetails.GuestID ='" & gid & "'"
         closeDB()
@@ -287,6 +293,12 @@ Public Class Form_CheckOut_GuestList
                     closeDB()
                 End If
             Next k
+
+            connection.Open()
+            Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Available' WHERE GuestID = " & ListView2.SelectedItems(0).SubItems(0).Text & "", connection)
+            update_guest.ExecuteNonQuery()
+            connection.Dispose()
+            connection.Close()
 
             connection.Open()
             Dim update_Transactions As New MySqlCommand("UPDATE table_Transactions SET Status = 'Checkout' WHERE T_ID = " & getTid & "", connection)

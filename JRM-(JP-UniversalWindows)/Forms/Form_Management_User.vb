@@ -20,6 +20,7 @@ Public Class Form_Management_User
 
 
     Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
+        UIDupdate = 0
         UM = 0
         Me.Close()
     End Sub
@@ -72,5 +73,53 @@ Public Class Form_Management_User
 
     Private Sub Form_Management_User_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         UM = 0
+    End Sub
+
+    Private Sub Button_Users_Create_Click(sender As Object, e As EventArgs) Handles Button_Users_Create.Click
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            Form_CreateNew_User.ShowDialog()
+        Else
+            MsgBox("User is not authorized to create a new account. Please Login with authorized credentials.", vbCritical, "Error")
+        End If
+    End Sub
+
+    Private Sub Button_Users_Update_Click(sender As Object, e As EventArgs) Handles Button_Users_Update.Click
+
+        If UIDType = "Admin" Or UIDType = "Manager" Then
+            If UIDupdate = 0 Then
+                Return
+            Else
+                Dim search_command As New MySqlCommand("SELECT * FROM `tblusers` WHERE `UserID` = @id", connection)
+                search_command.Parameters.Add("@id", MySqlDbType.Int64).Value = UIDupdate
+                Dim adapter As New MySqlDataAdapter(search_command)
+                Dim table As New DataTable()
+                Try
+                    adapter.Fill(table)
+                    If table.Rows.Count > 0 Then
+                        Form_Update_User.txtbox_Fname.Text = table(0)(1)
+                        Form_Update_User.txtbox_Mname.Text = table(0)(2)
+                        Form_Update_User.txtbox_Lname.Text = table(0)(3)
+                        Form_Update_User.combox_Gender.Text = table(0)(4)
+                        Form_Update_User.txtbox_Email.Text = table(0)(5)
+                        Form_Update_User.txtbox_Contact.Text = table(0)(6)
+                        Form_Update_User.txtbox_Address.Text = table(0)(7)
+                        Form_Update_User.PickDate.Value = table(0)(9)
+                        Form_Update_User.combox_type.Text = table(0)(10)
+                        Form_Update_User.txtbox_Username.Text = table(0)(11)
+                        Form_Update_User.txtbox_Password.Text = table(0)(12)
+                    Else
+                        MessageBox.Show("No Data Found")
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
+
+                Form_Update_User.txtbox_CPassword.Text = ""
+                Form_Update_User.ShowDialog()
+            End If
+
+        Else
+            MsgBox("User is not authorized to create a new account! Please Login with authorized credentials.", vbCritical, "Error")
+        End If
     End Sub
 End Class

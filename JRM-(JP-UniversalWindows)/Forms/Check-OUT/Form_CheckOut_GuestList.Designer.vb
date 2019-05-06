@@ -486,10 +486,11 @@ Partial Class Form_CheckOut_GuestList
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.TextBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form_CheckOut_GuestList"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "[Check-Out]"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
