@@ -31,6 +31,12 @@
 
     Public gid As Integer
     Public getTid As Integer
+
+    Public getID2 As Integer
+    Public getTID2 As Integer
     Public ForUpdateITEM_ID As Integer = 0 ''For Update ITEM ID
+
+    Public test3 As DateTime
+    Public test5 As String
 
 End Module

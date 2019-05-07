@@ -37,6 +37,7 @@ Partial Class Form_CheckOut_GuestList
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblOverallCharge = New System.Windows.Forms.Label()
@@ -64,7 +65,6 @@ Partial Class Form_CheckOut_GuestList
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -173,6 +173,11 @@ Partial Class Form_CheckOut_GuestList
         '
         Me.ColumnHeader12.Text = "Item_ID"
         Me.ColumnHeader12.Width = 0
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "type"
+        Me.ColumnHeader13.Width = 0
         '
         'Label2
         '
@@ -464,11 +469,6 @@ Partial Class Form_CheckOut_GuestList
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(464, 157)
         Me.Panel4.TabIndex = 28
-        '
-        'ColumnHeader13
-        '
-        Me.ColumnHeader13.Text = "type"
-        Me.ColumnHeader13.Width = 0
         '
         'Form_CheckOut_GuestList
         '

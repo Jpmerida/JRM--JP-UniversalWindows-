@@ -80,6 +80,23 @@ Public Class Form_CheckOut_GuestList
             Label1.Text = dr("Fname") + " " + dr("Mname") + " " + dr("Lname")
         Loop
         closeDB()
+        '================= Transaction Details
+        mysql = "SELECT * FROM table_Transactions WHERE T_ID ='" & getTid & "'"
+        closeDB()
+        conndb()
+        cmd = New MySqlCommand(mysql, conn)
+        Dim value As Integer
+        dr = cmd.ExecuteReader
+        Do Until dr.Read = False
+            value = Val(dr("T_ID"))
+            dcount = dr("discount")
+            advpay = dr("Advance")
+            test2 = dr("Total")
+            Label7.Text = "TransID - " & value.ToString("0000")
+            lblDiscount.Text = Double.Parse(dcount).ToString("n2")
+            lbladvancePay.Text = Double.Parse(advpay).ToString("n2")
+        Loop
+        closeDB()
         '================= Persons
         mysql = "SELECT * FROM table_transactions , table_transactiondetails WHERE 
         table_transactions.T_id = table_transactiondetails.T_id AND table_transactions.`Status` = 'Checkin' AND
@@ -88,10 +105,10 @@ Public Class Form_CheckOut_GuestList
         conndb()
         cmd = New MySqlCommand(mysql, conn)
         dr = cmd.ExecuteReader
-        Dim value As Integer
+
         lv.Items.Clear()
         Do Until dr.Read = False
-            value = Val(dr("T_ID"))
+
             newline = lv.Items.Add(dr("T_id"))
             newline.SubItems.Add(dr("Item_name"))
             newline.SubItems.Add(Double.Parse(dr("Item_Price")).ToString("n2"))
@@ -99,12 +116,7 @@ Public Class Form_CheckOut_GuestList
             newline.SubItems.Add(Double.Parse(dr("SubTotal")).ToString("n2"))
             newline.SubItems.Add(dr("Item_ID"))
             newline.SubItems.Add(dr("Type"))
-            dcount = dr("discount")
-            advpay = dr("Advance")
-            test2 = dr("Total")
-            Label7.Text = "TransID - " & value.ToString("0000")
-            lblDiscount.Text = Double.Parse(dcount).ToString("n2")
-            lbladvancePay.Text = Double.Parse(advpay).ToString("n2")
+
         Loop
         closeDB()
         '================= Cottage/Location
@@ -166,8 +178,8 @@ Public Class Form_CheckOut_GuestList
     End Sub
 
     Private Sub ListView2_Click(sender As Object, e As EventArgs) Handles ListView2.Click
-        gid = ListView2.SelectedItems(0).SubItems(0).Text
-        getTid = ListView2.SelectedItems(0).SubItems(4).Text
+        gid = ListView2.SelectedItems(0).SubItems(0).Text 'guest ID
+        getTid = ListView2.SelectedItems(0).SubItems(4).Text 'Transact ID
         DisplayList2(ListView1, getTid)
     End Sub
 
@@ -281,12 +293,12 @@ Public Class Form_CheckOut_GuestList
             For k = 0 To ListView1.Items.Count - 1
                 If ListView1.Items(k).SubItems(6).Text = "V000" Then
                     nono = Integer.Parse(ListView1.Items(k).SubItems(5).Text)
-                    mysql = "UPDATE tblVenue SET Status = @status" &
+                    mysql = "UPDATE tblVenue SET Status = 'Available'" &
                 " WHERE VenueID = @ID"
                     conndb()
                     cmd = New MySqlCommand(mysql, conn)
                     With cmd
-                        .Parameters.AddWithValue("@status", "Available")
+                        '.Parameters.AddWithValue("@status", "Available")
                         .Parameters.AddWithValue("@ID", nono)
                         .ExecuteNonQuery()
                     End With
@@ -295,7 +307,7 @@ Public Class Form_CheckOut_GuestList
             Next k
 
             connection.Open()
-            Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Available' WHERE GuestID = " & ListView2.SelectedItems(0).SubItems(0).Text & "", connection)
+            Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Available', Status = 'Active' WHERE GuestID = " & gid & "", connection)
             update_guest.ExecuteNonQuery()
             connection.Dispose()
             connection.Close()

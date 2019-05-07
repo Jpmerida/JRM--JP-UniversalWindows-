@@ -35,12 +35,14 @@ Public Class Form_CreateNew_Guest
             MsgBox("Missing Details!", vbExclamation, "Note")
         Else
             Dim NewGuestID As Integer
-            Dim insert_command1 As New MySqlCommand("INSERT INTO `tblguests`(`Name`,`Email`,`ContactNo`, `Address`, `GuestCreated`) VALUES (@n,@e,@c,@ad,@time)", connection)
+            Dim insert_command1 As New MySqlCommand("INSERT INTO `tblguests`(`Name`,`Email`,`ContactNo`, `Address`, `GuestCreated`, `Status`, `Remarks`) VALUES (@n,@e,@c,@ad,@time,@f,@g)", connection)
             insert_command1.Parameters.Add("@n", MySqlDbType.VarChar).Value = txtGroupName.Text
             insert_command1.Parameters.Add("@e", MySqlDbType.VarChar).Value = txtEmail.Text
             insert_command1.Parameters.Add("@c", MySqlDbType.VarChar).Value = txtContact.Text
             insert_command1.Parameters.Add("@ad", MySqlDbType.VarChar).Value = txtAddress.Text
             insert_command1.Parameters.Add("@time", MySqlDbType.DateTime).Value = DateTime.Now
+            insert_command1.Parameters.Add("@f", MySqlDbType.VarChar).Value = "Active"
+            insert_command1.Parameters.Add("@g", MySqlDbType.VarChar).Value = "Available"
 
             If execCommand(insert_command1) Then
                 Dim command As New MySqlCommand("SELECT MAX(`GuestID`) FROM `tblguests`", connection)
@@ -57,6 +59,7 @@ Public Class Form_CreateNew_Guest
                 If execCommand(insert_command2) Then
                     MessageBox.Show("Data Saved")
                     viewguests(Form_Management_Guest.ListView1, "")
+                    viewguests(Form_Checkin_Guest.ListView1, "")
                     Me.Close()
                 Else
                     MessageBox.Show("Data NOT Updated")
@@ -86,7 +89,7 @@ Public Class Form_CreateNew_Guest
         ComboBox1.Text = ""
     End Sub
 
-    Private Sub TxtFname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMname.KeyPress, txtLname.KeyPress, txtFname.KeyPress, ComboBox1.KeyPress
+    Private Sub TxtFname_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMname.KeyPress, ComboBox1.KeyPress
         OnlyLetters(e)
     End Sub
 End Class

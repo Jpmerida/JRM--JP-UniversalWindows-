@@ -5,9 +5,11 @@ Public Class Form_Checkin_Venue
 
     Private Sub CheckinSelector_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''InitializeComponent()
+        CheckServiceID = 0
         clearall()
 
-        populateDatagridview2(DataGridView1, "")
+        populateDatagridview10(ListView1, "")
+        Label2.Text = test5
 
     End Sub
     Sub clearall()
@@ -53,8 +55,16 @@ Public Class Form_Checkin_Venue
         ''CheckinForm.DataGridView1.Rows.Add(id, item, price, "1", total, True)
         table2.Rows.Add(id, item, price, 1, total, "V000")
 
+        ''For Form_Reservation_Checkin FORM
+        Form_Reservation_Checkin.DataGridView1.Rows.Add(id, item, price, 1, total, "V000")
+        Form_Reservation_Checkin.Venues(Form_Reservation_Checkin.StopV) = CheckServiceID
+        Form_Reservation_Checkin.StopV += 1
+        ''=-=-=---=-=-=-=-=-=-=-=-=-=-=-=-=
+
         Form_Checkin.DataGridView1.DataSource = table2
         Form_Reservation.DataGridView1.DataSource = table2
+
+
 
         Dim i As Integer
         For i = 0 To Form_Checkin.DataGridView1.Rows.Count - 1
@@ -80,25 +90,32 @@ Public Class Form_Checkin_Venue
 
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-        populateDatagridview(DataGridView1, TextBox1.Text)
+        populateDatagridview10(ListView1, TextBox1.Text)
     End Sub
 
-    Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
-        Try
-            Dim img As Byte()
-            img = DataGridView1.CurrentRow.Cells(5).Value
-            Dim ms As New MemoryStream(img)
 
-            PictureBox1.Image = Image.FromStream(ms)
-            CheckServiceID = DataGridView1.CurrentRow.Cells(0).Value
+    Private Sub TxtPrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrice.KeyPress
+        If (e.KeyChar < "0" OrElse e.KeyChar > "9") _
+    AndAlso e.KeyChar <> ControlChars.Back AndAlso e.KeyChar <> "." Then
+            'cancel keys
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub ListView1_Click(sender As Object, e As EventArgs) Handles ListView1.Click
+
+        Try
+            PictureBox1.ImageLocation = ListView1.SelectedItems(0).SubItems(5).Text
+
+            CheckServiceID = ListView1.SelectedItems(0).SubItems(0).Text
             ''CheckServiceTypeID = DataGridView1.CurrentRow.Cells(1).Value
-            txtName.Text = DataGridView1.CurrentRow.Cells(2).Value
-            txtStatus.Text = DataGridView1.CurrentRow.Cells(3).Value
+            txtName.Text = ListView1.SelectedItems(0).SubItems(2).Text
+            txtStatus.Text = ListView1.SelectedItems(0).SubItems(3).Text
             Dim price As Double
-            price = DataGridView1.CurrentRow.Cells(4).Value
+            price = ListView1.SelectedItems(0).SubItems(4).Text
             txtPrice.Text = price.ToString("n2")
 
-            mysql = "select * from tbllocationtype where CategoryID ='" & DataGridView1.CurrentRow.Cells(1).Value & "'"
+            mysql = "select * from tbllocationtype where CategoryID ='" & ListView1.SelectedItems(0).SubItems(1).Text & "'"
             conndb()
             cmd = New MySqlCommand(mysql, conn)
             dr = cmd.ExecuteReader(CommandBehavior.CloseConnection)
@@ -111,13 +128,5 @@ Public Class Form_Checkin_Venue
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub TxtPrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrice.KeyPress
-        If (e.KeyChar < "0" OrElse e.KeyChar > "9") _
-    AndAlso e.KeyChar <> ControlChars.Back AndAlso e.KeyChar <> "." Then
-            'cancel keys
-            e.Handled = True
-        End If
     End Sub
 End Class

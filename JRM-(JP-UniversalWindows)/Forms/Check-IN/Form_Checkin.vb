@@ -31,6 +31,7 @@ Public Class Form_Checkin
     Public Sub resettable()
 
         table2.Rows.Clear()
+        DataGridView1.DataSource = table2
         If continueonce = 0 Then
             table2.Columns.Add("ID", Type.GetType("System.String"))
             table2.Columns.Add("ITEM", Type.GetType("System.String"))
@@ -56,6 +57,8 @@ Public Class Form_Checkin
             DataGridView1.Columns(5).Visible = False
             DataGridView1.Columns(5).Width = 0
             continueonce = 1
+
+
         End If
     End Sub
 
@@ -150,6 +153,10 @@ Public Class Form_Checkin
         If StopV = 5 Then
             Exit Sub
         End If
+        Dim time As DateTime = DateTimePicker1.Value
+        Dim format As String = "yyyy-MM-dd"
+        test3 = DateTimePicker1.Value
+        test5 = DateTimePicker1.Value.ToString("yyyy-MM-dd")
         Form_Checkin_Venue.ShowDialog()
     End Sub
 
@@ -215,7 +222,7 @@ Public Class Form_Checkin
                 insert_command1.Parameters.Add("@g", MySqlDbType.Double).Value = txtDiscount.Text
                 insert_command1.Parameters.Add("@h", MySqlDbType.Double).Value = txtAdvance.Text
                 insert_command1.Parameters.Add("@i", MySqlDbType.Double).Value = txtTotal.Text
-
+                'insert_command1.Parameters.Add("@j", MySqlDbType.Double).Value = Now.ToLongTimeString()
                 If execCommand(insert_command1) Then
 
                     Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Checkin' WHERE GuestID = " & CheckGuestID & "", connection)
@@ -327,7 +334,8 @@ Public Class Form_Checkin
                 ''
 
                 MsgBox("Transaction has been charged to the selected guest", vbInformation, "Charged to guest")
-
+                clearAll()
+                resettable()
                 Me.Close()
             End If
         End If

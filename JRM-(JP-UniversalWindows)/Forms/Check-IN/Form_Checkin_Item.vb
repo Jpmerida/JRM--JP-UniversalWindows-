@@ -48,7 +48,6 @@ Public Class Form_Checkin_Item
         End If
 
 
-
         Dim id As Integer
         id = ListView1.SelectedItems.Item(0).SubItems(0).Text
 
@@ -61,8 +60,15 @@ Public Class Form_Checkin_Item
 
         table2.Rows.Add(id, item, price, selected, total, "I000")
 
+        Form_Reservation_Checkin.DataGridView1.Rows.Add(id, item, price, selected, total, "I000")
+        Form_Reservation_Checkin.ItemsMuch(Form_Reservation_Checkin.StopI) = ComboBox_Qty.Text
+        Form_Reservation_Checkin.Items(Form_Reservation_Checkin.StopI) = tempId
+        Form_Reservation_Checkin.StopI += 1
+
+
         Form_Checkin.DataGridView1.DataSource = table2
         Form_Reservation.DataGridView1.DataSource = table2
+
 
         Dim i As Integer
         For i = 0 To Form_Checkin.DataGridView1.Rows.Count - 1

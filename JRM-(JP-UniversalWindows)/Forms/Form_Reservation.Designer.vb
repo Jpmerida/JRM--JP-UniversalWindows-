@@ -57,32 +57,45 @@ Partial Class Form_Reservation
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button_RESERVE = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button_Cancel_Reservation = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.lblName = New System.Windows.Forms.Label()
-        Me.lblTransID = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lbltime = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.lblOverallCharge = New System.Windows.Forms.Label()
+        Me.lbladvancePay = New System.Windows.Forms.Label()
+        Me.lblDiscount = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lbltotalcharge = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblguestname = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label14
@@ -360,7 +373,6 @@ Partial Class Form_Reservation
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Enabled = False
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.Label11.Location = New System.Drawing.Point(41, 113)
         Me.Label11.Name = "Label11"
@@ -371,7 +383,6 @@ Partial Class Form_Reservation
         'DateTimePicker2
         '
         Me.DateTimePicker2.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker2.Enabled = False
         Me.DateTimePicker2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
         Me.DateTimePicker2.Location = New System.Drawing.Point(223, 107)
@@ -426,7 +437,6 @@ Partial Class Form_Reservation
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Enabled = False
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.Label1.Location = New System.Drawing.Point(43, 150)
         Me.Label1.Name = "Label1"
@@ -496,8 +506,8 @@ Partial Class Form_Reservation
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
@@ -505,6 +515,304 @@ Partial Class Form_Reservation
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1109, 515)
         Me.TabControl1.TabIndex = 1
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.GroupBox5)
+        Me.TabPage2.Controls.Add(Me.GroupBox4)
+        Me.TabPage2.Controls.Add(Me.Button1)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 39)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1101, 472)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "                        RESERVATION LIST                          "
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Stencil", 24.0!, System.Drawing.FontStyle.Bold)
+        Me.Button2.Location = New System.Drawing.Point(382, 374)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(217, 66)
+        Me.Button2.TabIndex = 36
+        Me.Button2.Text = "CANCEL"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.lbltime)
+        Me.GroupBox5.Controls.Add(Me.Label21)
+        Me.GroupBox5.Controls.Add(Me.DataGridView3)
+        Me.GroupBox5.Controls.Add(Me.lblOverallCharge)
+        Me.GroupBox5.Controls.Add(Me.lbladvancePay)
+        Me.GroupBox5.Controls.Add(Me.lblDiscount)
+        Me.GroupBox5.Controls.Add(Me.Label19)
+        Me.GroupBox5.Controls.Add(Me.Label18)
+        Me.GroupBox5.Controls.Add(Me.Label16)
+        Me.GroupBox5.Controls.Add(Me.lbltotalcharge)
+        Me.GroupBox5.Controls.Add(Me.Label10)
+        Me.GroupBox5.Controls.Add(Me.lblguestname)
+        Me.GroupBox5.Controls.Add(Me.Label12)
+        Me.GroupBox5.Controls.Add(Me.lblName)
+        Me.GroupBox5.Controls.Add(Me.Label8)
+        Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox5.Location = New System.Drawing.Point(382, 6)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(711, 362)
+        Me.GroupBox5.TabIndex = 11
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Booking Details"
+        '
+        'lbltime
+        '
+        Me.lbltime.AutoSize = True
+        Me.lbltime.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltime.Location = New System.Drawing.Point(489, 28)
+        Me.lbltime.Name = "lbltime"
+        Me.lbltime.Size = New System.Drawing.Size(216, 30)
+        Me.lbltime.TabIndex = 37
+        Me.lbltime.Text = "[ = = = = = = = = =]"
+        Me.lbltime.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(380, 38)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(103, 17)
+        Me.Label21.TabIndex = 36
+        Me.Label21.Text = "Time Expected :"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.AllowUserToAddRows = False
+        Me.DataGridView3.AllowUserToDeleteRows = False
+        Me.DataGridView3.AllowUserToResizeColumns = False
+        Me.DataGridView3.AllowUserToResizeRows = False
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(6, 111)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
+        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView3.Size = New System.Drawing.Size(699, 196)
+        Me.DataGridView3.TabIndex = 1
+        '
+        'lblOverallCharge
+        '
+        Me.lblOverallCharge.BackColor = System.Drawing.Color.Transparent
+        Me.lblOverallCharge.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOverallCharge.ForeColor = System.Drawing.Color.DarkRed
+        Me.lblOverallCharge.Location = New System.Drawing.Point(575, 310)
+        Me.lblOverallCharge.Name = "lblOverallCharge"
+        Me.lblOverallCharge.Size = New System.Drawing.Size(130, 42)
+        Me.lblOverallCharge.TabIndex = 35
+        Me.lblOverallCharge.Text = "00.00"
+        Me.lblOverallCharge.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lbladvancePay
+        '
+        Me.lbladvancePay.BackColor = System.Drawing.Color.Transparent
+        Me.lbladvancePay.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbladvancePay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbladvancePay.Location = New System.Drawing.Point(303, 310)
+        Me.lbladvancePay.Name = "lbladvancePay"
+        Me.lbladvancePay.Size = New System.Drawing.Size(130, 42)
+        Me.lbladvancePay.TabIndex = 33
+        Me.lbladvancePay.Text = "00.00"
+        Me.lbladvancePay.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblDiscount
+        '
+        Me.lblDiscount.BackColor = System.Drawing.Color.Transparent
+        Me.lblDiscount.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lblDiscount.Location = New System.Drawing.Point(71, 310)
+        Me.lblDiscount.Name = "lblDiscount"
+        Me.lblDiscount.Size = New System.Drawing.Size(130, 42)
+        Me.lblDiscount.TabIndex = 31
+        Me.lblDiscount.Text = "00.00"
+        Me.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label19
+        '
+        Me.Label19.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Label19.Location = New System.Drawing.Point(439, 310)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(130, 42)
+        Me.Label19.TabIndex = 34
+        Me.Label19.Text = "Remaining Payable :"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label18
+        '
+        Me.Label18.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Label18.Location = New System.Drawing.Point(201, 310)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(96, 42)
+        Me.Label18.TabIndex = 32
+        Me.Label18.Text = "Advance Pay :"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Label16.Location = New System.Drawing.Point(6, 310)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(70, 42)
+        Me.Label16.TabIndex = 30
+        Me.Label16.Text = "Discount :"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbltotalcharge
+        '
+        Me.lbltotalcharge.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbltotalcharge.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.lbltotalcharge.Location = New System.Drawing.Point(575, 66)
+        Me.lbltotalcharge.Name = "lbltotalcharge"
+        Me.lbltotalcharge.Size = New System.Drawing.Size(130, 42)
+        Me.lbltotalcharge.TabIndex = 29
+        Me.lbltotalcharge.Text = "00.00"
+        Me.lbltotalcharge.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label10
+        '
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Label10.Location = New System.Drawing.Point(520, 65)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 42)
+        Me.Label10.TabIndex = 28
+        Me.Label10.Text = "Total :"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblguestname
+        '
+        Me.lblguestname.AutoSize = True
+        Me.lblguestname.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblguestname.Location = New System.Drawing.Point(156, 65)
+        Me.lblguestname.Name = "lblguestname"
+        Me.lblguestname.Size = New System.Drawing.Size(216, 30)
+        Me.lblguestname.TabIndex = 7
+        Me.lblguestname.Text = "[ = = = = = = = = =]"
+        Me.lblguestname.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(37, 75)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(90, 17)
+        Me.Label12.TabIndex = 6
+        Me.Label12.Text = "Guest Name :"
+        '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(156, 28)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(216, 30)
+        Me.lblName.TabIndex = 5
+        Me.lblName.Text = "[ = = = = = = = = =]"
+        Me.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(34, 38)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(93, 17)
+        Me.Label8.TabIndex = 2
+        Me.Label8.Text = "Group Name :"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.Label7)
+        Me.GroupBox4.Controls.Add(Me.TextBox1)
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker4)
+        Me.GroupBox4.Controls.Add(Me.DataGridView2)
+        Me.GroupBox4.Controls.Add(Me.DateTimePicker3)
+        Me.GroupBox4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 6)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(368, 434)
+        Me.GroupBox4.TabIndex = 10
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Booking List"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(166, 31)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(21, 17)
+        Me.Label13.TabIndex = 5
+        Me.Label13.Text = "to"
+        '
+        'DateTimePicker4
+        '
+        Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker4.Location = New System.Drawing.Point(193, 27)
+        Me.DateTimePicker4.Name = "DateTimePicker4"
+        Me.DateTimePicker4.Size = New System.Drawing.Size(97, 25)
+        Me.DateTimePicker4.TabIndex = 4
+        '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker3.Location = New System.Drawing.Point(63, 27)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(97, 25)
+        Me.DateTimePicker3.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(48, 61)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(55, 17)
+        Me.Label7.TabIndex = 2
+        Me.Label7.Text = "Search :"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(109, 58)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(252, 25)
+        Me.TextBox1.TabIndex = 1
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AllowUserToResizeColumns = False
+        Me.DataGridView2.AllowUserToResizeRows = False
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 89)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(355, 338)
+        Me.DataGridView2.TabIndex = 0
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Stencil", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(691, 373)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(403, 67)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Proceed To Check-IN"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TabPage1
         '
@@ -520,159 +828,6 @@ Partial Class Form_Reservation
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "                                 RESERVATION                                   "
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.Button_Cancel_Reservation)
-        Me.TabPage2.Controls.Add(Me.GroupBox5)
-        Me.TabPage2.Controls.Add(Me.GroupBox4)
-        Me.TabPage2.Controls.Add(Me.Button1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 39)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1101, 472)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "                        RESERVATION LIST                          "
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'Button_Cancel_Reservation
-        '
-        Me.Button_Cancel_Reservation.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button_Cancel_Reservation.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button_Cancel_Reservation.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Cancel_Reservation.Location = New System.Drawing.Point(470, 367)
-        Me.Button_Cancel_Reservation.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button_Cancel_Reservation.Name = "Button_Cancel_Reservation"
-        Me.Button_Cancel_Reservation.Size = New System.Drawing.Size(260, 67)
-        Me.Button_Cancel_Reservation.TabIndex = 12
-        Me.Button_Cancel_Reservation.Text = "CANCEL"
-        Me.Button_Cancel_Reservation.UseVisualStyleBackColor = False
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.lblName)
-        Me.GroupBox5.Controls.Add(Me.lblTransID)
-        Me.GroupBox5.Controls.Add(Me.Label10)
-        Me.GroupBox5.Controls.Add(Me.Label8)
-        Me.GroupBox5.Controls.Add(Me.DataGridView3)
-        Me.GroupBox5.Location = New System.Drawing.Point(471, 6)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(622, 355)
-        Me.GroupBox5.TabIndex = 11
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Booking Details"
-        '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(314, 98)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(216, 30)
-        Me.lblName.TabIndex = 5
-        Me.lblName.Text = "[ = = = = = = = = =]"
-        Me.lblName.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'lblTransID
-        '
-        Me.lblTransID.AutoSize = True
-        Me.lblTransID.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTransID.Location = New System.Drawing.Point(314, 59)
-        Me.lblTransID.Name = "lblTransID"
-        Me.lblTransID.Size = New System.Drawing.Size(216, 30)
-        Me.lblTransID.TabIndex = 4
-        Me.lblTransID.Text = "[ = = = = = = = = =]"
-        Me.lblTransID.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(69, 59)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(176, 30)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Transaction ID :"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(21, 98)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(224, 30)
-        Me.Label8.TabIndex = 2
-        Me.Label8.Text = "Guest/Group Name :"
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.AllowUserToResizeColumns = False
-        Me.DataGridView3.AllowUserToResizeRows = False
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(6, 179)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(610, 170)
-        Me.DataGridView3.TabIndex = 1
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.TextBox1)
-        Me.GroupBox4.Controls.Add(Me.DataGridView2)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 6)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(457, 428)
-        Me.GroupBox4.TabIndex = 10
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Booking List"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(99, 358)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(94, 30)
-        Me.Label7.TabIndex = 2
-        Me.Label7.Text = "Search :"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(199, 355)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(252, 35)
-        Me.TextBox1.TabIndex = 1
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.AllowUserToAddRows = False
-        Me.DataGridView2.AllowUserToDeleteRows = False
-        Me.DataGridView2.AllowUserToResizeColumns = False
-        Me.DataGridView2.AllowUserToResizeRows = False
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 34)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(445, 315)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold)
-        Me.Button1.Location = New System.Drawing.Point(734, 367)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(360, 67)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Check-IN Guest"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Form_Reservation
         '
@@ -698,7 +853,6 @@ Partial Class Form_Reservation
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
@@ -706,6 +860,7 @@ Partial Class Form_Reservation
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -753,10 +908,23 @@ Partial Class Form_Reservation
     Friend WithEvents Label7 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents lblTransID As Label
-    Friend WithEvents Button_Cancel_Reservation As Button
     Public WithEvents DataGridView3 As DataGridView
+    Friend WithEvents lblguestname As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lbltotalcharge As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents lblDiscount As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents lbladvancePay As Label
+    Friend WithEvents lblOverallCharge As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents DateTimePicker4 As DateTimePicker
+    Friend WithEvents DateTimePicker3 As DateTimePicker
+    Friend WithEvents Button2 As Button
+    Friend WithEvents lbltime As Label
+    Friend WithEvents Label21 As Label
 End Class

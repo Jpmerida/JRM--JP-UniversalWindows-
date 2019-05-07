@@ -130,4 +130,5 @@ Public Class Form_Checkin_Guest
     Private Sub TxtContact_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContact.KeyPress
         OnlyNumbers(e)
     End Sub
+
 End Class

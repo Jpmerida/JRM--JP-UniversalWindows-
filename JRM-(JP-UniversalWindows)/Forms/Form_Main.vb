@@ -188,4 +188,8 @@ Public Class Form_Main
         Form_Reservation.ShowIcon = False
         Form_Reservation.ShowDialog()
     End Sub
+
+    Private Sub Button_Guests_Update_Click(sender As Object, e As EventArgs) Handles Button_Guests_Update.Click
+
+    End Sub
 End Class

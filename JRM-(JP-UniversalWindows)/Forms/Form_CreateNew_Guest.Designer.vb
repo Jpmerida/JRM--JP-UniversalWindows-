@@ -54,7 +54,7 @@ Partial Class Form_CreateNew_Guest
         Me.ComboBox1.Location = New System.Drawing.Point(124, 201)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(49, 28)
-        Me.ComboBox1.TabIndex = 56
+        Me.ComboBox1.TabIndex = 4
         '
         'cmdCancel
         '
@@ -62,7 +62,7 @@ Partial Class Form_CreateNew_Guest
         Me.cmdCancel.Location = New System.Drawing.Point(12, 335)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(223, 52)
-        Me.cmdCancel.TabIndex = 54
+        Me.cmdCancel.TabIndex = 9
         Me.cmdCancel.Text = "Cancel"
         Me.cmdCancel.UseVisualStyleBackColor = True
         '
@@ -72,7 +72,7 @@ Partial Class Form_CreateNew_Guest
         Me.cmdCreate.Location = New System.Drawing.Point(704, 335)
         Me.cmdCreate.Name = "cmdCreate"
         Me.cmdCreate.Size = New System.Drawing.Size(223, 52)
-        Me.cmdCreate.TabIndex = 53
+        Me.cmdCreate.TabIndex = 8
         Me.cmdCreate.Text = "Create New Guest"
         Me.cmdCreate.UseVisualStyleBackColor = True
         '
@@ -94,7 +94,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtGroupName.Location = New System.Drawing.Point(124, 61)
         Me.txtGroupName.Name = "txtGroupName"
         Me.txtGroupName.Size = New System.Drawing.Size(311, 29)
-        Me.txtGroupName.TabIndex = 134
+        Me.txtGroupName.TabIndex = 0
         Me.txtGroupName.Text = "Misc. Group (random)"
         Me.txtGroupName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -129,7 +129,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(311, 159)
-        Me.txtAddress.TabIndex = 131
+        Me.txtAddress.TabIndex = 7
         Me.txtAddress.Text = "SAMPLE : VALENCIA CITY, BUKIDNON"
         '
         'Label6
@@ -150,7 +150,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtEmail.Location = New System.Drawing.Point(108, 61)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(311, 29)
-        Me.txtEmail.TabIndex = 129
+        Me.txtEmail.TabIndex = 5
         '
         'Label5
         '
@@ -170,7 +170,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtContact.Location = New System.Drawing.Point(108, 96)
         Me.txtContact.Name = "txtContact"
         Me.txtContact.Size = New System.Drawing.Size(311, 29)
-        Me.txtContact.TabIndex = 127
+        Me.txtContact.TabIndex = 6
         '
         'Label2
         '
@@ -190,7 +190,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtLname.Location = New System.Drawing.Point(124, 166)
         Me.txtLname.Name = "txtLname"
         Me.txtLname.Size = New System.Drawing.Size(311, 29)
-        Me.txtLname.TabIndex = 124
+        Me.txtLname.TabIndex = 3
         '
         'txtMname
         '
@@ -198,7 +198,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtMname.Location = New System.Drawing.Point(124, 131)
         Me.txtMname.Name = "txtMname"
         Me.txtMname.Size = New System.Drawing.Size(67, 29)
-        Me.txtMname.TabIndex = 123
+        Me.txtMname.TabIndex = 2
         '
         'txtFname
         '
@@ -206,7 +206,7 @@ Partial Class Form_CreateNew_Guest
         Me.txtFname.Location = New System.Drawing.Point(124, 96)
         Me.txtFname.Name = "txtFname"
         Me.txtFname.Size = New System.Drawing.Size(311, 29)
-        Me.txtFname.TabIndex = 122
+        Me.txtFname.TabIndex = 1
         '
         'GroupBox1
         '

@@ -370,8 +370,8 @@ Partial Class Form_Checkin_Guest
     Friend WithEvents txtFname As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents ListView1 As ListView
     Friend WithEvents cmdSelect As Button
     Friend WithEvents ComboBox1 As TextBox
     Friend WithEvents btn_refresh As Button
+    Public WithEvents ListView1 As ListView
 End Class
