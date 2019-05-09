@@ -92,5 +92,210 @@ JRM-(JP-UniversalWindows)
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblusersDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblpaymentDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsvenueDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsitemDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestdetailsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblusersRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblpaymentRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsvenueRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsitemRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestdetailsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblusersRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblpaymentRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsvenueRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsitemRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.table_transactiondetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestdetailsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransaction.tblguestsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.table_transactionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.tblusersTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.tblpaymentTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.table_transactiondetailsvenueTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.table_transactiondetailsitemTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.table_transactiondetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.tblguestdetailsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.tblguestsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.UpdateUpdatedRows(JRM__JP_UniversalWindows_.DataSetTransaction,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.UpdateInsertedRows(JRM__JP_UniversalWindows_.DataSetTransaction,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.UpdateDeletedRows(JRM__JP_UniversalWindows_.DataSetTransaction,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.UpdateAll(JRM__JP_UniversalWindows_.DataSetTransaction)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:JRM__JP_UniversalWindows_.DataSetTransactionTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

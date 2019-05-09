@@ -73,7 +73,7 @@ Partial Class Form_Management_Venue
         Me.txtName.Location = New System.Drawing.Point(817, 318)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(352, 29)
-        Me.txtName.TabIndex = 89
+        Me.txtName.TabIndex = 2
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -94,7 +94,7 @@ Partial Class Form_Management_Venue
         Me.txtStatus.Location = New System.Drawing.Point(817, 440)
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.Size = New System.Drawing.Size(154, 29)
-        Me.txtStatus.TabIndex = 85
+        Me.txtStatus.TabIndex = 4
         Me.txtStatus.Text = "Available"
         Me.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -116,7 +116,7 @@ Partial Class Form_Management_Venue
         Me.txtPrice.Location = New System.Drawing.Point(977, 440)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(192, 29)
-        Me.txtPrice.TabIndex = 83
+        Me.txtPrice.TabIndex = 5
         Me.txtPrice.Text = "Price"
         Me.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -138,7 +138,7 @@ Partial Class Form_Management_Venue
         Me.txtCatType.Location = New System.Drawing.Point(817, 376)
         Me.txtCatType.Name = "txtCatType"
         Me.txtCatType.Size = New System.Drawing.Size(352, 29)
-        Me.txtCatType.TabIndex = 81
+        Me.txtCatType.TabIndex = 3
         Me.txtCatType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'BTN_INSERT
@@ -148,7 +148,7 @@ Partial Class Form_Management_Venue
         Me.BTN_INSERT.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_INSERT.Name = "BTN_INSERT"
         Me.BTN_INSERT.Size = New System.Drawing.Size(261, 38)
-        Me.BTN_INSERT.TabIndex = 91
+        Me.BTN_INSERT.TabIndex = 7
         Me.BTN_INSERT.Text = "Add / Update Services"
         Me.BTN_INSERT.UseVisualStyleBackColor = True
         '
@@ -165,7 +165,7 @@ Partial Class Form_Management_Venue
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(536, 427)
-        Me.DataGridView1.TabIndex = 92
+        Me.DataGridView1.TabIndex = 0
         '
         'TextBox1
         '
@@ -173,7 +173,7 @@ Partial Class Form_Management_Venue
         Me.TextBox1.Location = New System.Drawing.Point(461, 63)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(218, 29)
-        Me.TextBox1.TabIndex = 93
+        Me.TextBox1.TabIndex = 1
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
@@ -206,7 +206,7 @@ Partial Class Form_Management_Venue
         Me.txtDesc.Location = New System.Drawing.Point(817, 499)
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.Size = New System.Drawing.Size(352, 29)
-        Me.txtDesc.TabIndex = 95
+        Me.txtDesc.TabIndex = 6
         Me.txtDesc.Text = "Description"
         '
         'Button_Close
@@ -227,8 +227,8 @@ Partial Class Form_Management_Venue
         Me.btn_categories.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_categories.Name = "btn_categories"
         Me.btn_categories.Size = New System.Drawing.Size(271, 38)
-        Me.btn_categories.TabIndex = 98
-        Me.btn_categories.Text = "Add/Update Categories"
+        Me.btn_categories.TabIndex = 8
+        Me.btn_categories.Text = " Categories"
         Me.btn_categories.UseVisualStyleBackColor = True
         '
         'Button1

@@ -107,6 +107,7 @@ Public Class Form_Main
 
     Private Sub ToolbarCheckIn_Click(sender As Object, e As EventArgs) Handles toolbarCheckIn.Click
         CheckOutForm.Close()
+        Form_Login_Background.Show()
         Form_Checkin.ControlBox = False
         Form_Checkin.ShowIcon = False
         Form_Checkin.ShowDialog()
@@ -185,11 +186,12 @@ Public Class Form_Main
 
     Private Sub ToolbarReserve_Click(sender As Object, e As EventArgs) Handles toolbarReserve.Click
         CheckOutForm.Close()
+        'Form_Login_Background.Show()
         Form_Reservation.ShowIcon = False
         Form_Reservation.ShowDialog()
     End Sub
 
-    Private Sub Button_Guests_Update_Click(sender As Object, e As EventArgs) Handles Button_Guests_Update.Click
-
+    Private Sub ToolStripButton1_Click_1(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+        Form_Transaction_List.ShowDialog()
     End Sub
 End Class

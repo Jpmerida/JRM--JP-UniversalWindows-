@@ -7,7 +7,9 @@ Public Class Form_CreateNew_Services
     Dim fileSrc As String
     Dim fileDestination As String
     Dim filename As String
+    Dim go_On As Integer
     Private Sub FORM_AddNewServices_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        go_On = Nothing
         Try
             conndb()
             mysql = "select * from tbllocationtype"
@@ -40,6 +42,9 @@ Public Class Form_CreateNew_Services
     End Sub
 
     Private Sub BTN_INSERT_Click(sender As Object, e As EventArgs) Handles BTN_INSERT.Click
+        If txtDesc.Text = "" Or txtName.Text = "" Or txtPrice.Text = "" Or fileSrc = "" Then
+            Exit Sub
+        End If
         If (Not System.IO.Directory.Exists(Application.StartupPath & "\JRM_images\")) Then
             System.IO.Directory.CreateDirectory(Application.StartupPath & "\JRM_images\")
         End If
@@ -75,6 +80,7 @@ Public Class Form_CreateNew_Services
     End Sub
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
+        go_On = DataGridView1.CurrentRow.Cells(0).Value
         mysql = "select * from tblvenue where VenueID ='" & DataGridView1.CurrentRow.Cells(0).Value & "'"
         conndb()
         cmd = New MySqlCommand(mysql, conn)
@@ -119,7 +125,9 @@ Public Class Form_CreateNew_Services
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button_Update.Click
-
+        If go_On = Nothing Then
+            Exit Sub
+        End If
         ''''''''
         '''
         Dim ms As New MemoryStream

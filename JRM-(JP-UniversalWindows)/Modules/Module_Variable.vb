@@ -39,4 +39,7 @@
     Public test3 As DateTime
     Public test5 As String
 
+
+    '=================
+    Public RecentTID As Integer
 End Module

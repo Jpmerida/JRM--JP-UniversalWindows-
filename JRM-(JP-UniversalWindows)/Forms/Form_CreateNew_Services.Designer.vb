@@ -46,7 +46,7 @@ Partial Class Form_CreateNew_Services
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(415, 378)
+        Me.ComboBox1.Location = New System.Drawing.Point(576, 405)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(352, 32)
         Me.ComboBox1.TabIndex = 0
@@ -57,7 +57,7 @@ Partial Class Form_CreateNew_Services
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label7.Location = New System.Drawing.Point(525, 472)
+        Me.Label7.Location = New System.Drawing.Point(466, 446)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(104, 24)
         Me.Label7.TabIndex = 109
@@ -66,16 +66,17 @@ Partial Class Form_CreateNew_Services
         'txtDesc
         '
         Me.txtDesc.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDesc.Location = New System.Drawing.Point(415, 499)
+        Me.txtDesc.Location = New System.Drawing.Point(576, 443)
+        Me.txtDesc.Multiline = True
         Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(352, 29)
+        Me.txtDesc.Size = New System.Drawing.Size(352, 59)
         Me.txtDesc.TabIndex = 108
         Me.txtDesc.Text = "Description"
         '
         'BTN_INSERT
         '
         Me.BTN_INSERT.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_INSERT.Location = New System.Drawing.Point(529, 536)
+        Me.BTN_INSERT.Location = New System.Drawing.Point(814, 535)
         Me.BTN_INSERT.Margin = New System.Windows.Forms.Padding(2)
         Me.BTN_INSERT.Name = "BTN_INSERT"
         Me.BTN_INSERT.Size = New System.Drawing.Size(114, 41)
@@ -89,7 +90,7 @@ Partial Class Form_CreateNew_Services
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(553, 292)
+        Me.Label9.Location = New System.Drawing.Point(509, 300)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 24)
         Me.Label9.TabIndex = 106
@@ -98,7 +99,7 @@ Partial Class Form_CreateNew_Services
         'txtName
         '
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtName.Location = New System.Drawing.Point(415, 318)
+        Me.txtName.Location = New System.Drawing.Point(576, 297)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(352, 29)
         Me.txtName.TabIndex = 105
@@ -110,7 +111,7 @@ Partial Class Form_CreateNew_Services
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(426, 413)
+        Me.Label6.Location = New System.Drawing.Point(510, 370)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(60, 24)
         Me.Label6.TabIndex = 104
@@ -122,7 +123,7 @@ Partial Class Form_CreateNew_Services
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(645, 413)
+        Me.Label5.Location = New System.Drawing.Point(517, 335)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 24)
         Me.Label5.TabIndex = 102
@@ -131,7 +132,7 @@ Partial Class Form_CreateNew_Services
         'txtPrice
         '
         Me.txtPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrice.Location = New System.Drawing.Point(575, 440)
+        Me.txtPrice.Location = New System.Drawing.Point(576, 332)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(192, 29)
         Me.txtPrice.TabIndex = 101
@@ -143,7 +144,7 @@ Partial Class Form_CreateNew_Services
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(525, 349)
+        Me.Label3.Location = New System.Drawing.Point(437, 408)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(133, 24)
         Me.Label3.TabIndex = 100
@@ -152,7 +153,7 @@ Partial Class Form_CreateNew_Services
         'SelectImage
         '
         Me.SelectImage.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SelectImage.Location = New System.Drawing.Point(489, 246)
+        Me.SelectImage.Location = New System.Drawing.Point(634, 237)
         Me.SelectImage.Margin = New System.Windows.Forms.Padding(2)
         Me.SelectImage.Name = "SelectImage"
         Me.SelectImage.Size = New System.Drawing.Size(187, 31)
@@ -163,7 +164,7 @@ Partial Class Form_CreateNew_Services
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Gainsboro
-        Me.PictureBox1.Location = New System.Drawing.Point(475, 61)
+        Me.PictureBox1.Location = New System.Drawing.Point(610, 52)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(216, 181)
@@ -180,7 +181,7 @@ Partial Class Form_CreateNew_Services
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(367, 588)
+        Me.DataGridView1.Size = New System.Drawing.Size(418, 588)
         Me.DataGridView1.TabIndex = 110
         '
         'ComboBox2
@@ -188,7 +189,7 @@ Partial Class Form_CreateNew_Services
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Available", "Unavailable"})
-        Me.ComboBox2.Location = New System.Drawing.Point(415, 438)
+        Me.ComboBox2.Location = New System.Drawing.Point(576, 367)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(154, 32)
         Me.ComboBox2.TabIndex = 111
@@ -197,7 +198,7 @@ Partial Class Form_CreateNew_Services
         'Button_Close
         '
         Me.Button_Close.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Close.Location = New System.Drawing.Point(674, 11)
+        Me.Button_Close.Location = New System.Drawing.Point(857, 11)
         Me.Button_Close.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_Close.Name = "Button_Close"
         Me.Button_Close.Size = New System.Drawing.Size(115, 43)
@@ -208,7 +209,7 @@ Partial Class Form_CreateNew_Services
         'Button_Update
         '
         Me.Button_Update.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold)
-        Me.Button_Update.Location = New System.Drawing.Point(529, 537)
+        Me.Button_Update.Location = New System.Drawing.Point(576, 536)
         Me.Button_Update.Name = "Button_Update"
         Me.Button_Update.Size = New System.Drawing.Size(114, 40)
         Me.Button_Update.TabIndex = 113
@@ -219,7 +220,7 @@ Partial Class Form_CreateNew_Services
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(800, 588)
+        Me.ClientSize = New System.Drawing.Size(983, 588)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button_Update)
         Me.Controls.Add(Me.Button_Close)

@@ -9,7 +9,7 @@ Public Class Form_Checkin_Venue
         clearall()
 
         populateDatagridview10(ListView1, "")
-        Label2.Text = test5
+        'Label2.Text = test5
 
     End Sub
     Sub clearall()

@@ -67,7 +67,7 @@ Partial Class Form_Checkin
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Button1.Location = New System.Drawing.Point(22, 39)
+        Me.Button1.Location = New System.Drawing.Point(29, 384)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(240, 35)
@@ -81,15 +81,20 @@ Partial Class Form_Checkin
         Me.GroupBox1.Controls.Add(Me.Button_Add_Item)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Panel1)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.Button_Remove)
+        Me.GroupBox1.Controls.Add(Me.Down)
+        Me.GroupBox1.Controls.Add(Me.Up)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.GroupBox1.Location = New System.Drawing.Point(572, 11)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(526, 197)
+        Me.GroupBox1.Size = New System.Drawing.Size(561, 528)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Selection / Add"
@@ -97,24 +102,25 @@ Partial Class Form_Checkin
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.Cyan
-        Me.Button5.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(402, 81)
+        Me.Button5.Font = New System.Drawing.Font("Showcard Gothic", 29.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(397, 420)
         Me.Button5.Margin = New System.Windows.Forms.Padding(2)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(76, 67)
-        Me.Button5.TabIndex = 40
+        Me.Button5.Size = New System.Drawing.Size(102, 62)
+        Me.Button5.TabIndex = 5
         Me.Button5.Text = " +"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button5.UseVisualStyleBackColor = False
         '
         'Button_Add_Item
         '
         Me.Button_Add_Item.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button_Add_Item.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Button_Add_Item.Location = New System.Drawing.Point(22, 127)
+        Me.Button_Add_Item.Location = New System.Drawing.Point(29, 472)
         Me.Button_Add_Item.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_Add_Item.Name = "Button_Add_Item"
         Me.Button_Add_Item.Size = New System.Drawing.Size(240, 35)
-        Me.Button_Add_Item.TabIndex = 40
+        Me.Button_Add_Item.TabIndex = 3
         Me.Button_Add_Item.Text = "Add [Item]"
         Me.Button_Add_Item.UseVisualStyleBackColor = False
         '
@@ -122,7 +128,7 @@ Partial Class Form_Checkin
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(313, 90)
+        Me.Label15.Location = New System.Drawing.Point(320, 435)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(71, 17)
         Me.Label15.TabIndex = 92
@@ -132,11 +138,11 @@ Partial Class Form_Checkin
         '
         Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button2.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Button2.Location = New System.Drawing.Point(22, 83)
+        Me.Button2.Location = New System.Drawing.Point(29, 428)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(240, 35)
-        Me.Button2.TabIndex = 39
+        Me.Button2.TabIndex = 2
         Me.Button2.Text = "Add [Cottage/Location]"
         Me.Button2.UseVisualStyleBackColor = False
         '
@@ -146,17 +152,17 @@ Partial Class Form_Checkin
         Me.ComboBox1.FormatString = "N2"
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"25.00", "40.00", "50.00", "100.00"})
-        Me.ComboBox1.Location = New System.Drawing.Point(390, 41)
+        Me.ComboBox1.Location = New System.Drawing.Point(397, 386)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(88, 28)
-        Me.ComboBox1.TabIndex = 93
-        Me.ComboBox1.Text = "25.00"
+        Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.Text = "40.00"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(304, 46)
+        Me.Label17.Location = New System.Drawing.Point(311, 391)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(80, 17)
         Me.Label17.TabIndex = 94
@@ -171,11 +177,11 @@ Partial Class Form_Checkin
         Me.GroupBox2.Controls.Add(Me.txtAdvance)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(572, 212)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 279)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(526, 169)
+        Me.GroupBox2.Size = New System.Drawing.Size(549, 169)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         '
@@ -186,7 +192,7 @@ Partial Class Form_Checkin
         Me.txtDiscount.Multiline = True
         Me.txtDiscount.Name = "txtDiscount"
         Me.txtDiscount.Size = New System.Drawing.Size(183, 39)
-        Me.txtDiscount.TabIndex = 68
+        Me.txtDiscount.TabIndex = 6
         Me.txtDiscount.Text = "0"
         Me.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -227,7 +233,7 @@ Partial Class Form_Checkin
         Me.txtAdvance.Multiline = True
         Me.txtAdvance.Name = "txtAdvance"
         Me.txtAdvance.Size = New System.Drawing.Size(183, 39)
-        Me.txtAdvance.TabIndex = 63
+        Me.txtAdvance.TabIndex = 7
         Me.txtAdvance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label14
@@ -245,11 +251,11 @@ Partial Class Form_Checkin
         Me.Cancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cancel.Location = New System.Drawing.Point(572, 383)
+        Me.Cancel.Location = New System.Drawing.Point(576, 472)
         Me.Cancel.Margin = New System.Windows.Forms.Padding(2)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(261, 67)
-        Me.Cancel.TabIndex = 39
+        Me.Cancel.TabIndex = 9
         Me.Cancel.Text = "Cancel"
         Me.Cancel.UseVisualStyleBackColor = False
         '
@@ -257,37 +263,32 @@ Partial Class Form_Checkin
         '
         Me.Button_CheckIN.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Button_CheckIN.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_CheckIN.Location = New System.Drawing.Point(837, 383)
+        Me.Button_CheckIN.Location = New System.Drawing.Point(841, 472)
         Me.Button_CheckIN.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_CheckIN.Name = "Button_CheckIN"
         Me.Button_CheckIN.Size = New System.Drawing.Size(261, 67)
-        Me.Button_CheckIN.TabIndex = 40
+        Me.Button_CheckIN.TabIndex = 8
         Me.Button_CheckIN.Text = "Check-In"
         Me.Button_CheckIN.UseVisualStyleBackColor = False
         '
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.White
-        Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.txtTransID)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Controls.Add(Me.Panel1)
+        Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox3.Controls.Add(Me.Label11)
         Me.GroupBox3.Controls.Add(Me.txtGuest)
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.Up)
-        Me.GroupBox3.Controls.Add(Me.DataGridView1)
-        Me.GroupBox3.Controls.Add(Me.Down)
-        Me.GroupBox3.Controls.Add(Me.Button_Remove)
         Me.GroupBox3.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.GroupBox3.Location = New System.Drawing.Point(11, 11)
+        Me.GroupBox3.Location = New System.Drawing.Point(576, 11)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox3.Size = New System.Drawing.Size(557, 440)
+        Me.GroupBox3.Size = New System.Drawing.Size(526, 452)
         Me.GroupBox3.TabIndex = 95
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Accomodation Details"
@@ -296,7 +297,7 @@ Partial Class Form_Checkin
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(429, 386)
+        Me.Label6.Location = New System.Drawing.Point(-17, 11)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(123, 32)
         Me.Label6.TabIndex = 70
@@ -307,7 +308,7 @@ Partial Class Form_Checkin
         '
         Me.txtTransID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTransID.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.txtTransID.Location = New System.Drawing.Point(223, 42)
+        Me.txtTransID.Location = New System.Drawing.Point(221, 62)
         Me.txtTransID.Name = "txtTransID"
         Me.txtTransID.Size = New System.Drawing.Size(234, 26)
         Me.txtTransID.TabIndex = 100
@@ -318,7 +319,7 @@ Partial Class Form_Checkin
         Me.Label1.AutoSize = True
         Me.Label1.Enabled = False
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label1.Location = New System.Drawing.Point(43, 150)
+        Me.Label1.Location = New System.Drawing.Point(42, 192)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(147, 25)
         Me.Label1.TabIndex = 90
@@ -330,7 +331,7 @@ Partial Class Form_Checkin
         Me.DateTimePicker1.Enabled = False
         Me.DateTimePicker1.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(224, 144)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(223, 186)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(179, 33)
@@ -342,7 +343,8 @@ Partial Class Form_Checkin
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.lblGrandTotal)
         Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Location = New System.Drawing.Point(91, 377)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Location = New System.Drawing.Point(225, 291)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(326, 48)
         Me.Panel1.TabIndex = 99
@@ -374,7 +376,7 @@ Partial Class Form_Checkin
         Me.DateTimePicker2.Enabled = False
         Me.DateTimePicker2.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker2.Location = New System.Drawing.Point(223, 107)
+        Me.DateTimePicker2.Location = New System.Drawing.Point(222, 149)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(2)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(180, 33)
@@ -385,7 +387,7 @@ Partial Class Form_Checkin
         Me.Label11.AutoSize = True
         Me.Label11.Enabled = False
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label11.Location = New System.Drawing.Point(41, 113)
+        Me.Label11.Location = New System.Drawing.Point(40, 155)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(149, 25)
         Me.Label11.TabIndex = 91
@@ -395,7 +397,7 @@ Partial Class Form_Checkin
         '
         Me.txtGuest.AutoSize = True
         Me.txtGuest.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.txtGuest.Location = New System.Drawing.Point(219, 75)
+        Me.txtGuest.Location = New System.Drawing.Point(217, 95)
         Me.txtGuest.Name = "txtGuest"
         Me.txtGuest.Size = New System.Drawing.Size(292, 25)
         Me.txtGuest.TabIndex = 99
@@ -405,7 +407,7 @@ Partial Class Form_Checkin
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label4.Location = New System.Drawing.Point(39, 42)
+        Me.Label4.Location = New System.Drawing.Point(37, 62)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(151, 25)
         Me.Label4.TabIndex = 92
@@ -415,7 +417,7 @@ Partial Class Form_Checkin
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.Label2.Location = New System.Drawing.Point(119, 75)
+        Me.Label2.Location = New System.Drawing.Point(117, 95)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 25)
         Me.Label2.TabIndex = 92
@@ -424,10 +426,10 @@ Partial Class Form_Checkin
         'Up
         '
         Me.Up.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Up.Location = New System.Drawing.Point(472, 201)
+        Me.Up.Location = New System.Drawing.Point(5, 33)
         Me.Up.Name = "Up"
-        Me.Up.Size = New System.Drawing.Size(80, 25)
-        Me.Up.TabIndex = 97
+        Me.Up.Size = New System.Drawing.Size(86, 25)
+        Me.Up.TabIndex = 10
         Me.Up.Text = "UP"
         Me.Up.UseVisualStyleBackColor = True
         '
@@ -435,10 +437,10 @@ Partial Class Form_Checkin
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 201)
+        Me.DataGridView1.Location = New System.Drawing.Point(96, 33)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
@@ -446,26 +448,26 @@ Partial Class Form_Checkin
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(455, 162)
+        Me.DataGridView1.Size = New System.Drawing.Size(455, 249)
         Me.DataGridView1.TabIndex = 41
         '
         'Down
         '
         Me.Down.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Down.Location = New System.Drawing.Point(472, 232)
+        Me.Down.Location = New System.Drawing.Point(5, 64)
         Me.Down.Name = "Down"
-        Me.Down.Size = New System.Drawing.Size(80, 25)
-        Me.Down.TabIndex = 96
+        Me.Down.Size = New System.Drawing.Size(86, 25)
+        Me.Down.TabIndex = 11
         Me.Down.Text = "DOWN"
         Me.Down.UseVisualStyleBackColor = True
         '
         'Button_Remove
         '
         Me.Button_Remove.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Remove.Location = New System.Drawing.Point(472, 338)
+        Me.Button_Remove.Location = New System.Drawing.Point(5, 257)
         Me.Button_Remove.Name = "Button_Remove"
-        Me.Button_Remove.Size = New System.Drawing.Size(80, 25)
-        Me.Button_Remove.TabIndex = 10
+        Me.Button_Remove.Size = New System.Drawing.Size(86, 25)
+        Me.Button_Remove.TabIndex = 12
         Me.Button_Remove.Text = "Remove"
         Me.Button_Remove.UseVisualStyleBackColor = True
         '
@@ -475,14 +477,13 @@ Partial Class Form_Checkin
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(1105, 454)
+        Me.ClientSize = New System.Drawing.Size(1113, 550)
         Me.ControlBox = False
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Button_CheckIN)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Cancel)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form_Checkin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

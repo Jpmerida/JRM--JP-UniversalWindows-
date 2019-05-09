@@ -1,5 +1,6 @@
 ﻿Public Class ServiceCategories
     Private Sub ServiceCategories_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Normal
         viewCategories(ListView1, "")
     End Sub
 
@@ -9,12 +10,14 @@
 
 
     Private Sub btn_AddNew_Click_1(sender As Object, e As EventArgs) Handles btn_AddNew.Click
-        If SC2 = 0 Then
-            NewCategoryFORM = New Form_CreateNew_CategoryType()
-            NewCategoryFORM.mdiparent = Me.MdiParent
-            NewCategoryFORM.show
-            SC2 = 1
-        End If
+        Form_CreateNew_CategoryType.ShowDialog()
+
+        'If SC2 = 0 Then
+        '    NewCategoryFORM = New Form_CreateNew_CategoryType()
+        '    NewCategoryFORM.mdiparent = Me.MdiParent
+        '    NewCategoryFORM.show
+        '    SC2 = 1
+        'End If
     End Sub
 
 

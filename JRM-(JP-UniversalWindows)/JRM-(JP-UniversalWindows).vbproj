@@ -48,12 +48,28 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Devart.Data, Version=5.0.2158.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.MySql, Version=8.13.1366.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
     <Reference Include="DevComponents.DotNetBar2, Version=14.0.0.22, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -75,6 +91,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet_JRM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_JRM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_JRM.vb">
+      <DependentUpon>DataSet_JRM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Check-IN\Form_Checkin.Designer.vb">
       <DependentUpon>Form_Checkin.vb</DependentUpon>
     </Compile>
@@ -99,10 +129,10 @@
     <Compile Include="Forms\Check-IN\Form_Checkin_Venue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Reservation_Checkin.Designer.vb">
+    <Compile Include="Forms\Reservation FORMS\Form_Reservation_Checkin.Designer.vb">
       <DependentUpon>Form_Reservation_Checkin.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Reservation_Checkin.vb">
+    <Compile Include="Forms\Reservation FORMS\Form_Reservation_Checkin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_Update_Item.Designer.vb">
@@ -135,16 +165,28 @@
     <Compile Include="Forms\Check-OUT\Form_CheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form_Reservation.Designer.vb">
+    <Compile Include="Forms\Reservation FORMS\Form_Reservation.Designer.vb">
       <DependentUpon>Form_Reservation.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form_Reservation.vb">
+    <Compile Include="Forms\Reservation FORMS\Form_Reservation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login\Form_Login_Background.Designer.vb">
       <DependentUpon>Form_Login_Background.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Form_Login_Background.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Report.Designer.vb">
+      <DependentUpon>Form_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Transaction_List.Designer.vb">
+      <DependentUpon>Form_Transaction_List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Transaction_List.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modules\Module_Catcher.vb" />
@@ -283,6 +325,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Check-IN\Form_Checkin.resx">
       <DependentUpon>Form_Checkin.vb</DependentUpon>
     </EmbeddedResource>
@@ -304,7 +350,7 @@
     <EmbeddedResource Include="Forms\Form_Management_Item.resx">
       <DependentUpon>Form_Management_Item.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Reservation.resx">
+    <EmbeddedResource Include="Forms\Reservation FORMS\Form_Reservation.resx">
       <DependentUpon>Form_Reservation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Management_Venue.resx">
@@ -334,7 +380,7 @@
     <EmbeddedResource Include="Forms\Form_Management_Guest.resx">
       <DependentUpon>Form_Management_Guest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form_Reservation_Checkin.resx">
+    <EmbeddedResource Include="Forms\Reservation FORMS\Form_Reservation_Checkin.resx">
       <DependentUpon>Form_Reservation_Checkin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_Update_Item.resx">
@@ -354,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Check-OUT\Form_CheckOut.resx">
       <DependentUpon>Form_CheckOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Report.resx">
+      <DependentUpon>Form_Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Transaction_List.resx">
+      <DependentUpon>Form_Transaction_List.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -384,6 +436,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet_JRM.xsc">
+      <DependentUpon>DataSet_JRM.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_JRM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_JRM.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet_JRM.xss">
+      <DependentUpon>DataSet_JRM.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -410,7 +473,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -460,6 +525,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

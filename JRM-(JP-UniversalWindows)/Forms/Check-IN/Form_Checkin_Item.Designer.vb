@@ -60,7 +60,7 @@ Partial Class Form_Checkin_Item
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(483, 273)
-        Me.ListView1.TabIndex = 2
+        Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
@@ -115,17 +115,17 @@ Partial Class Form_Checkin_Item
         Me.ComboBox_Qty.Location = New System.Drawing.Point(607, 211)
         Me.ComboBox_Qty.Name = "ComboBox_Qty"
         Me.ComboBox_Qty.Size = New System.Drawing.Size(78, 28)
-        Me.ComboBox_Qty.TabIndex = 6
+        Me.ComboBox_Qty.TabIndex = 1
         Me.ComboBox_Qty.Text = "1"
         '
         'Button_AddItem
         '
         Me.Button_AddItem.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Button_AddItem.Location = New System.Drawing.Point(671, 294)
+        Me.Button_AddItem.Location = New System.Drawing.Point(565, 294)
         Me.Button_AddItem.Name = "Button_AddItem"
-        Me.Button_AddItem.Size = New System.Drawing.Size(117, 30)
-        Me.Button_AddItem.TabIndex = 7
-        Me.Button_AddItem.Text = "ADD"
+        Me.Button_AddItem.Size = New System.Drawing.Size(149, 30)
+        Me.Button_AddItem.TabIndex = 2
+        Me.Button_AddItem.Text = "Add Item"
         Me.Button_AddItem.UseVisualStyleBackColor = True
         '
         'txtItemName
@@ -154,7 +154,7 @@ Partial Class Form_Checkin_Item
         Me.TextBox1.Location = New System.Drawing.Point(254, 294)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(241, 27)
-        Me.TextBox1.TabIndex = 10
+        Me.TextBox1.TabIndex = 3
         '
         'Button_Close
         '
@@ -162,7 +162,7 @@ Partial Class Form_Checkin_Item
         Me.Button_Close.Location = New System.Drawing.Point(12, 294)
         Me.Button_Close.Name = "Button_Close"
         Me.Button_Close.Size = New System.Drawing.Size(117, 30)
-        Me.Button_Close.TabIndex = 11
+        Me.Button_Close.TabIndex = 4
         Me.Button_Close.Text = "Close"
         Me.Button_Close.UseVisualStyleBackColor = True
         '

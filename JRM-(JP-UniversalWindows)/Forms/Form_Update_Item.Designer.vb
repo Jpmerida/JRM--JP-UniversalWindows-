@@ -165,7 +165,7 @@ Partial Class Form_Update_Item
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(673, 331)
+        Me.ClientSize = New System.Drawing.Size(669, 327)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.btnClose)

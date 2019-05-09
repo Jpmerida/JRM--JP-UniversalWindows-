@@ -21,12 +21,17 @@ Public Class Form_CheckOut_GuestList
     End Sub
 
     Private Sub ResetAll()
+        pt = 0
+        dcount = 0
+        advpay = 0
+
         Array.Clear(Venues, 0, Venues.Length)
         StopV = 0
 
         Over_all_Charge = 0
         myChange = 0
         Panel3.Visible = False
+        Button1.Enabled = False
         Button_OpenTransact.Enabled = False
         Button_CheckOUT.Enabled = False
         AlreadyPaid = 0
@@ -51,6 +56,7 @@ Public Class Form_CheckOut_GuestList
         lv.Items.Clear()
         Do Until dr.Read = False
             value = Val(dr("T_ID"))
+
             newline = lv.Items.Add(dr("GuestID"))
             newline.SubItems.Add("TransID - " & value.ToString("0000"))
             newline.SubItems.Add(dr("Name"))
@@ -67,6 +73,7 @@ Public Class Form_CheckOut_GuestList
     End Sub
 
     Private Sub DisplayList2(lv As ListView, searchme As String)
+        'RecentTID = getTid
         ListView1.Items.Clear()
         Array.Clear(Venues, 0, Venues.Length)
         StopV = 0
@@ -88,6 +95,8 @@ Public Class Form_CheckOut_GuestList
         Dim value As Integer
         dr = cmd.ExecuteReader
         Do Until dr.Read = False
+            Label14.Text = dr("T_ID")
+            RecentTID = dr("T_ID")
             value = Val(dr("T_ID"))
             dcount = dr("discount")
             advpay = dr("Advance")
@@ -173,7 +182,7 @@ Public Class Form_CheckOut_GuestList
 
         ''lblOverallCharge.Text = Double.Parse(test2).ToString("n2")
         Button_OpenTransact.Enabled = True
-
+        Button1.Enabled = True
         checkifpaid()
     End Sub
 
@@ -323,6 +332,9 @@ Public Class Form_CheckOut_GuestList
 
             ResetAll()
             DisplayList1(ListView2, "")
+            RecentTID = Integer.Parse(Format(Label14.Text))
+            Label15.Text = RecentTID
+            Form_Report.ShowDialog()
         End If
     End Sub
 
@@ -336,5 +348,11 @@ Public Class Form_CheckOut_GuestList
 
     Private Sub Form_CheckOut_GuestList_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Form_Main.CO = 0
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        RecentTID = Integer.Parse(Format(Label14.Text))
+        Label15.Text = RecentTID
+        Form_Report.ShowDialog()
     End Sub
 End Class

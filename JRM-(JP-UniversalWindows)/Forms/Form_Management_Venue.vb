@@ -35,8 +35,12 @@ Public Class Form_Management_Venue
         If nf = 0 Then
             ADDServicesForm = New Form_CreateNew_Services()
             ADDServicesForm.MdiParent = Me.MdiParent
+            ADDServicesForm.windowstate = FormWindowState.Normal
             ADDServicesForm.Show()
-            nf = 1
+            NF = 1
+        Else
+            ADDServicesForm.windowstate = FormWindowState.Normal
+            ADDServicesForm.bringtofront()
         End If
         ''----------------
     End Sub
@@ -94,8 +98,12 @@ Public Class Form_Management_Venue
         If SC = 0 Then
             CategoryForm = New ServiceCategories()
             CategoryForm.mdiparent = Me.MdiParent
+            CategoryForm.WindowState = FormWindowState.Normal
             CategoryForm.show
             SC = 1
+        Else
+            CategoryForm.WindowState = FormWindowState.Normal
+            CategoryForm.bringtofront()
         End If
 
     End Sub

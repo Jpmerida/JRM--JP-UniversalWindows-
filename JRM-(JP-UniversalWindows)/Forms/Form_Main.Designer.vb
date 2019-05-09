@@ -81,6 +81,7 @@ Partial Class Form_Main
         Me.toolbarItems = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.toolbarUsers = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuLOGOUT = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
@@ -507,15 +508,17 @@ Partial Class Form_Main
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbarLogOUT, Me.ToolStripSeparator9, Me.toolbarCheckIn, Me.ToolStripButton11, Me.toolbarCheckOut, Me.ToolStripSeparator6, Me.toolbarReserve, Me.ToolStripSeparator7, Me.toolbarGuests, Me.ToolStripSeparator1, Me.toolbarLocations, Me.ToolStripSeparator8, Me.toolbarItems, Me.ToolStripSeparator10, Me.toolbarUsers})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.toolbarLogOUT, Me.ToolStripSeparator9, Me.toolbarCheckIn, Me.ToolStripButton11, Me.toolbarCheckOut, Me.ToolStripSeparator6, Me.toolbarReserve, Me.ToolStripSeparator7, Me.toolbarGuests, Me.ToolStripSeparator1, Me.toolbarLocations, Me.ToolStripSeparator8, Me.toolbarItems, Me.ToolStripSeparator10, Me.toolbarUsers, Me.ToolStripButton1})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1260, 39)
+        Me.ToolStrip1.Stretch = True
         Me.ToolStrip1.TabIndex = 15
         Me.ToolStrip1.Text = "ToolStrip2"
         '
         'toolbarLogOUT
         '
+        Me.toolbarLogOUT.ForeColor = System.Drawing.Color.Maroon
         Me.toolbarLogOUT.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.logout
         Me.toolbarLogOUT.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.toolbarLogOUT.Name = "toolbarLogOUT"
@@ -619,6 +622,15 @@ Partial Class Form_Main
         Me.toolbarUsers.Size = New System.Drawing.Size(193, 36)
         Me.toolbarUsers.Text = "Users Management"
         Me.toolbarUsers.ToolTipText = "Users"
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(36, 36)
+        Me.ToolStripButton1.Text = "Transaction List"
         '
         'MenuStrip1
         '
@@ -745,4 +757,5 @@ Partial Class Form_Main
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuLOGOUT As ToolStripMenuItem
+    Friend WithEvents ToolStripButton1 As ToolStripButton
 End Class

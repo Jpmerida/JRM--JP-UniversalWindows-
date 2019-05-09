@@ -143,6 +143,8 @@ Public Class Form_Checkin
         'table2.Columns.Clear()
         SubTot = 0
         'CI = 0
+        Form_Login_Background.Hide()
+        Form_Main.Activate()
         Me.Close()
     End Sub
 
@@ -229,40 +231,40 @@ Public Class Form_Checkin
                     update_guest.ExecuteNonQuery()
 
                     ''Venues
-                    Dim x As Integer = 0
-                    For x = 0 To Venues(x)
-                        If Venues(x) = Nothing Then
-                        Else
-                            Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Occupied' WHERE VenueID = " & Venues(x) & "", connection)
-                            update_Venue.ExecuteNonQuery()
-                        End If
-                    Next x
+                    'Dim x As Integer = 0
+                    'For x = 0 To Venues(x)
+                    '    If Venues(x) = Nothing Then
+                    '    Else
+                    '        Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Occupied' WHERE VenueID = " & Venues(x) & "", connection)
+                    '        update_Venue.ExecuteNonQuery()
+                    '    End If
+                    'Next x
 
                     ''Items
-                    Dim y As Integer = 0
-                    For y = 0 To Items(5 - y)
-                        If Items(y) = Nothing Then
-                        Else
-                            Dim newQTY As Integer
-                            mysql = "SELECT Item_Qty FROM table_items WHERE Item_ID = " & Items(y)
-                            closeDB()
-                            conndb()
-                            cmd = New MySqlCommand(mysql, conn)
-                            dr = cmd.ExecuteReader
-                            Do Until dr.Read = False
-                                newQTY = dr("item_Qty")
-                            Loop
-                            closeDB()
+                    'Dim y As Integer = 0
+                    'For y = 0 To Items(5 - y)
+                    '    If Items(y) = Nothing Then
+                    '    Else
+                    '        Dim newQTY As Integer
+                    '        mysql = "SELECT Item_Qty FROM table_items WHERE Item_ID = " & Items(y)
+                    '        closeDB()
+                    '        conndb()
+                    '        cmd = New MySqlCommand(mysql, conn)
+                    '        dr = cmd.ExecuteReader
+                    '        Do Until dr.Read = False
+                    '            newQTY = dr("item_Qty")
+                    '        Loop
+                    '        closeDB()
 
-                            mysql = "UPDATE table_items SET item_Qty = " & newQTY - Val(ItemsMuch(y)) & "" &
-                                " WHERE Item_Id = " & Items(y)
-                            closeDB()
-                            conndb()
-                            cmd = New MySqlCommand(mysql, conn)
-                            cmd.ExecuteNonQuery()
-                            closeDB()
-                        End If
-                    Next y
+                    '        mysql = "UPDATE table_items SET item_Qty = " & newQTY - Val(ItemsMuch(y)) & "" &
+                    '            " WHERE Item_Id = " & Items(y)
+                    '        closeDB()
+                    '        conndb()
+                    '        cmd = New MySqlCommand(mysql, conn)
+                    '        cmd.ExecuteNonQuery()
+                    '        closeDB()
+                    '    End If
+                    'Next y
 
 
                     ''Table Transactions Details
@@ -289,6 +291,9 @@ Public Class Form_Checkin
                             End With
                             closeDB()
                         ElseIf (Me.DataGridView1.Rows(i).Cells(5).Value = "V000") Then
+                            Dim update_Venue As New MySqlCommand("UPDATE tblVenue SET Status = 'Occupied' WHERE VenueID = " & DataGridView1.Rows(i).Cells(0).Value & "", connection)
+                            update_Venue.ExecuteNonQuery()
+
                             mysql = "INSERT INTO `Table_TransactionDetailsVENUE`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`, `Type`) " &
                                                 "VALUES (@aa,@bb,@cc,@dd,@ee,@ff,@gg)"
                             closeDB()
@@ -324,6 +329,34 @@ Public Class Form_Checkin
                             End With
                             closeDB()
 
+                            Dim newQTY As Integer
+                            mysql = "SELECT Item_Qty FROM table_items WHERE Item_ID = " & DataGridView1.Rows(i).Cells(0).Value
+                            closeDB()
+                            conndb()
+                            cmd = New MySqlCommand(mysql, conn)
+                            dr = cmd.ExecuteReader
+                            Do Until dr.Read = False
+                                newQTY = dr("item_Qty")
+                            Loop
+                            closeDB()
+
+                            If (newQTY <= Val(DataGridView1.Rows(i).Cells(3).Value)) Then
+                                mysql = "UPDATE table_items SET item_Qty = " & newQTY & ", Item_Status = '4'" &
+                                " WHERE Item_Id = " & DataGridView1.Rows(i).Cells(0).Value
+                                closeDB()
+                                conndb()
+                                cmd = New MySqlCommand(mysql, conn)
+                                cmd.ExecuteNonQuery()
+                                closeDB()
+                            Else
+                                mysql = "UPDATE table_items SET item_Qty = " & newQTY - Val(DataGridView1.Rows(i).Cells(3).Value) & "" &
+                                " WHERE Item_Id = " & DataGridView1.Rows(i).Cells(0).Value
+                                closeDB()
+                                conndb()
+                                cmd = New MySqlCommand(mysql, conn)
+                                cmd.ExecuteNonQuery()
+                                closeDB()
+                            End If
                         End If
 
                     Next i

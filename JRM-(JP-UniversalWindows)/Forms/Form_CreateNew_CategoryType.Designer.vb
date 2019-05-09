@@ -51,7 +51,6 @@ Partial Class Form_CreateNew_CategoryType
         Me.txtCatType.Name = "txtCatType"
         Me.txtCatType.Size = New System.Drawing.Size(502, 29)
         Me.txtCatType.TabIndex = 75
-        Me.txtCatType.Text = "Category Name"
         '
         'cmdCancel
         '
@@ -90,7 +89,6 @@ Partial Class Form_CreateNew_CategoryType
         Me.txtCatDesc.Name = "txtCatDesc"
         Me.txtCatDesc.Size = New System.Drawing.Size(502, 29)
         Me.txtCatDesc.TabIndex = 69
-        Me.txtCatDesc.Text = "Category Description"
         '
         'Label3
         '
@@ -119,7 +117,6 @@ Partial Class Form_CreateNew_CategoryType
         Me.txtCatNum.Name = "txtCatNum"
         Me.txtCatNum.Size = New System.Drawing.Size(213, 29)
         Me.txtCatNum.TabIndex = 59
-        Me.txtCatNum.Text = "1-99 +*"
         '
         'ComboBox1
         '
@@ -127,13 +124,13 @@ Partial Class Form_CreateNew_CategoryType
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Small", "Medium", "Large", "FunctionHall"})
         Me.ComboBox1.Location = New System.Drawing.Point(300, 111)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(213, 32)
         Me.ComboBox1.TabIndex = 77
         Me.ComboBox1.Text = "Small"
         '
-        'CreateNewCategoryType
+        'Form_CreateNew_CategoryType
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -150,8 +147,8 @@ Partial Class Form_CreateNew_CategoryType
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtCatNum)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "CreateNewCategoryType"
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Name = "Form_CreateNew_CategoryType"
         Me.Text = "CreateNewCategoryType"
         Me.ResumeLayout(False)
         Me.PerformLayout()

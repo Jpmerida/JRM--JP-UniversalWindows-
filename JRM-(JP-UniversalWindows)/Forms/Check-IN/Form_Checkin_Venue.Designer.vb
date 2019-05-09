@@ -37,7 +37,6 @@ Partial Class Form_Checkin_Venue
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -56,7 +55,7 @@ Partial Class Form_Checkin_Venue
         Me.txtName.Name = "txtName"
         Me.txtName.ReadOnly = True
         Me.txtName.Size = New System.Drawing.Size(326, 29)
-        Me.txtName.TabIndex = 70
+        Me.txtName.TabIndex = 2
         Me.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
@@ -79,7 +78,7 @@ Partial Class Form_Checkin_Venue
         Me.txtDesc.Name = "txtDesc"
         Me.txtDesc.ReadOnly = True
         Me.txtDesc.Size = New System.Drawing.Size(326, 29)
-        Me.txtDesc.TabIndex = 68
+        Me.txtDesc.TabIndex = 6
         Me.txtDesc.Text = "Description"
         Me.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -103,7 +102,7 @@ Partial Class Form_Checkin_Venue
         Me.txtStatus.Name = "txtStatus"
         Me.txtStatus.ReadOnly = True
         Me.txtStatus.Size = New System.Drawing.Size(326, 29)
-        Me.txtStatus.TabIndex = 66
+        Me.txtStatus.TabIndex = 5
         Me.txtStatus.Text = "Available"
         Me.txtStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -127,7 +126,7 @@ Partial Class Form_Checkin_Venue
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.ReadOnly = True
         Me.txtPrice.Size = New System.Drawing.Size(326, 29)
-        Me.txtPrice.TabIndex = 64
+        Me.txtPrice.TabIndex = 4
         Me.txtPrice.Text = "Price"
         Me.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -151,7 +150,7 @@ Partial Class Form_Checkin_Venue
         Me.txtCatType.Name = "txtCatType"
         Me.txtCatType.ReadOnly = True
         Me.txtCatType.Size = New System.Drawing.Size(326, 29)
-        Me.txtCatType.TabIndex = 62
+        Me.txtCatType.TabIndex = 3
         Me.txtCatType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button3
@@ -163,7 +162,7 @@ Partial Class Form_Checkin_Venue
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(218, 69)
-        Me.Button3.TabIndex = 71
+        Me.Button3.TabIndex = 8
         Me.Button3.Text = "Cancel"
         Me.Button3.UseVisualStyleBackColor = False
         '
@@ -175,7 +174,7 @@ Partial Class Form_Checkin_Venue
         Me.Button4.Margin = New System.Windows.Forms.Padding(2)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(218, 69)
-        Me.Button4.TabIndex = 72
+        Me.Button4.TabIndex = 7
         Me.Button4.Text = "SELECT"
         Me.Button4.UseVisualStyleBackColor = False
         '
@@ -198,7 +197,7 @@ Partial Class Form_Checkin_Venue
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(186, 29)
-        Me.TextBox1.TabIndex = 75
+        Me.TextBox1.TabIndex = 1
         '
         'Label1
         '
@@ -223,15 +222,6 @@ Partial Class Form_Checkin_Venue
         Me.PictureBox1.TabIndex = 80
         Me.PictureBox1.TabStop = False
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(54, 15)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 81
-        Me.Label2.Text = "Label2"
-        '
         'ListView1
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.OneClick
@@ -243,7 +233,7 @@ Partial Class Form_Checkin_Venue
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(455, 423)
-        Me.ListView1.TabIndex = 82
+        Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
@@ -286,7 +276,6 @@ Partial Class Form_Checkin_Venue
         Me.ClientSize = New System.Drawing.Size(1004, 483)
         Me.ControlBox = False
         Me.Controls.Add(Me.ListView1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label9)
@@ -326,7 +315,6 @@ Partial Class Form_Checkin_Venue
     Public WithEvents txtStatus As TextBox
     Public WithEvents txtPrice As TextBox
     Public WithEvents txtCatType As TextBox
-    Public WithEvents Label2 As Label
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader

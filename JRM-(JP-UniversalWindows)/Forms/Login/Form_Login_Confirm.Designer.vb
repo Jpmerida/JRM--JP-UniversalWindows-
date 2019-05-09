@@ -49,13 +49,13 @@ Partial Class Form_Login_Confirm
         'Button1
         '
         Me.Button1.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.Button1.Location = New System.Drawing.Point(158, 351)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 50)
         Me.Button1.TabIndex = 3
-        Me.Button1.Text = "CANCEL"
+        Me.Button1.Text = "CLOSE"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label2
@@ -106,18 +106,18 @@ Partial Class Form_Login_Confirm
         '
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 462)
+        Me.StatusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 464)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.StatusStrip1.Size = New System.Drawing.Size(714, 22)
+        Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
+        Me.StatusStrip1.Size = New System.Drawing.Size(714, 20)
         Me.StatusStrip1.TabIndex = 29
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(121, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(121, 15)
         Me.ToolStripStatusLabel1.Text = "ToolStripStatusLabel1"
         '
         'Form_Login_Confirm

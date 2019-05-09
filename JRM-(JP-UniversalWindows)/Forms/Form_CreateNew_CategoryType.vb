@@ -30,7 +30,7 @@ Public Class Form_CreateNew_CategoryType
     End Function
 
     Private Sub cmdCreate_Click(sender As Object, e As EventArgs) Handles cmdCreate.Click
-        Dim insert_command As New MySqlCommand("INSERT INTO `tblVenueType`(`CatType`,`CatDescription`,`CatNum`, `CatSize`) VALUES (@CT,@CD,@CN,@CS)", connection)
+        Dim insert_command As New MySqlCommand("INSERT INTO `tblLocationType`(`CatType`,`CatDescription`,`CatNum`, `CatSize`) VALUES (@CT,@CD,@CN,@CS)", connection)
 
         insert_command.Parameters.Add("@CT", MySqlDbType.VarChar).Value = txtCatType.Text
         insert_command.Parameters.Add("@CD", MySqlDbType.VarChar).Value = txtCatDesc.Text

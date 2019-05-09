@@ -111,7 +111,7 @@ Partial Class Form_Checkin_Guest
         Me.cmdCreate.Location = New System.Drawing.Point(573, 383)
         Me.cmdCreate.Name = "cmdCreate"
         Me.cmdCreate.Size = New System.Drawing.Size(261, 67)
-        Me.cmdCreate.TabIndex = 102
+        Me.cmdCreate.TabIndex = 2
         Me.cmdCreate.Text = "Create"
         Me.cmdCreate.UseVisualStyleBackColor = False
         '
@@ -272,7 +272,7 @@ Partial Class Form_Checkin_Guest
         Me.ListView1.Location = New System.Drawing.Point(11, 53)
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(530, 397)
-        Me.ListView1.TabIndex = 101
+        Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
         '
@@ -284,7 +284,7 @@ Partial Class Form_Checkin_Guest
         Me.cmdSelect.Location = New System.Drawing.Point(840, 383)
         Me.cmdSelect.Name = "cmdSelect"
         Me.cmdSelect.Size = New System.Drawing.Size(261, 67)
-        Me.cmdSelect.TabIndex = 124
+        Me.cmdSelect.TabIndex = 1
         Me.cmdSelect.Text = "Select"
         Me.cmdSelect.UseVisualStyleBackColor = False
         '
@@ -306,7 +306,7 @@ Partial Class Form_Checkin_Guest
         Me.btn_refresh.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_refresh.Name = "btn_refresh"
         Me.btn_refresh.Size = New System.Drawing.Size(145, 28)
-        Me.btn_refresh.TabIndex = 126
+        Me.btn_refresh.TabIndex = 3
         Me.btn_refresh.Text = "Refresh"
         Me.btn_refresh.UseVisualStyleBackColor = True
         '

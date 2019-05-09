@@ -24,7 +24,6 @@ Partial Class Form_CreateNew_Item
     Private Sub InitializeComponent()
         Me.SelectImage = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnAddItem = New System.Windows.Forms.Button()
         Me.txtItemDescription = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtItemQuantity = New System.Windows.Forms.TextBox()
@@ -33,6 +32,7 @@ Partial Class Form_CreateNew_Item
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAddItem = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
@@ -67,16 +67,6 @@ Partial Class Form_CreateNew_Item
         Me.GroupBox1.TabIndex = 100
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "New Item"
-        '
-        'btnAddItem
-        '
-        Me.btnAddItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddItem.Location = New System.Drawing.Point(565, 297)
-        Me.btnAddItem.Name = "btnAddItem"
-        Me.btnAddItem.Size = New System.Drawing.Size(100, 31)
-        Me.btnAddItem.TabIndex = 101
-        Me.btnAddItem.Text = "Add Item"
-        Me.btnAddItem.UseVisualStyleBackColor = True
         '
         'txtItemDescription
         '
@@ -151,15 +141,27 @@ Partial Class Form_CreateNew_Item
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Item Name :"
         '
+        'btnAddItem
+        '
+        Me.btnAddItem.BackColor = System.Drawing.Color.YellowGreen
+        Me.btnAddItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddItem.Location = New System.Drawing.Point(565, 299)
+        Me.btnAddItem.Name = "btnAddItem"
+        Me.btnAddItem.Size = New System.Drawing.Size(100, 31)
+        Me.btnAddItem.TabIndex = 101
+        Me.btnAddItem.Text = "Add Item"
+        Me.btnAddItem.UseVisualStyleBackColor = False
+        '
         'btnClose
         '
+        Me.btnClose.BackColor = System.Drawing.Color.Salmon
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnClose.Location = New System.Drawing.Point(565, 12)
+        Me.btnClose.Location = New System.Drawing.Point(459, 299)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(100, 31)
         Me.btnClose.TabIndex = 102
         Me.btnClose.Text = "Close"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -177,7 +179,7 @@ Partial Class Form_CreateNew_Item
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(677, 335)
+        Me.ClientSize = New System.Drawing.Size(686, 362)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.btnClose)
@@ -187,7 +189,7 @@ Partial Class Form_CreateNew_Item
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Form_CreateNew_Item"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Item [Add New Item]"
+        Me.Text = "Item [New Item]"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

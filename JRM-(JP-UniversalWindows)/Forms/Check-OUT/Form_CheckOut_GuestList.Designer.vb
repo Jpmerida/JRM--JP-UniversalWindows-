@@ -43,6 +43,8 @@ Partial Class Form_CheckOut_GuestList
         Me.lblOverallCharge = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -65,6 +67,7 @@ Partial Class Form_CheckOut_GuestList
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -222,7 +225,10 @@ Partial Class Form_CheckOut_GuestList
         '
         'Panel2
         '
+        Me.Panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label6)
@@ -232,6 +238,26 @@ Partial Class Form_CheckOut_GuestList
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(330, 404)
         Me.Panel2.TabIndex = 17
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(280, 49)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 45
+        Me.Label15.Text = "Label15"
+        Me.Label15.Visible = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(280, 20)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(45, 13)
+        Me.Label14.TabIndex = 27
+        Me.Label14.Text = "Label14"
+        Me.Label14.Visible = False
         '
         'Label1
         '
@@ -287,12 +313,13 @@ Partial Class Form_CheckOut_GuestList
         '
         'btnConfirmPayment
         '
+        Me.btnConfirmPayment.AutoSize = True
         Me.btnConfirmPayment.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
-        Me.btnConfirmPayment.Location = New System.Drawing.Point(99, 133)
+        Me.btnConfirmPayment.Location = New System.Drawing.Point(80, 133)
         Me.btnConfirmPayment.Name = "btnConfirmPayment"
-        Me.btnConfirmPayment.Size = New System.Drawing.Size(136, 38)
+        Me.btnConfirmPayment.Size = New System.Drawing.Size(174, 38)
         Me.btnConfirmPayment.TabIndex = 28
-        Me.btnConfirmPayment.Text = "Confirm"
+        Me.btnConfirmPayment.Text = "Confirm Payment"
         Me.btnConfirmPayment.UseVisualStyleBackColor = True
         '
         'lblChange
@@ -380,6 +407,7 @@ Partial Class Form_CheckOut_GuestList
         '
         'Button_OpenTransact
         '
+        Me.Button_OpenTransact.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button_OpenTransact.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
         Me.Button_OpenTransact.Location = New System.Drawing.Point(946, 12)
         Me.Button_OpenTransact.Name = "Button_OpenTransact"
@@ -390,6 +418,7 @@ Partial Class Form_CheckOut_GuestList
         '
         'btnClose
         '
+        Me.btnClose.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnClose.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
         Me.btnClose.Location = New System.Drawing.Point(1131, 12)
         Me.btnClose.Name = "btnClose"
@@ -426,10 +455,10 @@ Partial Class Form_CheckOut_GuestList
         '
         Me.Button_CheckOUT.BackColor = System.Drawing.Color.PaleGreen
         Me.Button_CheckOUT.Font = New System.Drawing.Font("Stencil", 28.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_CheckOUT.Location = New System.Drawing.Point(983, 464)
+        Me.Button_CheckOUT.Location = New System.Drawing.Point(945, 464)
         Me.Button_CheckOUT.Margin = New System.Windows.Forms.Padding(2)
         Me.Button_CheckOUT.Name = "Button_CheckOUT"
-        Me.Button_CheckOUT.Size = New System.Drawing.Size(261, 67)
+        Me.Button_CheckOUT.Size = New System.Drawing.Size(331, 67)
         Me.Button_CheckOUT.TabIndex = 43
         Me.Button_CheckOUT.Text = "Check-out"
         Me.Button_CheckOUT.UseVisualStyleBackColor = False
@@ -470,11 +499,24 @@ Partial Class Form_CheckOut_GuestList
         Me.Panel4.Size = New System.Drawing.Size(464, 157)
         Me.Panel4.TabIndex = 28
         '
+        'Button1
+        '
+        Me.Button1.AutoSize = True
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!)
+        Me.Button1.Location = New System.Drawing.Point(795, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(145, 28)
+        Me.Button1.TabIndex = 44
+        Me.Button1.Text = "Show Transactions"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form_CheckOut_GuestList
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(1334, 558)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
@@ -547,4 +589,7 @@ Partial Class Form_CheckOut_GuestList
     Friend WithEvents lbltotalcharge As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents ColumnHeader13 As ColumnHeader
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label15 As Label
 End Class
