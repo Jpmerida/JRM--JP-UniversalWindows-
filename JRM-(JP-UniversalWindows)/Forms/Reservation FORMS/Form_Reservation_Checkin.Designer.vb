@@ -92,7 +92,6 @@ Partial Class Form_Reservation_Checkin
         Me.GroupBox5.Controls.Add(Me.Button3)
         Me.GroupBox5.Controls.Add(Me.Button_Remove)
         Me.GroupBox5.Controls.Add(Me.DataGridView1)
-        Me.GroupBox5.Controls.Add(Me.DataGridView3)
         Me.GroupBox5.Controls.Add(Me.lblOverallCharge)
         Me.GroupBox5.Controls.Add(Me.Label19)
         Me.GroupBox5.Controls.Add(Me.lbladvancePay)
@@ -101,6 +100,7 @@ Partial Class Form_Reservation_Checkin
         Me.GroupBox5.Controls.Add(Me.Label16)
         Me.GroupBox5.Controls.Add(Me.lbltotalcharge)
         Me.GroupBox5.Controls.Add(Me.Label10)
+        Me.GroupBox5.Controls.Add(Me.DataGridView3)
         Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.GroupBox5.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox5.Name = "GroupBox5"
@@ -144,7 +144,7 @@ Partial Class Form_Reservation_Checkin
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(88, 28)
         Me.ComboBox1.TabIndex = 139
-        Me.ComboBox1.Text = "25.00"
+        Me.ComboBox1.Text = "40.00"
         '
         'Button5
         '
@@ -298,11 +298,11 @@ Partial Class Form_Reservation_Checkin
         Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(83, 24)
+        Me.DataGridView3.Location = New System.Drawing.Point(73, 93)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.ReadOnly = True
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(622, 196)
+        Me.DataGridView3.Size = New System.Drawing.Size(467, 196)
         Me.DataGridView3.TabIndex = 1
         Me.DataGridView3.Visible = False
         '

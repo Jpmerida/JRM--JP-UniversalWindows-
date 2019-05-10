@@ -334,7 +334,15 @@ Public Class Form_CheckOut_GuestList
             DisplayList1(ListView2, "")
             RecentTID = Integer.Parse(Format(Label14.Text))
             Label15.Text = RecentTID
-            Form_Report.ShowDialog()
+
+            'Dim xform As New Form_Report
+            'xform.MdiParent = Me.MdiParent
+            '''xform.WindowState = FormWindowState.Normal
+            'xform.Show()
+
+            Form_Report.Close()
+            Form_Report.WindowState = FormWindowState.Normal
+            Form_Report.Show()
         End If
     End Sub
 
@@ -353,6 +361,8 @@ Public Class Form_CheckOut_GuestList
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         RecentTID = Integer.Parse(Format(Label14.Text))
         Label15.Text = RecentTID
-        Form_Report.ShowDialog()
+        Form_Report.Close()
+        Form_Report.WindowState = FormWindowState.Normal
+        Form_Report.Show()
     End Sub
 End Class

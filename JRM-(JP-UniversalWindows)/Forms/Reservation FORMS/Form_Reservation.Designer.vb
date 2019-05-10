@@ -84,6 +84,7 @@ Partial Class Form_Reservation
         Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -223,7 +224,7 @@ Partial Class Form_Reservation
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(88, 28)
         Me.ComboBox1.TabIndex = 93
-        Me.ComboBox1.Text = "25.00"
+        Me.ComboBox1.Text = "40.00"
         '
         'Button_Pick_Locations
         '
@@ -508,12 +509,11 @@ Partial Class Form_Reservation
         '
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Font = New System.Drawing.Font("Segoe UI Black", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1109, 515)
+        Me.TabControl1.Size = New System.Drawing.Size(1113, 513)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage2
@@ -525,9 +525,9 @@ Partial Class Form_Reservation
         Me.TabPage2.Location = New System.Drawing.Point(4, 39)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1101, 472)
+        Me.TabPage2.Size = New System.Drawing.Size(1105, 470)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "                        RESERVATION LIST                          "
+        Me.TabPage2.Text = "                   RESERVATION LIST                     "
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'Button2
@@ -785,7 +785,6 @@ Partial Class Form_Reservation
         Me.DataGridView2.AllowUserToResizeColumns = False
         Me.DataGridView2.AllowUserToResizeRows = False
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(6, 89)
         Me.DataGridView2.Name = "DataGridView2"
@@ -824,17 +823,29 @@ Partial Class Form_Reservation
         Me.TabPage1.Location = New System.Drawing.Point(4, 39)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1101, 472)
+        Me.TabPage1.Size = New System.Drawing.Size(1105, 470)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "                                 RESERVATION                                   "
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Red
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(1026, 6)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 29)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "CLOSE"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form_Reservation
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1109, 484)
+        Me.ClientSize = New System.Drawing.Size(1109, 490)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -927,4 +938,5 @@ Partial Class Form_Reservation
     Friend WithEvents Button2 As Button
     Friend WithEvents lbltime As Label
     Friend WithEvents Label21 As Label
+    Friend WithEvents Button3 As Button
 End Class

@@ -33,12 +33,12 @@ Public Class Form_Checkin
         table2.Rows.Clear()
         DataGridView1.DataSource = table2
         If continueonce = 0 Then
-            table2.Columns.Add("ID", Type.GetType("System.String"))
-            table2.Columns.Add("ITEM", Type.GetType("System.String"))
-            table2.Columns.Add("Price", Type.GetType("System.Double"))
-            table2.Columns.Add("Qty", Type.GetType("System.Double"))
-            table2.Columns.Add("SubTotal", Type.GetType("System.Double"))
-            table2.Columns.Add("TYPE", Type.GetType("System.String"))
+            table2.Columns.Add("ID", type.GetType("System.String"))
+            table2.Columns.Add("ITEM", type.GetType("System.String"))
+            table2.Columns.Add("Price", type.GetType("System.Double"))
+            table2.Columns.Add("Qty", type.GetType("System.Double"))
+            table2.Columns.Add("SubTotal", type.GetType("System.Double"))
+            table2.Columns.Add("TYPE", type.GetType("System.String"))
             DataGridView1.DataSource = table2
             DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             DataGridView1.AllowUserToAddRows = False
@@ -65,7 +65,7 @@ Public Class Form_Checkin
     Public Sub clearAll()
         ''table2 = New DataTable("Table")
         txtGuest.Text = "___________________________________"
-        ComboBox1.Text = "25.00"
+        ComboBox1.Text = "40.00"
         txtTotal.Text = 0
         txtAdvance.Clear()
         lblGrandTotal.Text = 00.00
@@ -162,7 +162,7 @@ Public Class Form_Checkin
         Form_Checkin_Venue.ShowDialog()
     End Sub
 
-    Private Sub Down_Click(sender As Object, e As EventArgs)
+    Private Sub Down_Click(sender As Object, e As EventArgs) Handles Down.Click
         If DataGridView1.Rows.Count >= 1 Then
             Dim i As Integer = DataGridView1.CurrentRow.Index + 1
             If (i >= -1 And i < DataGridView1.Rows.Count) Then
@@ -171,7 +171,7 @@ Public Class Form_Checkin
         End If
     End Sub
 
-    Private Sub Up_Click(sender As Object, e As EventArgs)
+    Private Sub Up_Click(sender As Object, e As EventArgs) Handles Up.Click
         If (DataGridView1.Rows.Count >= 1) Then
             Dim i As Integer = DataGridView1.CurrentRow.Index - 1
             If (i >= 0 And i < DataGridView1.Rows.Count) Then
@@ -180,7 +180,7 @@ Public Class Form_Checkin
         End If
     End Sub
 
-    Private Sub Button_Remove_Click(sender As Object, e As EventArgs)
+    Private Sub Button_Remove_Click(sender As Object, e As EventArgs) Handles Button_Remove.Click
         If DataGridView1.Rows.Count = 0 Then
             MsgBox("Please select an item to remove", vbCritical, "No item selected")
             Exit Sub
@@ -214,7 +214,7 @@ Public Class Form_Checkin
         Else
             If MsgBox(" GrandTotal : " & lblGrandTotal.Text & " is the total transaction to the selected guest?", vbQuestion + vbYesNo, "Charge Transaction") = vbYes Then
                 ''
-                Dim insert_command1 As New MySqlCommand("INSERT INTO `Table_Transactions`(`U_id`, `G_id`, `TransDate`, `Status`, `checkin`, `checkout`, `discount`, `advance`, `total`) VALUES (@a,@b,@c,@d,@e,@f,@g,@h,@i)", connection)
+                Dim insert_command1 As New MySqlCommand("INSERT INTO `Table_Transactions`(`U_id`, `G_id`, `TransDate`, `Status`, `checkin`, `checkout`, `discount`, `advance`, `total`, `gain`) VALUES (@a,@b,@c,@d,@e,@f,@g,@h,@i,@j)", connection)
                 insert_command1.Parameters.Add("@a", MySqlDbType.Int64).Value = UID
                 insert_command1.Parameters.Add("@b", MySqlDbType.Int64).Value = CheckGuestID
                 insert_command1.Parameters.Add("@c", MySqlDbType.DateTime).Value = DateTime.Now
@@ -224,7 +224,7 @@ Public Class Form_Checkin
                 insert_command1.Parameters.Add("@g", MySqlDbType.Double).Value = txtDiscount.Text
                 insert_command1.Parameters.Add("@h", MySqlDbType.Double).Value = txtAdvance.Text
                 insert_command1.Parameters.Add("@i", MySqlDbType.Double).Value = txtTotal.Text
-                'insert_command1.Parameters.Add("@j", MySqlDbType.Double).Value = Now.ToLongTimeString()
+                insert_command1.Parameters.Add("@j", MySqlDbType.Double).Value = lblGrandTotal.Text
                 If execCommand(insert_command1) Then
 
                     Dim update_guest As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Checkin' WHERE GuestID = " & CheckGuestID & "", connection)
@@ -369,6 +369,7 @@ Public Class Form_Checkin
                 MsgBox("Transaction has been charged to the selected guest", vbInformation, "Charged to guest")
                 clearAll()
                 resettable()
+                Form_Login_Background.Hide()
                 Me.Close()
             End If
         End If
@@ -453,5 +454,6 @@ Public Class Form_Checkin
     Private Sub TxtDiscount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDiscount.KeyPress, ComboBox1.KeyPress, txtAdvance.KeyPress
         OnlyNumbers(e)
     End Sub
+
 
 End Class

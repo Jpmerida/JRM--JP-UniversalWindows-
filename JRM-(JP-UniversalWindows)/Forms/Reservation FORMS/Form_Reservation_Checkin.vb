@@ -35,6 +35,8 @@ Public Class Form_Reservation_Checkin
 
         dcount = 0
         advpay = 0
+        txtDiscount.Text = "0"
+        ComboBox1.Text = "40.00"
     End Sub
     Public Sub DisplayR(datagrid As DataGridView, valueToSearch As Integer)
         DataGridView1.Rows.Clear()
@@ -161,29 +163,31 @@ Public Class Form_Reservation_Checkin
         datagrid.Columns(9).Visible = False
         datagrid.Columns(10).Visible = False
         datagrid.Columns(11).Visible = False
-        datagrid.Columns(12).Visible = True
-        datagrid.Columns(12).HeaderText = "Selected Items"
-        datagrid.Columns(13).Visible = True
-        datagrid.Columns(13).HeaderText = "Price"
+        datagrid.Columns(12).Visible = False
+        'datagrid.Columns(12).HeaderText = "Selected Items"
+        datagrid.Columns(13).Visible = True 'ITEMS
+        datagrid.Columns(13).HeaderText = "Selected Items"
         datagrid.Columns(14).Visible = True
-        datagrid.Columns(14).HeaderText = "Qty"
+        datagrid.Columns(14).HeaderText = "Price"
         datagrid.Columns(15).Visible = True
-        datagrid.Columns(15).HeaderText = "sub-Total"
-        datagrid.Columns(16).Visible = False
+        datagrid.Columns(15).HeaderText = "Qty"
+        datagrid.Columns(16).Visible = True
+        datagrid.Columns(16).HeaderText = "Sub-Total"
         datagrid.Columns(17).Visible = False
+        datagrid.Columns(18).Visible = False 'type
 
-        datagrid.Columns(13).DefaultCellStyle.Format = "n2"
-        datagrid.Columns(13).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         datagrid.Columns(14).DefaultCellStyle.Format = "n2"
         datagrid.Columns(14).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         datagrid.Columns(15).DefaultCellStyle.Format = "n2"
         datagrid.Columns(15).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        datagrid.Columns(16).DefaultCellStyle.Format = "n2"
+        datagrid.Columns(16).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
 
         '' =======================================================================
         Dim i As Integer
         Dim pt = 0
         For i = 0 To datagrid.Rows.Count - 1
-            pt = pt + datagrid.Rows(i).Cells(15).Value
+            pt = pt + datagrid.Rows(i).Cells(16).Value
         Next i
 
         lbltotalcharge.Text = FormatNumber(pt)
@@ -421,7 +425,7 @@ Public Class Form_Reservation_Checkin
             '= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
             '= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =  New Data
-            Dim insert_command1 As New MySqlCommand("INSERT INTO `Table_Transactions`(`U_id`, `G_id`, `TransDate`, `Status`, `checkin`, `checkout`, `discount`, `advance`, `total`) VALUES (@a,@b,@c,@d,@e,@f,@g,@h,@i)", connection)
+            Dim insert_command1 As New MySqlCommand("INSERT INTO `Table_Transactions`(`U_id`, `G_id`, `TransDate`, `Status`, `checkin`, `checkout`, `discount`, `advance`, `total`, `gain`) VALUES (@a,@b,@c,@d,@e,@f,@g,@h,@i,@j)", connection)
             insert_command1.Parameters.Add("@a", MySqlDbType.Int64).Value = UID
             insert_command1.Parameters.Add("@b", MySqlDbType.Int64).Value = getID2
             insert_command1.Parameters.Add("@c", MySqlDbType.DateTime).Value = DateTime.Now
@@ -431,7 +435,7 @@ Public Class Form_Reservation_Checkin
             insert_command1.Parameters.Add("@g", MySqlDbType.Double).Value = txtDiscount.Text
             insert_command1.Parameters.Add("@h", MySqlDbType.Double).Value = txtAdvance.Text
             insert_command1.Parameters.Add("@i", MySqlDbType.Double).Value = txtTotal.Text
-            'insert_command1.Parameters.Add("@j", MySqlDbType.Double).Value = Now.ToLongTimeString()
+            insert_command1.Parameters.Add("@j", MySqlDbType.Double).Value = lbltotalcharge.Text
             If execCommand(insert_command1) Then
 
                 Dim update_guest2 As New MySqlCommand("UPDATE tblGuests SET Remarks = 'Checkin' WHERE GuestID = " & getID2 & "", connection)
@@ -442,7 +446,17 @@ Public Class Form_Reservation_Checkin
                 newtransactionID = command.ExecuteScalar().ToString()
                 closeDB()
                 Dim i As Integer
+
                 For i = 0 To Me.DataGridView1.Rows.Count - 1
+
+                    'Dim TransID As Integer = 
+                    Dim Iname As String = DataGridView1.Rows(i).Cells(1).Value
+                    Dim Iprice As Double = DataGridView1.Rows(i).Cells(2).Value
+                    Dim Iqty As Double = DataGridView1.Rows(i).Cells(3).Value
+                    Dim Itotal As Double = DataGridView1.Rows(i).Cells(4).Value
+                    Dim Iid As Integer = DataGridView1.Rows(i).Cells(0).Value
+                    Dim Itype As String = DataGridView1.Rows(i).Cells(5).Value
+
                     If (Me.DataGridView1.Rows(i).Cells(5).Value = "P000") Then
                         mysql = "INSERT INTO `Table_TransactionDetails`(`T_id`, `Item_Name`, `Item_Price`, `Quantity`, `SubTotal`, `Item_ID`, `Type`) " &
                                             "VALUES (@aa,@bb,@cc,@dd,@ee,@ff,@gg)"
@@ -451,12 +465,12 @@ Public Class Form_Reservation_Checkin
                         cmd = New MySqlCommand(mysql, conn)
                         With cmd
                             .Parameters.AddWithValue("@aa", newtransactionID)
-                            .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
-                            .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
-                            .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
-                            .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
-                            .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
-                            .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                            .Parameters.AddWithValue("@bb", Iname)
+                            .Parameters.AddWithValue("@cc", Iprice)
+                            .Parameters.AddWithValue("@dd", Iqty)
+                            .Parameters.AddWithValue("@ee", Itotal)
+                            .Parameters.AddWithValue("@ff", Iid)
+                            .Parameters.AddWithValue("@gg", Itype)
                             .ExecuteNonQuery()
                         End With
                         closeDB()
@@ -471,12 +485,12 @@ Public Class Form_Reservation_Checkin
                         cmd = New MySqlCommand(mysql, conn)
                         With cmd
                             .Parameters.AddWithValue("@aa", newtransactionID)
-                            .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
-                            .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
-                            .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
-                            .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
-                            .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
-                            .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                            .Parameters.AddWithValue("@bb", Iname)
+                            .Parameters.AddWithValue("@cc", Iprice)
+                            .Parameters.AddWithValue("@dd", Iqty)
+                            .Parameters.AddWithValue("@ee", Itotal)
+                            .Parameters.AddWithValue("@ff", Iid)
+                            .Parameters.AddWithValue("@gg", Itype)
                             .ExecuteNonQuery()
                         End With
                         closeDB()
@@ -489,12 +503,12 @@ Public Class Form_Reservation_Checkin
                         cmd = New MySqlCommand(mysql, conn)
                         With cmd
                             .Parameters.AddWithValue("@aa", newtransactionID)
-                            .Parameters.AddWithValue("@bb", Me.DataGridView1.Rows(i).Cells(1).Value)
-                            .Parameters.AddWithValue("@cc", Me.DataGridView1.Rows(i).Cells(2).Value)
-                            .Parameters.AddWithValue("@dd", Me.DataGridView1.Rows(i).Cells(3).Value)
-                            .Parameters.AddWithValue("@ee", Me.DataGridView1.Rows(i).Cells(4).Value)
-                            .Parameters.AddWithValue("@ff", Me.DataGridView1.Rows(i).Cells(0).Value)
-                            .Parameters.AddWithValue("@gg", Me.DataGridView1.Rows(i).Cells(5).Value)
+                            .Parameters.AddWithValue("@bb", Iname)
+                            .Parameters.AddWithValue("@cc", Iprice)
+                            .Parameters.AddWithValue("@dd", Iqty)
+                            .Parameters.AddWithValue("@ee", Itotal)
+                            .Parameters.AddWithValue("@ff", Iid)
+                            .Parameters.AddWithValue("@gg", Itype)
                             .ExecuteNonQuery()
                         End With
                         closeDB()
@@ -538,6 +552,7 @@ Public Class Form_Reservation_Checkin
             Form_Reservation.displayReserved(Form_Reservation.DataGridView2, "")
             Form_Reservation.DisplayR(DataGridView3, Nothing)
             resetall()
+            Form_Reservation.Close()
             Me.Close()
             '= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
         Else

@@ -117,6 +117,11 @@ Public Class Form_Report
 
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btn_Close.Click
+        Me.Close()
+    End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

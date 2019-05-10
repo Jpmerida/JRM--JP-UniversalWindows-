@@ -28,8 +28,16 @@ Partial Class Form_Checkin
         Me.Button_Add_Item = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblGrandTotal = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button_Remove = New System.Windows.Forms.Button()
+        Me.Down = New System.Windows.Forms.Button()
+        Me.Up = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtDiscount = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -40,27 +48,27 @@ Partial Class Form_Checkin
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Button_CheckIN = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtTransID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblGrandTotal = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtGuest = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Up = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Down = New System.Windows.Forms.Button()
-        Me.Button_Remove = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn()
+        Me.Column4 = New DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn()
+        Me.Column5 = New DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -89,6 +97,7 @@ Partial Class Form_Checkin
         Me.GroupBox1.Controls.Add(Me.Button_Remove)
         Me.GroupBox1.Controls.Add(Me.Down)
         Me.GroupBox1.Controls.Add(Me.Up)
+        Me.GroupBox1.Controls.Add(Me.DataGridView2)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
@@ -146,6 +155,50 @@ Partial Class Form_Checkin
         Me.Button2.Text = "Add [Cottage/Location]"
         Me.Button2.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.lblGrandTotal)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Location = New System.Drawing.Point(225, 291)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(326, 48)
+        Me.Panel1.TabIndex = 99
+        '
+        'lblGrandTotal
+        '
+        Me.lblGrandTotal.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGrandTotal.ForeColor = System.Drawing.Color.Black
+        Me.lblGrandTotal.Location = New System.Drawing.Point(160, 4)
+        Me.lblGrandTotal.Name = "lblGrandTotal"
+        Me.lblGrandTotal.Size = New System.Drawing.Size(155, 38)
+        Me.lblGrandTotal.TabIndex = 1
+        Me.lblGrandTotal.Text = "00.00"
+        Me.lblGrandTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label9.Location = New System.Drawing.Point(3, 4)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(151, 37)
+        Me.Label9.TabIndex = 95
+        Me.Label9.Text = "Sub Total :"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(-17, 11)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(123, 32)
+        Me.Label6.TabIndex = 70
+        Me.Label6.Text = "Discount :"
+        Me.Label6.Visible = False
+        '
         'ComboBox1
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
@@ -167,6 +220,54 @@ Partial Class Form_Checkin
         Me.Label17.Size = New System.Drawing.Size(80, 17)
         Me.Label17.TabIndex = 94
         Me.Label17.Text = "Head Price :"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridView1.Location = New System.Drawing.Point(96, 33)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(455, 249)
+        Me.DataGridView1.TabIndex = 41
+        '
+        'Button_Remove
+        '
+        Me.Button_Remove.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button_Remove.Location = New System.Drawing.Point(5, 257)
+        Me.Button_Remove.Name = "Button_Remove"
+        Me.Button_Remove.Size = New System.Drawing.Size(86, 25)
+        Me.Button_Remove.TabIndex = 12
+        Me.Button_Remove.Text = "Remove"
+        Me.Button_Remove.UseVisualStyleBackColor = True
+        '
+        'Down
+        '
+        Me.Down.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Down.Location = New System.Drawing.Point(5, 64)
+        Me.Down.Name = "Down"
+        Me.Down.Size = New System.Drawing.Size(86, 25)
+        Me.Down.TabIndex = 11
+        Me.Down.Text = "DOWN"
+        Me.Down.UseVisualStyleBackColor = True
+        '
+        'Up
+        '
+        Me.Up.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Up.Location = New System.Drawing.Point(5, 33)
+        Me.Up.Name = "Up"
+        Me.Up.Size = New System.Drawing.Size(86, 25)
+        Me.Up.TabIndex = 10
+        Me.Up.Text = "UP"
+        Me.Up.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -293,17 +394,6 @@ Partial Class Form_Checkin
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Accomodation Details"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(-17, 11)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(123, 32)
-        Me.Label6.TabIndex = 70
-        Me.Label6.Text = "Discount :"
-        Me.Label6.Visible = False
-        '
         'txtTransID
         '
         Me.txtTransID.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -336,39 +426,6 @@ Partial Class Form_Checkin
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(179, 33)
         Me.DateTimePicker1.TabIndex = 0
-        '
-        'Panel1
-        '
-        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.lblGrandTotal)
-        Me.Panel1.Controls.Add(Me.Label9)
-        Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Location = New System.Drawing.Point(225, 291)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(326, 48)
-        Me.Panel1.TabIndex = 99
-        '
-        'lblGrandTotal
-        '
-        Me.lblGrandTotal.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGrandTotal.ForeColor = System.Drawing.Color.Black
-        Me.lblGrandTotal.Location = New System.Drawing.Point(160, 4)
-        Me.lblGrandTotal.Name = "lblGrandTotal"
-        Me.lblGrandTotal.Size = New System.Drawing.Size(155, 38)
-        Me.lblGrandTotal.TabIndex = 1
-        Me.lblGrandTotal.Text = "00.00"
-        Me.lblGrandTotal.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Label9.Location = New System.Drawing.Point(3, 4)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(151, 37)
-        Me.Label9.TabIndex = 95
-        Me.Label9.Text = "Sub Total :"
         '
         'DateTimePicker2
         '
@@ -423,53 +480,79 @@ Partial Class Form_Checkin
         Me.Label2.TabIndex = 92
         Me.Label2.Text = "Guest :"
         '
-        'Up
+        'DataGridView2
         '
-        Me.Up.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Up.Location = New System.Drawing.Point(5, 33)
-        Me.Up.Name = "Up"
-        Me.Up.Size = New System.Drawing.Size(86, 25)
-        Me.Up.TabIndex = 10
-        Me.Up.Text = "UP"
-        Me.Up.UseVisualStyleBackColor = True
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
+        Me.DataGridView2.Location = New System.Drawing.Point(96, 33)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView2.MultiSelect = False
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView2.Size = New System.Drawing.Size(455, 249)
+        Me.DataGridView2.TabIndex = 100
         '
-        'DataGridView1
+        'Column1
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DataGridView1.Location = New System.Drawing.Point(96, 33)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(455, 249)
-        Me.DataGridView1.TabIndex = 41
+        Me.Column1.HeaderText = "id"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
-        'Down
+        'Column2
         '
-        Me.Down.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Down.Location = New System.Drawing.Point(5, 64)
-        Me.Down.Name = "Down"
-        Me.Down.Size = New System.Drawing.Size(86, 25)
-        Me.Down.TabIndex = 11
-        Me.Down.Text = "DOWN"
-        Me.Down.UseVisualStyleBackColor = True
+        Me.Column2.HeaderText = "item"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
-        'Button_Remove
+        'Column3
         '
-        Me.Button_Remove.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button_Remove.Location = New System.Drawing.Point(5, 257)
-        Me.Button_Remove.Name = "Button_Remove"
-        Me.Button_Remove.Size = New System.Drawing.Size(86, 25)
-        Me.Button_Remove.TabIndex = 12
-        Me.Button_Remove.Text = "Remove"
-        Me.Button_Remove.UseVisualStyleBackColor = True
+        '
+        '
+        '
+        Me.Column3.BackgroundStyle.Class = "DataGridViewNumericBorder"
+        Me.Column3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.Column3.HeaderText = "price"
+        Me.Column3.Increment = 1.0R
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        '
+        '
+        '
+        Me.Column4.BackgroundStyle.Class = "DataGridViewNumericBorder"
+        Me.Column4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.Column4.HeaderText = "qty"
+        Me.Column4.Increment = 1.0R
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        '
+        '
+        '
+        Me.Column5.BackgroundStyle.Class = "DataGridViewNumericBorder"
+        Me.Column5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square
+        Me.Column5.HeaderText = "sub total"
+        Me.Column5.Increment = 1.0R
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        '
+        'Column6
+        '
+        Me.Column6.HeaderText = "type"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
         '
         'Form_Checkin
         '
@@ -490,13 +573,14 @@ Partial Class Form_Checkin
         Me.Text = "Check-in Form"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -534,4 +618,11 @@ Partial Class Form_Checkin
     Friend WithEvents Button_Remove As Button
     Friend WithEvents lblGrandTotal As Label
     Friend WithEvents Label9 As Label
+    Public WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn
+    Friend WithEvents Column4 As DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn
+    Friend WithEvents Column5 As DevComponents.DotNetBar.Controls.DataGridViewDoubleInputColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
 End Class
