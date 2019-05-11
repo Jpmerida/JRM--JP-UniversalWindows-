@@ -42,4 +42,7 @@
 
     '=================
     Public RecentTID As Integer
+
+    Public Reportd1 As String
+    Public Reportd2 As String
 End Module

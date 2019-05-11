@@ -198,6 +198,8 @@ Public Class Form_Checkin
             lblGrandTotal.Text = FormatNumber(GrandTotal)
         End If
     End Sub
+
+
     Private Sub Button_CheckIN_Click(sender As Object, e As EventArgs) Handles Button_CheckIN.Click
         'Dim advance As Integer = Val(txtAdvance.Text)
         'Dim reserve As String = "0"
@@ -360,6 +362,26 @@ Public Class Form_Checkin
                         End If
 
                     Next i
+
+                    If txtTotal.Text = "00.00" Then
+                        mysql = "INSERT INTO `tblPayment`(`GuestID`, `T_id`, `ReservationID`, `AmountPaid`, `Change`, `TotalChange`, `DatePayed`)" &
+                    " VALUES (@a,@b,@c,@d,@e,@f,@g)"
+                        closeDB()
+                        conndb()
+                        cmd = New MySqlCommand(mysql, conn)
+                        With cmd
+                            .Parameters.AddWithValue("@a", CheckGuestID)
+                            .Parameters.AddWithValue("@b", NewTransactionID)
+                            .Parameters.AddWithValue("@c", 1)
+                            .Parameters.AddWithValue("@d", Double.Parse(txtAdvance.Text))
+                            .Parameters.AddWithValue("@e", 0)
+                            .Parameters.AddWithValue("@f", Double.Parse(lblGrandTotal.Text))
+                            .Parameters.AddWithValue("@g", Date.Now)
+                            .ExecuteNonQuery()
+                        End With
+                        closeDB()
+                    End If
+
                 Else
                     MessageBox.Show("Data NOT Inserted")
                     Exit Sub

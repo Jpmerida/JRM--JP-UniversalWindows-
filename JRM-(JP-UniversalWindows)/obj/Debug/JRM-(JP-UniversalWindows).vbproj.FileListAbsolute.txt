@@ -130,3 +130,7 @@ C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalW
 C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.xml
 C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Report.resources
 C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Transaction_List.resources
+C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Report_by_date.resources
+C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Search_Date_Transactions.resources
+C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Display_Transactions_Date.resources
+C:\Microsoft Visual Studio\Projects\JRM-(JP-UniversalWindows)\JRM-(JP-UniversalWindows)\obj\Debug\JRM__JP_UniversalWindows_.Form_Monthly_Report.resources

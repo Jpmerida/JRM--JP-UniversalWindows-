@@ -4,6 +4,8 @@ Public Class Form_Main
 
     Public CO As Integer = 0 'checkout Form
     Public IM As Integer = 0 'Item Management
+    Public TI As Integer = 0 'Transaction FORM
+    Dim yform As New Form_Transaction_List
     Dim CLogin = New Form_Login()
     Dim ItemsWindow = New Form_Management_Item
     Dim CheckOutForm As New Form_CheckOut_GuestList()
@@ -36,13 +38,17 @@ Public Class Form_Main
     End Sub
 
     Public Sub firstreset()
+        toolbarUsers.Visible = True
+        toolbarItems.Visible = True
+        toolbarLocations.Visible = True
+        ToolStrip1.Visible = True
         If UIDType = "Admin" Or UIDType = "Manager" Then
             Form_Management_Guest.Button1.Visible = False
         Else
             toolbarUsers.Visible = False
             toolbarItems.Visible = False
             toolbarLocations.Visible = False
-
+            ToolStrip1.Visible = False
             Tab_Main.TabPages.Remove(TabPage4)
             ''Tab_Main.TabPages.Remove(TabPage5)
         End If
@@ -192,6 +198,18 @@ Public Class Form_Main
     End Sub
 
     Private Sub ToolStripButton1_Click_1(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        Form_Transaction_List.ShowDialog()
+        If TI = 0 Then
+            yform = New Form_Transaction_List
+            yform.MdiParent = Me
+            yform.WindowState = FormWindowState.Maximized
+            'UserWindow.Text = "User Management Window [List]" +
+            yform.Show()
+            TI = 1
+        Else
+            yform.WindowState = FormWindowState.Maximized
+            yform.BringToFront()
+        End If
+        '.ShowDialog()
+        'Form_Transaction_List.ShowDialog()
     End Sub
 End Class

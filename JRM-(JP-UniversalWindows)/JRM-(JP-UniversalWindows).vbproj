@@ -91,16 +91,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CrystalReport1.vb">
+    <Compile Include="CrystalReport_OR.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>CrystalReport_OR.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport2.vb">
+    <Compile Include="CrystalReport_Report.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <DependentUpon>CrystalReport_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport_MonthlyReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_MonthlyReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSet_JRM.Designer.vb">
@@ -183,10 +189,34 @@
     <Compile Include="Forms\Login\Form_Login_Background.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Report.Designer.vb">
+    <Compile Include="Form_Display_Transactions_Date.Designer.vb">
+      <DependentUpon>Form_Display_Transactions_Date.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Display_Transactions_Date.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Print_OUT\Form_Report_by_date.Designer.vb">
+      <DependentUpon>Form_Report_by_date.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print_OUT\Form_Report_by_date.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Print_OUT\Form_Report.Designer.vb">
       <DependentUpon>Form_Report.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_Report.vb">
+    <Compile Include="Forms\Print_OUT\Form_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Print_OUT\Form_Monthly_Report.Designer.vb">
+      <DependentUpon>Form_Monthly_Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Print_OUT\Form_Monthly_Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Search_Date_Transactions.Designer.vb">
+      <DependentUpon>Form_Search_Date_Transactions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Search_Date_Transactions.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Transaction_List.Designer.vb">
@@ -331,13 +361,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="CrystalReport_OR.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+      <LastGenOutput>CrystalReport_OR.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport2.rpt">
+    <EmbeddedResource Include="CrystalReport_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
+      <LastGenOutput>CrystalReport_Report.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport_MonthlyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_MonthlyReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Check-IN\Form_Checkin.resx">
       <DependentUpon>Form_Checkin.vb</DependentUpon>
@@ -411,8 +445,20 @@
     <EmbeddedResource Include="Forms\Check-OUT\Form_CheckOut.resx">
       <DependentUpon>Form_CheckOut.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Report.resx">
+    <EmbeddedResource Include="Form_Display_Transactions_Date.resx">
+      <DependentUpon>Form_Display_Transactions_Date.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Print_OUT\Form_Report_by_date.resx">
+      <DependentUpon>Form_Report_by_date.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Print_OUT\Form_Report.resx">
       <DependentUpon>Form_Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Print_OUT\Form_Monthly_Report.resx">
+      <DependentUpon>Form_Monthly_Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Search_Date_Transactions.resx">
+      <DependentUpon>Form_Search_Date_Transactions.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Transaction_List.resx">
       <DependentUpon>Form_Transaction_List.vb</DependentUpon>

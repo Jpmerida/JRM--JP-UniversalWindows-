@@ -81,6 +81,7 @@ Public Class Form_Management_Item
         If ForUpdateITEM_ID = 0 Then
             Exit Sub
         Else
+
             Form_Update_Item.ShowDialog()
         End If
     End Sub

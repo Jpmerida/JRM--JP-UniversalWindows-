@@ -605,8 +605,8 @@ Partial Class Form_Main
         Me.toolbarItems.Image = Global.JRM__JP_UniversalWindows_.My.Resources.Resources.menu_5
         Me.toolbarItems.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.toolbarItems.Name = "toolbarItems"
-        Me.toolbarItems.Size = New System.Drawing.Size(187, 36)
-        Me.toolbarItems.Text = "Item Management"
+        Me.toolbarItems.Size = New System.Drawing.Size(127, 36)
+        Me.toolbarItems.Text = "Items Mgt."
         Me.toolbarItems.ToolTipText = "Items"
         '
         'ToolStripSeparator10
@@ -619,17 +619,16 @@ Partial Class Form_Main
         Me.toolbarUsers.Image = CType(resources.GetObject("toolbarUsers.Image"), System.Drawing.Image)
         Me.toolbarUsers.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.toolbarUsers.Name = "toolbarUsers"
-        Me.toolbarUsers.Size = New System.Drawing.Size(193, 36)
-        Me.toolbarUsers.Text = "Users Management"
+        Me.toolbarUsers.Size = New System.Drawing.Size(126, 36)
+        Me.toolbarUsers.Text = "Users Mgt."
         Me.toolbarUsers.ToolTipText = "Users"
         '
         'ToolStripButton1
         '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(36, 36)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(164, 36)
         Me.ToolStripButton1.Text = "Transaction List"
         '
         'MenuStrip1

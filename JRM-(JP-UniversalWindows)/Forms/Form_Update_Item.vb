@@ -15,7 +15,7 @@ Public Class Form_Update_Item
     End Sub
 
     Private Sub Form_Update_Item_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mysql = "SELECT * FROM Table_Items WHERE Item_ID = " & oldID
+        mysql = "SELECT * FROM Table_Items WHERE Item_ID = " & ForUpdateITEM_ID
         conndb()
         cmd = New MySqlCommand(mysql, conn)
         dr = cmd.ExecuteReader
